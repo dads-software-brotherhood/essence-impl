@@ -56,13 +56,16 @@ public class PracticeRepositoryTest {
     public void insertPractice() throws Exception {
         LOGGER.info("insert practice");
         SEPractice practice = new SEPractice();
-        practice.setBriefDescription("Practice Brief Descrition");
+        // Practice
         practice.setConsistencyRules("Consistency Rules");
-        practice.setDescription("Practice Description");
         practice.setEntry(Arrays.asList("Requeriments:Alpha", "Software:Architecture"));
-        practice.setResult(Arrays.asList("Requeriments:Alpha", "Software:Architecture"));
         practice.setMeasures(Arrays.asList("Timing", "five minutes pear meeting"));
         practice.setObjective("The Objetive of the practice");
+        practice.setResult(Arrays.asList("Requeriments:Alpha", "Software:Architecture"));
+        
+        // ElementGroup
+        practice.setBriefDescription("Practice Brief Descrition");
+        practice.setDescription("Practice Description");
 
         // Inheritance
         practice.setExtension(extension);
