@@ -27,7 +27,6 @@ import java.util.Collection;
 
 import org.omg.essence.model.GraphicalElement;
 import org.omg.essence.model.foundation.ElementGroup;
-import org.omg.essence.model.foundation.ExtensionElement;
 import org.omg.essence.model.foundation.LanguageElement;
 import org.omg.essence.model.foundation.MergeResolution;
 
@@ -118,9 +117,6 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
     /** The language elements this group owns by reference */
     private Collection<LanguageElement> referredElements;
 
-    /** The extension. */
-    private Collection<ExtensionElement> extension;
-
     public String getName() {
         return name;
     }
@@ -175,16 +171,6 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
 
     public void setReferredElements(Collection<LanguageElement> referredElements) {
         this.referredElements = referredElements;
-    }
-
-    @Override
-    public Collection<ExtensionElement> getExtension() {
-        return extension;
-    }
-
-    @Override
-    public void setExtension(Collection<ExtensionElement> extension) {
-        this.extension = extension;
     }
 
 }

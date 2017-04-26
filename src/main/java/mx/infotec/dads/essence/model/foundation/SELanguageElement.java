@@ -34,6 +34,7 @@ import org.omg.essence.model.foundation.Resource;
 import org.omg.essence.model.foundation.Tag;
 import org.omg.essence.model.view.FeatureSelection;
 import org.omg.essence.model.view.ViewSelection;
+import org.springframework.data.annotation.Id;
 
 /**
  * <pre>
@@ -74,6 +75,11 @@ import org.omg.essence.model.view.ViewSelection;
  * @since essence 1.1
  */
 public abstract class SELanguageElement implements LanguageElement {
+    /**
+     * Id for mongo registry
+     */
+    @Id
+    private String id;
 
     /**
      * A flag indicating whether this element may be suppressed in an extension
@@ -192,6 +198,15 @@ public abstract class SELanguageElement implements LanguageElement {
 
     public void setPatternAssociation(Collection<PatternAssociation> patternAssociation) {
         this.patternAssociation = patternAssociation;
+    }
+
+    /**
+     * Returns the identifier of the document.
+     * 
+     * @return the id
+     */
+    public String getId() {
+        return id;
     }
 
 }
