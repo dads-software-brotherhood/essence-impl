@@ -23,7 +23,6 @@
  */
 package mx.infotec.dads.essence.repository;
 
-import java.io.File;
 import java.util.Arrays;
 
 import org.junit.Test;
@@ -34,6 +33,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import mx.infotec.dads.essence.model.SEGraphicalElement;
+import mx.infotec.dads.essence.model.foundation.SEMergeResolution;
 import mx.infotec.dads.essence.model.foundation.SEPractice;
 
 /**
@@ -62,27 +63,27 @@ public class PracticeRepositoryTest {
         practice.setMeasures(Arrays.asList("Timing", "five minutes pear meeting"));
         practice.setObjective("The Objetive of the practice");
         practice.setResult(Arrays.asList("Requeriments:Alpha", "Software:Architecture"));
-        
+
         // ElementGroup
         practice.setBriefDescription("Practice Brief Descrition");
         practice.setDescription("Practice Description");
-
-        // Inheritance
-        practice.setExtension(extension);
-        practice.setFeatureSelection(featureSelection);
-        practice.setIcon(icon);
-        practice.setMergeResolution(mergeResolution);
-        practice.setName(name);
-        practice.setOwnedElements(ownedElements);
-        practice.setOwner(owner);
-        practice.setPatternAssociation(patternAssociation);
-        practice.setProperties(properties);
-        practice.setReferredElements(referredElements);
-        practice.setReferrer(referrer);
-        practice.setResource(resource);
-        practice.setSuppressable(isSuppressable);
-        practice.setTag(tag);
-        practice.setViewSelection(viewSelection);
+        practice.setIcon(new SEGraphicalElement());
+        practice.setMergeResolution(Arrays.asList(new SEMergeResolution()));
+        practice.setName("Name of the Practice");
+//        practice.setOwnedElements(ownedElements);
+//        practice.setReferredElements(referredElements);
+//
+//        // Inheritance
+//        practice.setExtension(extension);
+//        practice.setFeatureSelection(featureSelection);
+//        practice.setOwner(owner);
+//        practice.setPatternAssociation(patternAssociation);
+//        practice.setProperties(properties);
+//        practice.setReferrer(referrer);
+//        practice.setResource(resource);
+//        practice.setSuppressable(isSuppressable);
+//        practice.setTag(tag);
+//        practice.setViewSelection(viewSelection);
         practiceRepository.save(practice);
         id = practice.getId();
         LOGGER.info("id = {}", id);
