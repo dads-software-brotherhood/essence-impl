@@ -66,7 +66,7 @@ public class PracticeRepositoryTest {
 
         // ElementGroup
         practice.setBriefDescription("Practice Brief Descrition");
-        practice.setDescription("Practice Description");
+        practice.setDescription("Practice DescriptionSSSS");
         practice.setIcon(new SEGraphicalElement());
         practice.setMergeResolution(Arrays.asList(new SEMergeResolution()));
         practice.setName("Name of the Practice");
