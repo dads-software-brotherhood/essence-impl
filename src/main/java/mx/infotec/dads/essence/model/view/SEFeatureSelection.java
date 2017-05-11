@@ -70,9 +70,6 @@ public class SEFeatureSelection extends SELanguageElement implements FeatureSele
      */
     private String featureName;
 
-    /** The view selection. */
-    private Collection<ViewSelection> viewSelection;
-
     /** The construct. */
     private LanguageElement construct;
 
@@ -82,16 +79,6 @@ public class SEFeatureSelection extends SELanguageElement implements FeatureSele
 
     public void setFeatureName(String featureName) {
         this.featureName = featureName;
-    }
-
-    @Override
-    public Collection<ViewSelection> getViewSelection() {
-        return viewSelection;
-    }
-
-    @Override
-    public void setViewSelection(Collection<ViewSelection> viewSelection) {
-        this.viewSelection = viewSelection;
     }
 
     public LanguageElement getConstruct() {

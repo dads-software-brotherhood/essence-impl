@@ -117,14 +117,17 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
     /** The language elements this group owns by reference */
     private Collection<LanguageElement> referredElements;
 
+    @Override
     public String getName() {
         return name;
     }
 
+    
     public void setName(String name) {
         this.name = name;
     }
 
+    @Override
     public GraphicalElement getIcon() {
         return icon;
     }
@@ -133,6 +136,7 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
         this.icon = icon;
     }
 
+    @Override
     public String getBriefDescription() {
         return briefDescription;
     }
@@ -141,6 +145,7 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
         this.briefDescription = briefDescription;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
@@ -149,6 +154,7 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
         this.description = description;
     }
 
+    @Override
     public Collection<MergeResolution> getMergeResolution() {
         return mergeResolution;
     }
@@ -157,6 +163,7 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
         this.mergeResolution = mergeResolution;
     }
 
+    @Override
     public Collection<LanguageElement> getOwnedElements() {
         return ownedElements;
     }
@@ -165,6 +172,7 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
         this.ownedElements = ownedElements;
     }
 
+    @Override
     public Collection<LanguageElement> getReferredElements() {
         return referredElements;
     }

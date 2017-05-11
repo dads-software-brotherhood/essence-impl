@@ -88,12 +88,7 @@ public class SEViewSelection extends SELanguageElement implements ViewSelection 
      */
     private Collection<ViewSelection> includedViewSelection;
 
-    /**
-     * The selected features, such as attributes and associations of constructs
-     * to be included in the view.
-     */
-    private Collection<FeatureSelection> featureSelection;
-
+    @Override
     public String getName() {
         return name;
     }
@@ -102,6 +97,7 @@ public class SEViewSelection extends SELanguageElement implements ViewSelection 
         this.name = name;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
@@ -110,6 +106,7 @@ public class SEViewSelection extends SELanguageElement implements ViewSelection 
         this.description = description;
     }
 
+    @Override
     public Collection<ViewSelection> getReferringViewSelection() {
         return referringViewSelection;
     }
@@ -118,6 +115,7 @@ public class SEViewSelection extends SELanguageElement implements ViewSelection 
         this.referringViewSelection = referringViewSelection;
     }
 
+    @Override
     public Collection<LanguageElement> getConstructSelection() {
         return constructSelection;
     }
@@ -126,6 +124,7 @@ public class SEViewSelection extends SELanguageElement implements ViewSelection 
         this.constructSelection = constructSelection;
     }
 
+    @Override
     public Collection<ViewSelection> getIncludedViewSelection() {
         return includedViewSelection;
     }
@@ -134,13 +133,4 @@ public class SEViewSelection extends SELanguageElement implements ViewSelection 
         this.includedViewSelection = includedViewSelection;
     }
 
-    @Override
-    public Collection<FeatureSelection> getFeatureSelection() {
-        return featureSelection;
-    }
-
-    @Override
-    public void setFeatureSelection(Collection<FeatureSelection> featureSelection) {
-        this.featureSelection = featureSelection;
-    }
 }

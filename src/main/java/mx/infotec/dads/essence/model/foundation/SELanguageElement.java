@@ -35,6 +35,7 @@ import org.omg.essence.model.foundation.Tag;
 import org.omg.essence.model.view.FeatureSelection;
 import org.omg.essence.model.view.ViewSelection;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -74,10 +75,9 @@ import org.springframework.data.annotation.Id;
  * @version 1.1
  * @since essence 1.1
  */
+@Document
 public abstract class SELanguageElement implements LanguageElement {
-    /**
-     * Id for mongo registry
-     */
+
     @Id
     private String id;
 
@@ -120,6 +120,7 @@ public abstract class SELanguageElement implements LanguageElement {
     /** The pattern association. */
     private Collection<PatternAssociation> patternAssociation;
 
+    @Override
     public boolean isSuppressable() {
         return isSuppressable;
     }
@@ -128,6 +129,7 @@ public abstract class SELanguageElement implements LanguageElement {
         this.isSuppressable = isSuppressable;
     }
 
+    @Override
     public ElementGroup getOwner() {
         return owner;
     }
@@ -136,6 +138,7 @@ public abstract class SELanguageElement implements LanguageElement {
         this.owner = owner;
     }
 
+    @Override
     public Collection<Tag> getTag() {
         return tag;
     }
@@ -144,6 +147,7 @@ public abstract class SELanguageElement implements LanguageElement {
         this.tag = tag;
     }
 
+    @Override
     public Collection<Resource> getResource() {
         return resource;
     }
@@ -152,6 +156,7 @@ public abstract class SELanguageElement implements LanguageElement {
         this.resource = resource;
     }
 
+    @Override
     public Collection<EndeavorProperty> getProperties() {
         return properties;
     }
@@ -160,6 +165,7 @@ public abstract class SELanguageElement implements LanguageElement {
         this.properties = properties;
     }
 
+    @Override
     public Collection<ViewSelection> getViewSelection() {
         return viewSelection;
     }
@@ -168,6 +174,7 @@ public abstract class SELanguageElement implements LanguageElement {
         this.viewSelection = viewSelection;
     }
 
+    @Override
     public Collection<FeatureSelection> getFeatureSelection() {
         return featureSelection;
     }
@@ -176,6 +183,7 @@ public abstract class SELanguageElement implements LanguageElement {
         this.featureSelection = featureSelection;
     }
 
+    @Override
     public Collection<ExtensionElement> getExtension() {
         return extension;
     }
@@ -184,6 +192,7 @@ public abstract class SELanguageElement implements LanguageElement {
         this.extension = extension;
     }
 
+    @Override
     public Collection<ElementGroup> getReferrer() {
         return referrer;
     }
@@ -192,6 +201,7 @@ public abstract class SELanguageElement implements LanguageElement {
         this.referrer = referrer;
     }
 
+    @Override
     public Collection<PatternAssociation> getPatternAssociation() {
         return patternAssociation;
     }
@@ -200,13 +210,12 @@ public abstract class SELanguageElement implements LanguageElement {
         this.patternAssociation = patternAssociation;
     }
 
-    /**
-     * Returns the identifier of the document.
-     * 
-     * @return the id
-     */
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
 }

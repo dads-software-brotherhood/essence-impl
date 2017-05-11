@@ -131,6 +131,7 @@ import org.omg.essence.model.foundation.Practice;
  * @version 1.1
  * @since essence 1.1
  */
+
 public class SEPractice extends SEElementGroup implements Practice {
 
     /**
@@ -167,6 +168,7 @@ public class SEPractice extends SEElementGroup implements Practice {
      */
     private Collection<String> result;
 
+    @Override
     public String getConsistencyRules() {
         return consistencyRules;
     }
@@ -175,6 +177,7 @@ public class SEPractice extends SEElementGroup implements Practice {
         this.consistencyRules = consistencyRules;
     }
 
+    @Override
     public String getObjective() {
         return objective;
     }
@@ -183,6 +186,7 @@ public class SEPractice extends SEElementGroup implements Practice {
         this.objective = objective;
     }
 
+    @Override
     public Collection<String> getMeasures() {
         return measures;
     }
@@ -191,6 +195,7 @@ public class SEPractice extends SEElementGroup implements Practice {
         this.measures = measures;
     }
 
+    @Override
     public Collection<String> getEntry() {
         return entry;
     }
@@ -199,6 +204,7 @@ public class SEPractice extends SEElementGroup implements Practice {
         this.entry = entry;
     }
 
+    @Override
     public Collection<String> getResult() {
         return result;
     }

@@ -64,7 +64,7 @@ import mx.infotec.dads.essence.model.foundation.SEBasicElement;
 public abstract class SEAbstractActivity extends SEBasicElement implements AbstractActivity {
 
     /** The activity association. */
-    private Collection<ActivityAssociation> activityAssociation;
+    private Collection<SEActivityAssociation> activityAssociation;
 
     /**
      * The criterion. A collection of criteria that have to be fulfilled for
@@ -72,11 +72,11 @@ public abstract class SEAbstractActivity extends SEBasicElement implements Abstr
      */
     private Collection<Criterion> criterion;
 
-    public Collection<ActivityAssociation> getActivityAssociation() {
+    public Collection<SEActivityAssociation> getActivityAssociation() {
         return activityAssociation;
     }
 
-    public void setActivityAssociation(Collection<ActivityAssociation> activityAssociation) {
+    public void setActivityAssociation(Collection<SEActivityAssociation> activityAssociation) {
         this.activityAssociation = activityAssociation;
     }
 

@@ -81,7 +81,7 @@ public class PracticeRepositoryTest {
 //        practice.setProperties(properties);
 //        practice.setReferrer(referrer);
 //        practice.setResource(resource);
-//        practice.setSuppressable(isSuppressable);
+        practice.setSuppressable(false);
 //        practice.setTag(tag);
 //        practice.setViewSelection(viewSelection);
         practiceRepository.save(practice);
@@ -94,6 +94,6 @@ public class PracticeRepositoryTest {
         LOGGER.info("get practice id = {}", id);
         SEPractice practice = practiceRepository.findOne(id);
         System.out.println(practice);
-        LOGGER.info(practice.getId());
+        LOGGER.info("id: {}",practice.getId());
     }
 }
