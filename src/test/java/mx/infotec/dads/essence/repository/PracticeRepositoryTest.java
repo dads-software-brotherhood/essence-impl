@@ -64,7 +64,7 @@ public class PracticeRepositoryTest {
 
         // ElementGroup
         practice.setBriefDescription("Practice Brief Descrition");
-        practice.setDescription("Practice DescriptionSSSS");
+        practice.setDescription("Refactoring all");
         practice.setIcon(null);
         practice.setMergeResolution(null);
         practice.setName("Name of the Practice");

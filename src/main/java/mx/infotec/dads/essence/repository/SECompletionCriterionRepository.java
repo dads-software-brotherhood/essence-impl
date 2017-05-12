@@ -25,14 +25,14 @@ package mx.infotec.dads.essence.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import mx.infotec.dads.essence.model.foundation.SEPractice;
+import mx.infotec.dads.essence.model.activityspaceandactivity.SECompletionCriterion;
 
 /**
- * SEPracticeRepository
+ * SECompletionCriterionRepository
  * 
  * @author Daniel Cortes Pichardo
  *
  */
-public interface SEPracticeRepository extends MongoRepository<SEPractice, String> {
+public interface SECompletionCriterionRepository extends MongoRepository<SECompletionCriterion, String> {
 
 }

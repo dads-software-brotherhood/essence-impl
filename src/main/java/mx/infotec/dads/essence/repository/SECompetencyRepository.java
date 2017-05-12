@@ -25,14 +25,14 @@ package mx.infotec.dads.essence.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import mx.infotec.dads.essence.model.foundation.SEPractice;
+import mx.infotec.dads.essence.model.competency.SECompetency;
 
 /**
- * SEPracticeRepository
+ * SECompetencyRepository
  * 
  * @author Daniel Cortes Pichardo
  *
  */
-public interface SEPracticeRepository extends MongoRepository<SEPractice, String> {
+public interface SECompetencyRepository extends MongoRepository<SECompetency, String> {
 
 }

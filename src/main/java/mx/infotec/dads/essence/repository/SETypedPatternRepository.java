@@ -25,14 +25,14 @@ package mx.infotec.dads.essence.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import mx.infotec.dads.essence.model.foundation.SEPractice;
+import mx.infotec.dads.essence.model.userdefinedtypes.SETypedPattern;
 
 /**
- * SEPracticeRepository
+ * SETypedPatternRepository
  * 
  * @author Daniel Cortes Pichardo
  *
  */
-public interface SEPracticeRepository extends MongoRepository<SEPractice, String> {
+public interface SETypedPatternRepository extends MongoRepository<SETypedPattern, String> {
 
 }
