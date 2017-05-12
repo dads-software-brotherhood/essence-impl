@@ -24,6 +24,8 @@
 package mx.infotec.dads.essence.model.foundation;
 
 import org.omg.essence.model.foundation.Tag;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -59,12 +61,14 @@ import org.omg.essence.model.foundation.Tag;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "tags")
 public class SETag extends SELanguageElement implements Tag {
 
     /** The Value of the tag. */
     private String value;
 
     /** The language element. */
+    @DBRef
     private SELanguageElement languageElement;
 
     public String getValue() {

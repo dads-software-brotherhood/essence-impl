@@ -24,6 +24,7 @@
 package mx.infotec.dads.essence.model.foundation;
 
 import org.omg.essence.model.foundation.PracticeAsset;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -58,5 +59,6 @@ import org.omg.essence.model.foundation.PracticeAsset;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "practiceassets")
 public class SEPracticeAsset extends SEElementGroup implements PracticeAsset{
 }

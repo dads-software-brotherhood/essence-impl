@@ -26,6 +26,8 @@ package mx.infotec.dads.essence.model.alphaandworkproduct;
 import java.util.Collection;
 
 import org.omg.essence.model.alphaandworkproduct.WorkProduct;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.activityspaceandactivity.SEAction;
 import mx.infotec.dads.essence.model.foundation.SEBasicElement;
@@ -74,15 +76,19 @@ import mx.infotec.dads.essence.model.foundation.SEBasicElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "workproducts")
 public class SEWorkProduct extends SEBasicElement implements WorkProduct {
 
     /** The level of details defined for the work product. */
+    @DBRef
     private Collection<? extends SELevelOfDetail> levelOfDetail;
 
     /** The action. */
+    @DBRef
     private Collection<? extends SEAction> action;
 
     /** The work product manifest. */
+    @DBRef
     private Collection<? extends SEWorkProductManifest> workProductManifest;
 
     public Collection<? extends SELevelOfDetail> getLevelOfDetail() {

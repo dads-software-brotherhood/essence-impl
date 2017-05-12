@@ -24,6 +24,8 @@
 package mx.infotec.dads.essence.model.activityspaceandactivity;
 
 import org.omg.essence.model.activityspaceandactivity.ActivityAssociation;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
@@ -79,12 +81,15 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
  * @version 1.1
  * @since essence 1.1
  */
-public class SEActivityAssociation extends SELanguageElement implements ActivityAssociation{
+@Document(collection = "activityassociations")
+public class SEActivityAssociation extends SELanguageElement implements ActivityAssociation {
 
     /** The first member of the association. */
+    @DBRef
     private SEAbstractActivity end2;
 
     /** The second member of the association. */
+    @DBRef
     private SEAbstractActivity end1;
 
     /** The kind of the association. */

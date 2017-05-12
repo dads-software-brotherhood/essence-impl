@@ -23,8 +23,9 @@
  */
 package mx.infotec.dads.essence.model.view;
 
-import org.omg.essence.model.foundation.LanguageElement;
 import org.omg.essence.model.view.FeatureSelection;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
@@ -59,6 +60,7 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "featureselections")
 public class SEFeatureSelection extends SELanguageElement implements FeatureSelection {
 
     /**
@@ -68,7 +70,8 @@ public class SEFeatureSelection extends SELanguageElement implements FeatureSele
     private String featureName;
 
     /** The construct. */
-    private LanguageElement construct;
+    @DBRef
+    private SELanguageElement construct;
 
     public String getFeatureName() {
         return featureName;
@@ -78,11 +81,11 @@ public class SEFeatureSelection extends SELanguageElement implements FeatureSele
         this.featureName = featureName;
     }
 
-    public LanguageElement getConstruct() {
+    public SELanguageElement getConstruct() {
         return construct;
     }
 
-    public void setConstruct(LanguageElement construct) {
+    public void setConstruct(SELanguageElement construct) {
         this.construct = construct;
     }
 

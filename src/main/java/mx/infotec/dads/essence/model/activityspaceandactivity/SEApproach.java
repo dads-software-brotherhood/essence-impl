@@ -24,6 +24,7 @@
 package mx.infotec.dads.essence.model.activityspaceandactivity;
 
 import org.omg.essence.model.activityspaceandactivity.Approach;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
@@ -60,6 +61,7 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 public class SEApproach extends SELanguageElement implements Approach {
 
     /** The activity */
+    @DBRef
     private SEActivity activity;
 
     /** The name of the Approach */

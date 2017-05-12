@@ -24,6 +24,8 @@
 package mx.infotec.dads.essence.model.foundation;
 
 import org.omg.essence.model.foundation.Resource;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -61,6 +63,7 @@ import org.omg.essence.model.foundation.Resource;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection="resources")
 public class SEResource extends SELanguageElement implements Resource{
 
     /**
@@ -70,6 +73,7 @@ public class SEResource extends SELanguageElement implements Resource{
     private String content;
 
     /** The language element */
+    @DBRef
     private SELanguageElement languageElement;
 
     public String getContent() {

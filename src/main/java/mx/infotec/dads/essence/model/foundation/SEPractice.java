@@ -26,7 +26,6 @@ package mx.infotec.dads.essence.model.foundation;
 import java.util.Collection;
 
 import org.omg.essence.model.foundation.Practice;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -137,9 +136,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "practices")
 public class SEPractice extends SEElementGroup implements Practice {
 
-    @Id
-    private String id;
-
     /**
      * Rules on the consistency of a particular Practice. The format for writing
      * these rules is out of the scope of this specification. It is recommended
@@ -160,6 +156,7 @@ public class SEPractice extends SEElementGroup implements Practice {
      * List of standard units used to evaluate the practice performance and the
      * objectives’ achievement.
      */
+
     private Collection<String> measures;
 
     /**
@@ -222,14 +219,6 @@ public class SEPractice extends SEElementGroup implements Practice {
         this.result = result;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public Long getVersion() {
         return version;
     }
@@ -237,5 +226,4 @@ public class SEPractice extends SEElementGroup implements Practice {
     public void setVersion(Long version) {
         this.version = version;
     }
-
 }

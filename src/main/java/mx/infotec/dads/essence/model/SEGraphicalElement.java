@@ -24,6 +24,7 @@
 package mx.infotec.dads.essence.model;
 
 import org.omg.essence.model.GraphicalElement;
+import org.springframework.data.annotation.Id;
 
 /**
  * The Class GraphicalElement. It is one of four data types used for attributes.
@@ -33,6 +34,17 @@ import org.omg.essence.model.GraphicalElement;
  * @since essence 1.1
  */
 public class SEGraphicalElement implements GraphicalElement {
+    @Id
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
     /**
      * It most be a concrete class
      */

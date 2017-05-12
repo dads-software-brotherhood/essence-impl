@@ -27,6 +27,8 @@ import java.util.Collection;
 
 import org.omg.essence.model.competency.Competency;
 import org.omg.essence.model.competency.CompetencyLevel;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.foundation.SEBasicElement;
 
@@ -66,9 +68,11 @@ import mx.infotec.dads.essence.model.foundation.SEBasicElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "competencies")
 public class SECompetency extends SEBasicElement implements Competency {
 
     /** A collection of levels defined for this competency. */
+    @DBRef
     private Collection<? extends CompetencyLevel> possibleLevel;
 
     public Collection<? extends CompetencyLevel> getPossibleLevel() {

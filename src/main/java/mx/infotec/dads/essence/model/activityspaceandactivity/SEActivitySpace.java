@@ -26,6 +26,8 @@ package mx.infotec.dads.essence.model.activityspaceandactivity;
 import java.util.Collection;
 
 import org.omg.essence.model.activityspaceandactivity.ActivitySpace;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.alphaandworkproduct.SEAlpha;
 
@@ -66,18 +68,20 @@ import mx.infotec.dads.essence.model.alphaandworkproduct.SEAlpha;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "activityspaces")
 public class SEActivitySpace extends SEAbstractActivity implements ActivitySpace {
 
     /**
      * A collection of alphas that have to be present to be successful in
      * fulfilling the objectives of this activity space.
      */
+    @DBRef
     private Collection<? extends SEAlpha> input;
 
     public Collection<? extends SEAlpha> getInput() {
         return input;
     }
-    
+
     public void setInput(Collection<? extends SEAlpha> input) {
         this.input = input;
     }

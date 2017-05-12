@@ -27,6 +27,7 @@ import java.util.Collection;
 
 import org.omg.essence.model.foundation.EndeavorProperty;
 import org.omg.essence.model.foundation.Type;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 /**
  * <pre>
@@ -66,6 +67,7 @@ import org.omg.essence.model.foundation.Type;
 public class SEType implements Type {
 
     /** The property. */
+    @DBRef
     private Collection<? extends EndeavorProperty> property;
 
     /** The name. */

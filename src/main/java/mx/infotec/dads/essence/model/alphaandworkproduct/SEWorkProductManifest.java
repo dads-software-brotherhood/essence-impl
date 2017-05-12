@@ -24,6 +24,8 @@
 package mx.infotec.dads.essence.model.alphaandworkproduct;
 
 import org.omg.essence.model.alphaandworkproduct.WorkProductManifest;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
@@ -62,6 +64,7 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "workproductmanifests")
 public class SEWorkProductManifest extends SELanguageElement implements WorkProductManifest {
 
     /**
@@ -77,9 +80,11 @@ public class SEWorkProductManifest extends SELanguageElement implements WorkProd
     private int upperBound;
 
     /** The alpha bound by this manifest. */
+    @DBRef
     private SEAlpha alpha;
 
     /** The work product bound by this manifest. */
+    @DBRef
     private SEWorkProduct workProduct;
 
     public int getLowerBound() {

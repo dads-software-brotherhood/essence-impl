@@ -26,6 +26,8 @@ package mx.infotec.dads.essence.model.alphaandworkproduct;
 import java.util.Collection;
 
 import org.omg.essence.model.alphaandworkproduct.Alpha;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.activityspaceandactivity.SEAction;
 import mx.infotec.dads.essence.model.activityspaceandactivity.SEActivitySpace;
@@ -97,24 +99,31 @@ import mx.infotec.dads.essence.model.foundation.SEBasicElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "alphas")
 public class SEAlpha extends SEBasicElement implements Alpha {
 
     /** The states of the alpha. */
+    @DBRef
     private Collection<? extends SEState> states;
 
     /** The action. */
+    @DBRef
     private Collection<? extends SEAction> action;
 
     /** The activity space. */
+    @DBRef
     private SEActivitySpace activitySpace;
 
     /** The alpha containment. */
+    @DBRef
     private Collection<? extends SEAlphaContainment> alphaContainment;
 
     /** The alpha association. */
+    @DBRef
     private Collection<? extends SEAlphaAssociation> alphaAssociation;
 
     /** The work product manifest. */
+    @DBRef
     private Collection<? extends SEWorkProductManifest> workProductManifest;
 
     public Collection<? extends SEState> getStates() {

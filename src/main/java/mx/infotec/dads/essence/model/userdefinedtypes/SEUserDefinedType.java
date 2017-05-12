@@ -29,6 +29,8 @@ import org.omg.essence.model.userdefinedtypes.TypedPattern;
 import org.omg.essence.model.userdefinedtypes.TypedResource;
 import org.omg.essence.model.userdefinedtypes.TypedTag;
 import org.omg.essence.model.userdefinedtypes.UserDefinedType;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
@@ -68,6 +70,7 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "userdefinedtypes")
 public class SEUserDefinedType extends SELanguageElement implements UserDefinedType {
 
     /** The name of the type. */
@@ -83,12 +86,15 @@ public class SEUserDefinedType extends SELanguageElement implements UserDefinedT
     private String constraint;
 
     /** The typed resource. */
+    @DBRef
     private Collection<? extends TypedResource> typedResource;
 
     /** The typed pattern. */
+    @DBRef
     private Collection<? extends TypedPattern> typedPattern;
 
     /** The typed tag. */
+    @DBRef
     private Collection<? extends TypedTag> typedTag;
 
     public String getName() {

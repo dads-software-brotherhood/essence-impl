@@ -26,6 +26,8 @@ package mx.infotec.dads.essence.model.alphaandworkproduct;
 import java.util.Collection;
 
 import org.omg.essence.model.alphaandworkproduct.LevelOfDetail;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.activityspaceandactivity.SECriterion;
 import mx.infotec.dads.essence.model.foundation.SECheckpoint;
@@ -83,6 +85,7 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection="levelofdetails")
 public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail {
 
     /** A description of the level of detail. */
@@ -98,18 +101,23 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
     private String name;
 
     /** Checklist items to determine if the level of detail has been reached. */
+    @DBRef
     private Collection<? extends SECheckpoint> checkListItem;
 
     /** Next level of detail. */
+    @DBRef
     private SELevelOfDetail successor;
 
     /** The criterion. */
+    @DBRef
     private Collection<? extends SECriterion> criterion;
 
     /** The predecessor. */
+    @DBRef
     private SELevelOfDetail predecessor;
 
     /** The work product. */
+    @DBRef
     private SEWorkProduct workProduct;
 
     public String getDescription() {

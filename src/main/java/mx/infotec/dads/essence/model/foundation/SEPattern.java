@@ -27,6 +27,8 @@ import java.util.Collection;
 
 import org.omg.essence.model.foundation.Pattern;
 import org.omg.essence.model.foundation.PatternAssociation;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -65,9 +67,11 @@ import org.omg.essence.model.foundation.PatternAssociation;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "basicelements")
 public class SEPattern extends SEBasicElement implements Pattern {
 
     /** Named association types between elements */
+    @DBRef
     private Collection<? extends PatternAssociation> association;
 
     public Collection<? extends PatternAssociation> getAssociation() {

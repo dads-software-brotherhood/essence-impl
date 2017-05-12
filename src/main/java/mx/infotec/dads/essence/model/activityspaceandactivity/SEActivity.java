@@ -26,6 +26,8 @@ package mx.infotec.dads.essence.model.activityspaceandactivity;
 import java.util.Collection;
 
 import org.omg.essence.model.activityspaceandactivity.Activity;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.competency.SECompetencyLevel;
 
@@ -82,15 +84,19 @@ import mx.infotec.dads.essence.model.competency.SECompetencyLevel;
  * @version 1.1
  * @since essence 1.1
  */
-public class SEActivity extends SEAbstractActivity implements Activity{
+@Document(collection = "activities")
+public class SEActivity extends SEAbstractActivity implements Activity {
 
     /** The approach. */
+    @DBRef
     private Collection<? extends SEApproach> approach;
 
     /** The action. */
+    @DBRef
     private Collection<? extends SEAction> action;
 
     /** The required competency level. */
+    @DBRef
     private Collection<? extends SECompetencyLevel> requiredCompetencyLevel;
 
     public Collection<? extends SEApproach> getApproach() {

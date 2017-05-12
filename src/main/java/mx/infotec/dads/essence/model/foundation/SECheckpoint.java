@@ -27,6 +27,8 @@ import org.omg.essence.model.alphaandworkproduct.LevelOfDetail;
 import org.omg.essence.model.alphaandworkproduct.State;
 import org.omg.essence.model.competency.CompetencyLevel;
 import org.omg.essence.model.foundation.Checkpoint;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -65,7 +67,8 @@ import org.omg.essence.model.foundation.Checkpoint;
  * @version 1.1
  * @since essence 1.1
  */
-public class SECheckpoint extends SELanguageElement implements Checkpoint{
+@Document(collection = "checkpoints")
+public class SECheckpoint extends SELanguageElement implements Checkpoint {
 
     /** The name of the checkpoint. */
     private String name;
@@ -77,12 +80,15 @@ public class SECheckpoint extends SELanguageElement implements Checkpoint{
     private String shortDescription;
 
     /** The level. */
+    @DBRef
     private LevelOfDetail level;
 
     /** The state. */
+    @DBRef
     private State state;
 
     /** The competency level. */
+    @DBRef
     private CompetencyLevel competencyLevel;
 
     public String getName() {

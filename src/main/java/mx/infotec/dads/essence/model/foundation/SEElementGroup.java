@@ -26,6 +26,7 @@ package mx.infotec.dads.essence.model.foundation;
 import java.util.Collection;
 
 import org.omg.essence.model.foundation.ElementGroup;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import mx.infotec.dads.essence.model.SEGraphicalElement;
 
@@ -89,6 +90,7 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
     protected String name;
 
     /** The icon to be used when presenting the element group */
+    @DBRef
     protected SEGraphicalElement icon;
 
     /**
@@ -108,12 +110,15 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
     protected String description;
 
     /** The merge resolution. */
+    @DBRef
     protected Collection<? extends SEMergeResolution> mergeResolution;
 
     /** The language elements this group owns by value */
+    @DBRef
     protected Collection<? extends SELanguageElement> ownedElements;
 
     /** The language elements this group owns by reference */
+    @DBRef
     protected Collection<? extends SELanguageElement> referredElements;
 
     @Override
@@ -178,5 +183,5 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
     public void setReferredElements(Collection<? extends SELanguageElement> referredElements) {
         this.referredElements = referredElements;
     }
-
+    
 }

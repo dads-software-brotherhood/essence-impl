@@ -25,6 +25,7 @@ package mx.infotec.dads.essence.model.activityspaceandactivity;
 
 import org.omg.essence.model.activityspaceandactivity.Criterion;
 import org.omg.essence.model.activityspaceandactivity.EntryCriterion;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -55,5 +56,6 @@ import org.omg.essence.model.activityspaceandactivity.EntryCriterion;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "entrycriteria")
 public class SEEntryCriterion extends SECriterion implements EntryCriterion {
 }

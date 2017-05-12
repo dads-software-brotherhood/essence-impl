@@ -33,8 +33,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import mx.infotec.dads.essence.model.SEGraphicalElement;
-import mx.infotec.dads.essence.model.foundation.SEMergeResolution;
 import mx.infotec.dads.essence.model.foundation.SEPractice;
 
 /**
@@ -67,11 +65,9 @@ public class PracticeRepositoryTest {
         // ElementGroup
         practice.setBriefDescription("Practice Brief Descrition");
         practice.setDescription("Practice DescriptionSSSS");
-        practice.setIcon(new SEGraphicalElement());
-        practice.setMergeResolution(Arrays.asList(new SEMergeResolution()));
-        practice.setName("Name of the Practice");
+        practice.setIcon(null);
         practice.setMergeResolution(null);
-        practice.setProperties(null);
+        practice.setName("Name of the Practice");
 //        practice.setOwnedElements(ownedElements);
 //        practice.setReferredElements(referredElements);
 //

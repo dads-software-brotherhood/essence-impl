@@ -25,6 +25,7 @@ package mx.infotec.dads.essence.model.foundation;
 
 import org.omg.essence.model.GraphicalElement;
 import org.omg.essence.model.foundation.BasicElement;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 /**
  * <pre>
@@ -69,6 +70,7 @@ public abstract class SEBasicElement extends SELanguageElement implements BasicE
      * 
      * @see GraphicalElement
      */
+    @DBRef
     protected GraphicalElement icon;
 
     /**

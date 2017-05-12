@@ -24,6 +24,8 @@
 package mx.infotec.dads.essence.model.alphaandworkproduct;
 
 import org.omg.essence.model.alphaandworkproduct.AlphaContainment;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
@@ -61,6 +63,7 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "alphacontainments")
 public class SEAlphaContainment extends SELanguageElement implements AlphaContainment {
 
     /** Lower bound for the number of instances of the sub(ordinate)-alpha. */
@@ -70,9 +73,11 @@ public class SEAlphaContainment extends SELanguageElement implements AlphaContai
     private int upperBound;
 
     /** The super alpha */
+    @DBRef
     private SEAlpha superAlpha;
 
     /** The subordinate alpha. */
+    @DBRef
     private SEAlpha subordinateAlpha;
 
     public int getLowerBound() {

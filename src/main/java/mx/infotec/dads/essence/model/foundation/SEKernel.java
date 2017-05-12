@@ -27,6 +27,8 @@ import java.util.Collection;
 
 import org.omg.essence.model.foundation.Kernel;
 import org.omg.essence.model.foundation.Method;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -91,9 +93,11 @@ import org.omg.essence.model.foundation.Method;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "kernels")
 public class SEKernel extends SEElementGroup implements Kernel {
 
     /** The referring method. */
+    @DBRef
     private Collection<? extends Method> referringMethod;
 
     /**

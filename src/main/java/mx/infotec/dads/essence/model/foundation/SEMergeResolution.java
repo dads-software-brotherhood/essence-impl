@@ -24,6 +24,8 @@
 package mx.infotec.dads.essence.model.foundation;
 
 import org.omg.essence.model.foundation.MergeResolution;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -57,6 +59,7 @@ import org.omg.essence.model.foundation.MergeResolution;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "mergeresolutions")
 public class SEMergeResolution extends SELanguageElement implements MergeResolution {
 
     /** The name of the attribute on which the conflict is solved. */
@@ -69,6 +72,7 @@ public class SEMergeResolution extends SELanguageElement implements MergeResolut
     private String resolutionFunction;
 
     /** The element group. */
+    @DBRef
     private SEElementGroup elementGroup;
 
     public String getTargetAttribute() {

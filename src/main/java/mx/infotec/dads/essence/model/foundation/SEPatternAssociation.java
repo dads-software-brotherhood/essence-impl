@@ -25,9 +25,9 @@ package mx.infotec.dads.essence.model.foundation;
 
 import java.util.Collection;
 
-import org.omg.essence.model.foundation.LanguageElement;
-import org.omg.essence.model.foundation.Pattern;
 import org.omg.essence.model.foundation.PatternAssociation;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -66,16 +66,19 @@ import org.omg.essence.model.foundation.PatternAssociation;
  * @version 1.1
  * @since essence 1.1
  */
-public class SEPatternAssociation extends SELanguageElement implements PatternAssociation{
-
+@Document(collection = "patternassociations")
+public class SEPatternAssociation extends SELanguageElement implements PatternAssociation {
+    
     /** Name of the association. */
     private String name;
 
     /** The elements taking part in the pattern via this association */
-    private Collection<? extends LanguageElement> elements;
+    @DBRef
+    private Collection<? extends SELanguageElement> elements;
 
     /** The pattern. */
-    private Pattern pattern;
+    @DBRef
+    private SEPattern pattern;
 
     public String getName() {
         return name;
@@ -85,19 +88,19 @@ public class SEPatternAssociation extends SELanguageElement implements PatternAs
         this.name = name;
     }
 
-    public Collection<? extends LanguageElement> getElements() {
+    public Collection<? extends SELanguageElement> getElements() {
         return elements;
     }
 
-    public void setElements(Collection<? extends LanguageElement> elements) {
+    public void setElements(Collection<? extends SELanguageElement> elements) {
         this.elements = elements;
     }
 
-    public Pattern getPattern() {
+    public SEPattern getPattern() {
         return pattern;
     }
 
-    public void setPattern(Pattern pattern) {
+    public void setPattern(SEPattern pattern) {
         this.pattern = pattern;
     }
 

@@ -25,6 +25,8 @@ package mx.infotec.dads.essence.model.userdefinedtypes;
 
 import org.omg.essence.model.userdefinedtypes.TypedResource;
 import org.omg.essence.model.userdefinedtypes.UserDefinedType;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.foundation.SEResource;
 
@@ -58,9 +60,11 @@ import mx.infotec.dads.essence.model.foundation.SEResource;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection="typedResources")
 public class SETypedResource extends SEResource implements TypedResource {
 
     /** The user defined type associated with this resource. */
+    @DBRef
     private UserDefinedType kind;
 
     public UserDefinedType getKind() {

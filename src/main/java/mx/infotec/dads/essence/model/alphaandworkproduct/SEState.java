@@ -26,6 +26,8 @@ package mx.infotec.dads.essence.model.alphaandworkproduct;
 import java.util.Collection;
 
 import org.omg.essence.model.alphaandworkproduct.State;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.activityspaceandactivity.SECriterion;
 import mx.infotec.dads.essence.model.foundation.SECheckpoint;
@@ -75,6 +77,7 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "states")
 public class SEState extends SELanguageElement implements State {
 
     /** The name of the state. */
@@ -84,18 +87,23 @@ public class SEState extends SELanguageElement implements State {
     private String description;
 
     /** A collection of checkpoints associated with the state. */
+    @DBRef
     private Collection<? extends SECheckpoint> checkListItem;
 
     /** The successor state. */
+    @DBRef
     private SEState successor;
 
     /** The criterion. */
+    @DBRef
     private Collection<? extends SECriterion> criterion;
 
     /** The alpha. */
+    @DBRef
     private SEAlpha alpha;
 
     /** The predecessor. */
+    @DBRef
     private SEState predecessor;
 
     public String getName() {

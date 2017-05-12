@@ -23,9 +23,9 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
-import org.omg.essence.model.foundation.ElementGroup;
 import org.omg.essence.model.foundation.ExtensionElement;
-import org.omg.essence.model.foundation.LanguageElement;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -60,13 +60,16 @@ import org.omg.essence.model.foundation.LanguageElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "extensionelements")
 public class SEExtensionElement extends SELanguageElement implements ExtensionElement {
 
     /** The element group. */
-    private ElementGroup elementGroup;
+    @DBRef
+    private SEElementGroup elementGroup;
 
     /** The element to be extended */
-    private LanguageElement targetElement;
+    @DBRef
+    private SELanguageElement targetElement;
 
     /** The name of the attribute which is to be extended */
     private String targetAttribute;
@@ -74,19 +77,19 @@ public class SEExtensionElement extends SELanguageElement implements ExtensionEl
     /** The function applied to the target attribute */
     private String extensionFunction;
 
-    public ElementGroup getElementGroup() {
+    public SEElementGroup getElementGroup() {
         return elementGroup;
     }
 
-    public void setElementGroup(ElementGroup elementGroup) {
+    public void setElementGroup(SEElementGroup elementGroup) {
         this.elementGroup = elementGroup;
     }
 
-    public LanguageElement getTargetElement() {
+    public SELanguageElement getTargetElement() {
         return targetElement;
     }
 
-    public void setTargetElement(LanguageElement targetElement) {
+    public void setTargetElement(SELanguageElement targetElement) {
         this.targetElement = targetElement;
     }
 
@@ -105,5 +108,4 @@ public class SEExtensionElement extends SELanguageElement implements ExtensionEl
     public void setExtensionFunction(String extensionFunction) {
         this.extensionFunction = extensionFunction;
     }
-
 }

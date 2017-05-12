@@ -24,6 +24,7 @@
 package mx.infotec.dads.essence.model.foundation;
 
 import org.omg.essence.model.foundation.Library;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -64,5 +65,6 @@ import org.omg.essence.model.foundation.Library;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "libraries")
 public class SELibrary extends SEElementGroup implements Library {
 }

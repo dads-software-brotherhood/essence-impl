@@ -25,6 +25,8 @@ package mx.infotec.dads.essence.model.userdefinedtypes;
 
 import org.omg.essence.model.userdefinedtypes.TypedPattern;
 import org.omg.essence.model.userdefinedtypes.UserDefinedType;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.foundation.SEPattern;
 
@@ -58,9 +60,11 @@ import mx.infotec.dads.essence.model.foundation.SEPattern;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection="typedpatterns")
 public class SETypedPattern extends SEPattern implements TypedPattern {
 
     /** The user defined type associated with this pattern */
+    @DBRef
     private UserDefinedType kind;
 
     public UserDefinedType getKind() {

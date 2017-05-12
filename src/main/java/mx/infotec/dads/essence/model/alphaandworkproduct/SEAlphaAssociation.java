@@ -25,6 +25,8 @@ package mx.infotec.dads.essence.model.alphaandworkproduct;
 
 import org.omg.essence.model.alphaandworkproduct.Alpha;
 import org.omg.essence.model.alphaandworkproduct.AlphaAssociation;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
@@ -63,6 +65,7 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection="alphaassociations")
 public class SEAlphaAssociation extends SELanguageElement implements AlphaAssociation {
 
     /** Lower bound of association endpoint 1. */
@@ -81,9 +84,11 @@ public class SEAlphaAssociation extends SELanguageElement implements AlphaAssoci
     private String name;
 
     /** The alpha endpoint 1 of the association. */
+    @DBRef
     private SEAlpha end1;
 
     /** The alpha endpoint 2 of the association. */
+    @DBRef
     private SEAlpha end2;
 
     public int getEnd1lowerBound() {

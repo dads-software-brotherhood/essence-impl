@@ -25,6 +25,7 @@ package mx.infotec.dads.essence.model.activityspaceandactivity;
 
 import org.omg.essence.model.activityspaceandactivity.CompletionCriterion;
 import org.omg.essence.model.activityspaceandactivity.Criterion;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -51,5 +52,6 @@ import org.omg.essence.model.activityspaceandactivity.Criterion;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection="completioncriteria")
 public class SECompletionCriterion extends SECriterion implements CompletionCriterion {
 }

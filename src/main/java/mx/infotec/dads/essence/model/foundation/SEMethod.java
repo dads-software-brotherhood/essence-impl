@@ -25,6 +25,8 @@ package mx.infotec.dads.essence.model.foundation;
 
 import org.omg.essence.model.foundation.Kernel;
 import org.omg.essence.model.foundation.Method;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -68,6 +70,7 @@ import org.omg.essence.model.foundation.Method;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "methods")
 public class SEMethod extends SEElementGroup implements Method {
 
     /**
@@ -79,6 +82,7 @@ public class SEMethod extends SEElementGroup implements Method {
     private String purpose;
 
     /** The Kernel this Method is based on */
+    @DBRef
     private Kernel baseKernel;
 
     public String getPurpose() {

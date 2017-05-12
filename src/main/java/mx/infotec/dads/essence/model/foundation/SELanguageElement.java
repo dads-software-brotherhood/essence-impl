@@ -27,6 +27,8 @@ import java.util.Collection;
 
 import org.omg.essence.model.foundation.LanguageElement;
 import org.omg.essence.model.view.FeatureSelection;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import mx.infotec.dads.essence.model.view.SEFeatureSelection;
 import mx.infotec.dads.essence.model.view.SEViewSelection;
@@ -70,7 +72,10 @@ import mx.infotec.dads.essence.model.view.SEViewSelection;
  * @since essence 1.1
  */
 public abstract class SELanguageElement implements LanguageElement {
-    
+    /** The mongodb Id */
+    @Id
+    private String id;
+
     /**
      * A flag indicating whether this element may be suppressed in an extension
      * or composition (see 9.4.3.2 on the essence standard)
@@ -78,36 +83,45 @@ public abstract class SELanguageElement implements LanguageElement {
     protected boolean isSuppressable = true;
 
     /** The element group that owns this language element */
+    @DBRef
     protected SEElementGroup owner;
 
     /** Tags associated with this language element */
+    @DBRef
     protected Collection<? extends SETag> tag;
 
     /** Resources associated with this language element. */
+    @DBRef
     protected Collection<? extends SEResource> resource;
 
     /**
      * Properties (defined at M1 level) that you want to track during the
      * endeavor.
      */
+    @DBRef
     protected Collection<? extends SEEndeavorProperty> properties;
 
     /**
      * A list of ViewSelection selects a subset of constructs and construct
      * features such as attributes and associations.
      */
+    @DBRef
     protected Collection<? extends SEViewSelection> viewSelection;
 
     /** The feature selection. */
+    @DBRef
     protected Collection<? extends SEFeatureSelection> featureSelection;
 
     /** The extension. */
+    @DBRef
     protected Collection<? extends SEExtensionElement> extension;
 
     /** The referrer. */
+    @DBRef
     protected Collection<? extends SEElementGroup> referrer;
 
     /** The pattern association. */
+    @DBRef
     protected Collection<? extends SEPatternAssociation> patternAssociation;
 
     @Override
@@ -198,6 +212,14 @@ public abstract class SELanguageElement implements LanguageElement {
 
     public void setPatternAssociation(Collection<? extends SEPatternAssociation> patternAssociation) {
         this.patternAssociation = patternAssociation;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
 }

@@ -26,6 +26,7 @@ package mx.infotec.dads.essence.model.activityspaceandactivity;
 import java.util.Collection;
 
 import org.omg.essence.model.activityspaceandactivity.AbstractActivity;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import mx.infotec.dads.essence.model.foundation.SEBasicElement;
 
@@ -62,12 +63,14 @@ import mx.infotec.dads.essence.model.foundation.SEBasicElement;
 public abstract class SEAbstractActivity extends SEBasicElement implements AbstractActivity {
 
     /** The activity association. */
+    @DBRef
     protected Collection<? extends SEActivityAssociation> activityAssociation;
 
     /**
      * The criterion. A collection of criteria that have to be fulfilled for
      * entering the activity or considering the activity completed
      */
+    @DBRef
     protected Collection<? extends SECriterion> criterion;
 
     public Collection<? extends SEActivityAssociation> getActivityAssociation() {

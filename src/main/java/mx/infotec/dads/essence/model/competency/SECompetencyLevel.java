@@ -29,6 +29,8 @@ import org.omg.essence.model.activityspaceandactivity.Activity;
 import org.omg.essence.model.competency.Competency;
 import org.omg.essence.model.competency.CompetencyLevel;
 import org.omg.essence.model.foundation.Checkpoint;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
@@ -66,6 +68,7 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "competencylevels")
 public class SECompetencyLevel extends SELanguageElement implements CompetencyLevel {
 
     /** The name of the competency level */
@@ -81,12 +84,15 @@ public class SECompetencyLevel extends SELanguageElement implements CompetencyLe
     private int level;
 
     /** The activity. */
+    @DBRef
     private Collection<? extends Activity> activity;
 
     /** The competency. */
+    @DBRef
     private Competency competency;
 
     /** The checklist item. */
+    @DBRef
     private Collection<? extends Checkpoint> checklistItem;
 
     public String getName() {

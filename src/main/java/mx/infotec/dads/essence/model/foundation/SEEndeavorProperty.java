@@ -24,6 +24,8 @@
 package mx.infotec.dads.essence.model.foundation;
 
 import org.omg.essence.model.foundation.EndeavorProperty;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -57,21 +59,26 @@ import org.omg.essence.model.foundation.EndeavorProperty;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "endeavorproperties")
 public class SEEndeavorProperty implements EndeavorProperty {
 
     /** The language element. */
+    @DBRef
     private SELanguageElement languageElement;
 
     /**
      * The association used to express this property if it is not a simple
      * property.
      */
+    @DBRef
     private SEEndeavorAssociation association;
 
     /** The association owning this property */
+    @DBRef
     private SEEndeavorAssociation owningAssociation;
 
     /** The type of the property */
+    @DBRef
     private SEType type;
 
     /** Name of the property */

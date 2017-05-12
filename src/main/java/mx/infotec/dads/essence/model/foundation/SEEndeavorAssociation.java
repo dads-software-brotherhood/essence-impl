@@ -26,7 +26,7 @@ package mx.infotec.dads.essence.model.foundation;
 import java.util.Collection;
 
 import org.omg.essence.model.foundation.EndeavorAssociation;
-import org.omg.essence.model.foundation.EndeavorProperty;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 /**
  * <pre>
@@ -62,24 +62,26 @@ import org.omg.essence.model.foundation.EndeavorProperty;
 public class SEEndeavorAssociation implements EndeavorAssociation {
 
     /** The properties of this association */
-    private Collection<? extends EndeavorProperty> ownedEnd;
+    @DBRef
+    private Collection<? extends SEEndeavorProperty> ownedEnd;
 
     /** End properties of the association */
-    private Collection<? extends EndeavorProperty> memberEnd;
+    @DBRef
+    private Collection<? extends SEEndeavorProperty> memberEnd;
 
-    public Collection<? extends EndeavorProperty> getOwnedEnd() {
+    public Collection<? extends SEEndeavorProperty> getOwnedEnd() {
         return ownedEnd;
     }
 
-    public void setOwnedEnd(Collection<? extends EndeavorProperty> ownedEnd) {
+    public void setOwnedEnd(Collection<? extends SEEndeavorProperty> ownedEnd) {
         this.ownedEnd = ownedEnd;
     }
 
-    public Collection<? extends EndeavorProperty> getMemberEnd() {
+    public Collection<? extends SEEndeavorProperty> getMemberEnd() {
         return memberEnd;
     }
 
-    public void setMemberEnd(Collection<? extends EndeavorProperty> memberEnd) {
+    public void setMemberEnd(Collection<? extends SEEndeavorProperty> memberEnd) {
         this.memberEnd = memberEnd;
     }
 

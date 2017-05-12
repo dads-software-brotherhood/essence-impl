@@ -25,6 +25,8 @@ package mx.infotec.dads.essence.model.userdefinedtypes;
 
 import org.omg.essence.model.userdefinedtypes.TypedTag;
 import org.omg.essence.model.userdefinedtypes.UserDefinedType;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.foundation.SETag;
 
@@ -58,9 +60,11 @@ import mx.infotec.dads.essence.model.foundation.SETag;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "typedtags")
 public class SETypedTag extends SETag implements TypedTag {
 
     /** The user defined type associated with this tag. */
+    @DBRef
     private UserDefinedType kind;
 
     public UserDefinedType getKind() {

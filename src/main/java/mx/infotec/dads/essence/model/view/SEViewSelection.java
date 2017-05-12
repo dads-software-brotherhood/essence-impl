@@ -25,8 +25,9 @@ package mx.infotec.dads.essence.model.view;
 
 import java.util.Collection;
 
-import org.omg.essence.model.foundation.LanguageElement;
 import org.omg.essence.model.view.ViewSelection;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
@@ -63,6 +64,7 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "viewselections")
 public class SEViewSelection extends SELanguageElement implements ViewSelection {
 
     /** The name of the view. */
@@ -72,20 +74,23 @@ public class SEViewSelection extends SELanguageElement implements ViewSelection 
     private String description;
 
     /** The referring view selection. */
-    private Collection<? extends ViewSelection> referringViewSelection;
+    @DBRef
+    private Collection<? extends SEViewSelection> referringViewSelection;
 
     /**
      * The selected constructs (such as Alpha, State, etc) to be included in the
      * view.
      */
-    private Collection<? extends LanguageElement> constructSelection;
+    @DBRef
+    private Collection<? extends SELanguageElement> constructSelection;
 
     /**
      * ViewSelections to be included in this ViewSelection (provides a means to
      * build extended and more sophisticated views based on existing/smaller
      * views)
      */
-    private Collection<? extends ViewSelection> includedViewSelection;
+    @DBRef
+    private Collection<? extends SEViewSelection> includedViewSelection;
 
     @Override
     public String getName() {
@@ -106,29 +111,29 @@ public class SEViewSelection extends SELanguageElement implements ViewSelection 
     }
 
     @Override
-    public Collection<? extends ViewSelection> getReferringViewSelection() {
+    public Collection<? extends SEViewSelection> getReferringViewSelection() {
         return referringViewSelection;
     }
 
-    public void setReferringViewSelection(Collection<? extends ViewSelection> referringViewSelection) {
+    public void setReferringViewSelection(Collection<? extends SEViewSelection> referringViewSelection) {
         this.referringViewSelection = referringViewSelection;
     }
 
     @Override
-    public Collection<? extends LanguageElement> getConstructSelection() {
+    public Collection<? extends SELanguageElement> getConstructSelection() {
         return constructSelection;
     }
 
-    public void setConstructSelection(Collection<? extends LanguageElement> constructSelection) {
+    public void setConstructSelection(Collection<? extends SELanguageElement> constructSelection) {
         this.constructSelection = constructSelection;
     }
 
     @Override
-    public Collection<? extends ViewSelection> getIncludedViewSelection() {
+    public Collection<? extends SEViewSelection> getIncludedViewSelection() {
         return includedViewSelection;
     }
 
-    public void setIncludedViewSelection(Collection<? extends ViewSelection> includedViewSelection) {
+    public void setIncludedViewSelection(Collection<? extends SEViewSelection> includedViewSelection) {
         this.includedViewSelection = includedViewSelection;
     }
 

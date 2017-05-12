@@ -27,6 +27,8 @@ import java.util.Collection;
 
 import org.omg.essence.model.activityspaceandactivity.Action;
 import org.omg.essence.model.activityspaceandactivity.ActionKind;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.alphaandworkproduct.SEAlpha;
 import mx.infotec.dads.essence.model.alphaandworkproduct.SEWorkProduct;
@@ -84,20 +86,26 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "actions")
 public class SEAction extends SELanguageElement implements Action {
 
     /** The activity. */
-    protected SEActivity activity;
+    @DBRef
+    private SEActivity activity;
 
     /** The alpha. */
-    protected Collection<? extends SEAlpha> alpha;
+    @DBRef
+    private Collection<? extends SEAlpha> alpha;
 
     /** The work product. */
-    protected Collection<? extends SEWorkProduct> workProduct;
+    @DBRef
+    private Collection<? extends SEWorkProduct> workProduct;
 
     /** The kind. */
-    protected ActionKind kind;
+    @DBRef
+    private ActionKind kind;
 
+    @Override
     public SEActivity getActivity() {
         return activity;
     }
@@ -106,6 +114,7 @@ public class SEAction extends SELanguageElement implements Action {
         this.activity = activity;
     }
 
+    @Override
     public Collection<? extends SEAlpha> getAlpha() {
         return alpha;
     }
@@ -114,6 +123,7 @@ public class SEAction extends SELanguageElement implements Action {
         this.alpha = alpha;
     }
 
+    @Override
     public Collection<? extends SEWorkProduct> getWorkProduct() {
         return workProduct;
     }
@@ -122,6 +132,7 @@ public class SEAction extends SELanguageElement implements Action {
         this.workProduct = workProduct;
     }
 
+    @Override
     public ActionKind getKind() {
         return kind;
     }
@@ -129,5 +140,4 @@ public class SEAction extends SELanguageElement implements Action {
     public void setKind(ActionKind kind) {
         this.kind = kind;
     }
-
 }
