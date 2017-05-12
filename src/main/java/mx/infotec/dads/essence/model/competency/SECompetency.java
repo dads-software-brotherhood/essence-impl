@@ -69,13 +69,13 @@ import mx.infotec.dads.essence.model.foundation.SEBasicElement;
 public class SECompetency extends SEBasicElement implements Competency {
 
     /** A collection of levels defined for this competency. */
-    private Collection<CompetencyLevel> possibleLevel;
+    private Collection<? extends CompetencyLevel> possibleLevel;
 
-    public Collection<CompetencyLevel> getPossibleLevel() {
+    public Collection<? extends CompetencyLevel> getPossibleLevel() {
         return possibleLevel;
     }
 
-    public void setPossibleLevel(Collection<CompetencyLevel> possibleLevel) {
+    public void setPossibleLevel(Collection<? extends CompetencyLevel> possibleLevel) {
         this.possibleLevel = possibleLevel;
     }
 

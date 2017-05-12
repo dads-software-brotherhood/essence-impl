@@ -66,16 +66,16 @@ import org.omg.essence.model.foundation.Type;
 public class SEType implements Type {
 
     /** The property. */
-    private Collection<EndeavorProperty> property;
+    private Collection<? extends EndeavorProperty> property;
 
     /** The name. */
     private String name;
 
-    public Collection<EndeavorProperty> getProperty() {
+    public Collection<? extends EndeavorProperty> getProperty() {
         return property;
     }
 
-    public void setProperty(Collection<EndeavorProperty> property) {
+    public void setProperty(Collection<? extends EndeavorProperty> property) {
         this.property = property;
     }
 

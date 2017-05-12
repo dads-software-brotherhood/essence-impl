@@ -62,14 +62,14 @@ import org.omg.essence.model.foundation.BasicElement;
 public abstract class SEBasicElement extends SELanguageElement implements BasicElement {
 
     /** The name of the element. */
-    private String name;
+    protected String name;
 
     /**
      * The icon to be used when presenting the elements.
      * 
      * @see GraphicalElement
      */
-    private GraphicalElement icon;
+    protected GraphicalElement icon;
 
     /**
      * A short and concise description of what the element is. It is discouraged
@@ -77,7 +77,7 @@ public abstract class SEBasicElement extends SELanguageElement implements BasicE
      * the brief description. The content of this attribute should be a summary
      * of the content fiven in attribute "description".
      */
-    private String briefDescription;
+    protected String briefDescription;
 
     /**
      * A more detailed description of the element. The content of this attribute
@@ -85,7 +85,7 @@ public abstract class SEBasicElement extends SELanguageElement implements BasicE
      * may include section headings, formatting information, hyperlinks, or
      * similar to ease structured reading and navigation.
      */
-    private String description;
+    protected String description;
 
     public String getName() {
         return name;

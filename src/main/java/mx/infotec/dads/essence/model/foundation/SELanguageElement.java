@@ -34,8 +34,6 @@ import org.omg.essence.model.foundation.Resource;
 import org.omg.essence.model.foundation.Tag;
 import org.omg.essence.model.view.FeatureSelection;
 import org.omg.essence.model.view.ViewSelection;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -75,50 +73,46 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @version 1.1
  * @since essence 1.1
  */
-@Document
 public abstract class SELanguageElement implements LanguageElement {
-
-    @Id
-    private String id;
-
+    
     /**
      * A flag indicating whether this element may be suppressed in an extension
      * or composition (see 9.4.3.2 on the essence standard)
      */
-    private boolean isSuppressable = true;
+    protected boolean isSuppressable = true;
 
     /** The element group that owns this language element */
-    private ElementGroup owner;
+    protected ElementGroup owner;
 
     /** Tags associated with this language element */
-    private Collection<Tag> tag;
+    protected Collection<? extends Tag> tag;
 
     /** Resources associated with this language element. */
-    private Collection<Resource> resource;
+    protected Collection<? extends Resource> resource;
 
     /**
      * Properties (defined at M1 level) that you want to track during the
      * endeavor.
      */
-    private Collection<EndeavorProperty> properties;
+    protected Collection<? extends EndeavorProperty> properties;
 
     /**
      * A list of ViewSelection selects a subset of constructs and construct
      * features such as attributes and associations.
      */
-    private Collection<ViewSelection> viewSelection;
+    protected Collection<? extends ViewSelection> viewSelection;
 
     /** The feature selection. */
-    private Collection<FeatureSelection> featureSelection;
+    protected Collection<? extends FeatureSelection> featureSelection;
 
     /** The extension. */
-    private Collection<ExtensionElement> extension;
+    protected Collection<? extends ExtensionElement> extension;
 
     /** The referrer. */
-    private Collection<ElementGroup> referrer;
+    protected Collection<? extends ElementGroup> referrer;
 
     /** The pattern association. */
-    private Collection<PatternAssociation> patternAssociation;
+    protected Collection<? extends PatternAssociation> patternAssociation;
 
     @Override
     public boolean isSuppressable() {
@@ -139,83 +133,75 @@ public abstract class SELanguageElement implements LanguageElement {
     }
 
     @Override
-    public Collection<Tag> getTag() {
+    public Collection<? extends Tag> getTag() {
         return tag;
     }
 
-    public void setTag(Collection<Tag> tag) {
+    public void setTag(Collection<? extends Tag> tag) {
         this.tag = tag;
     }
 
     @Override
-    public Collection<Resource> getResource() {
+    public Collection<? extends Resource> getResource() {
         return resource;
     }
 
-    public void setResource(Collection<Resource> resource) {
+    public void setResource(Collection<? extends Resource> resource) {
         this.resource = resource;
     }
 
     @Override
-    public Collection<EndeavorProperty> getProperties() {
+    public Collection<? extends EndeavorProperty> getProperties() {
         return properties;
     }
 
-    public void setProperties(Collection<EndeavorProperty> properties) {
+    public void setProperties(Collection<? extends EndeavorProperty> properties) {
         this.properties = properties;
     }
 
     @Override
-    public Collection<ViewSelection> getViewSelection() {
+    public Collection<? extends ViewSelection> getViewSelection() {
         return viewSelection;
     }
 
-    public void setViewSelection(Collection<ViewSelection> viewSelection) {
+    public void setViewSelection(Collection<? extends ViewSelection> viewSelection) {
         this.viewSelection = viewSelection;
     }
 
     @Override
-    public Collection<FeatureSelection> getFeatureSelection() {
+    public Collection<? extends FeatureSelection> getFeatureSelection() {
         return featureSelection;
     }
 
-    public void setFeatureSelection(Collection<FeatureSelection> featureSelection) {
+    public void setFeatureSelection(Collection<? extends FeatureSelection> featureSelection) {
         this.featureSelection = featureSelection;
     }
 
     @Override
-    public Collection<ExtensionElement> getExtension() {
+    public Collection<? extends ExtensionElement> getExtension() {
         return extension;
     }
 
-    public void setExtension(Collection<ExtensionElement> extension) {
+    public void setExtension(Collection<? extends ExtensionElement> extension) {
         this.extension = extension;
     }
 
     @Override
-    public Collection<ElementGroup> getReferrer() {
+    public Collection<? extends ElementGroup> getReferrer() {
         return referrer;
     }
 
-    public void setReferrer(Collection<ElementGroup> referrer) {
+    public void setReferrer(Collection<? extends ElementGroup> referrer) {
         this.referrer = referrer;
     }
 
     @Override
-    public Collection<PatternAssociation> getPatternAssociation() {
+    public Collection<? extends PatternAssociation> getPatternAssociation() {
         return patternAssociation;
     }
 
-    public void setPatternAssociation(Collection<PatternAssociation> patternAssociation) {
+    public void setPatternAssociation(Collection<? extends PatternAssociation> patternAssociation) {
         this.patternAssociation = patternAssociation;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
 }

@@ -26,7 +26,6 @@ package mx.infotec.dads.essence.model.view;
 import java.util.Collection;
 
 import org.omg.essence.model.foundation.LanguageElement;
-import org.omg.essence.model.view.FeatureSelection;
 import org.omg.essence.model.view.ViewSelection;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
@@ -73,20 +72,20 @@ public class SEViewSelection extends SELanguageElement implements ViewSelection 
     private String description;
 
     /** The referring view selection. */
-    private Collection<ViewSelection> referringViewSelection;
+    private Collection<? extends ViewSelection> referringViewSelection;
 
     /**
      * The selected constructs (such as Alpha, State, etc) to be included in the
      * view.
      */
-    private Collection<LanguageElement> constructSelection;
+    private Collection<? extends LanguageElement> constructSelection;
 
     /**
      * ViewSelections to be included in this ViewSelection (provides a means to
      * build extended and more sophisticated views based on existing/smaller
      * views)
      */
-    private Collection<ViewSelection> includedViewSelection;
+    private Collection<? extends ViewSelection> includedViewSelection;
 
     @Override
     public String getName() {
@@ -107,29 +106,29 @@ public class SEViewSelection extends SELanguageElement implements ViewSelection 
     }
 
     @Override
-    public Collection<ViewSelection> getReferringViewSelection() {
+    public Collection<? extends ViewSelection> getReferringViewSelection() {
         return referringViewSelection;
     }
 
-    public void setReferringViewSelection(Collection<ViewSelection> referringViewSelection) {
+    public void setReferringViewSelection(Collection<? extends ViewSelection> referringViewSelection) {
         this.referringViewSelection = referringViewSelection;
     }
 
     @Override
-    public Collection<LanguageElement> getConstructSelection() {
+    public Collection<? extends LanguageElement> getConstructSelection() {
         return constructSelection;
     }
 
-    public void setConstructSelection(Collection<LanguageElement> constructSelection) {
+    public void setConstructSelection(Collection<? extends LanguageElement> constructSelection) {
         this.constructSelection = constructSelection;
     }
 
     @Override
-    public Collection<ViewSelection> getIncludedViewSelection() {
+    public Collection<? extends ViewSelection> getIncludedViewSelection() {
         return includedViewSelection;
     }
 
-    public void setIncludedViewSelection(Collection<ViewSelection> includedViewSelection) {
+    public void setIncludedViewSelection(Collection<? extends ViewSelection> includedViewSelection) {
         this.includedViewSelection = includedViewSelection;
     }
 

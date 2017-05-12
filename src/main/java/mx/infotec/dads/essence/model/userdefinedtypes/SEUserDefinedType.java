@@ -83,13 +83,13 @@ public class SEUserDefinedType extends SELanguageElement implements UserDefinedT
     private String constraint;
 
     /** The typed resource. */
-    private Collection<TypedResource> typedResource;
+    private Collection<? extends TypedResource> typedResource;
 
     /** The typed pattern. */
-    private Collection<TypedPattern> typedPattern;
+    private Collection<? extends TypedPattern> typedPattern;
 
     /** The typed tag. */
-    private Collection<TypedTag> typedTag;
+    private Collection<? extends TypedTag> typedTag;
 
     public String getName() {
         return name;
@@ -115,27 +115,27 @@ public class SEUserDefinedType extends SELanguageElement implements UserDefinedT
         this.constraint = constraint;
     }
 
-    public Collection<TypedResource> getTypedResource() {
+    public Collection<? extends TypedResource> getTypedResource() {
         return typedResource;
     }
 
-    public void setTypedResource(Collection<TypedResource> typedResource) {
+    public void setTypedResource(Collection<? extends TypedResource> typedResource) {
         this.typedResource = typedResource;
     }
 
-    public Collection<TypedPattern> getTypedPattern() {
+    public Collection<? extends TypedPattern> getTypedPattern() {
         return typedPattern;
     }
 
-    public void setTypedPattern(Collection<TypedPattern> typedPattern) {
+    public void setTypedPattern(Collection<? extends TypedPattern> typedPattern) {
         this.typedPattern = typedPattern;
     }
 
-    public Collection<TypedTag> getTypedTag() {
+    public Collection<? extends TypedTag> getTypedTag() {
         return typedTag;
     }
 
-    public void setTypedTag(Collection<TypedTag> typedTag) {
+    public void setTypedTag(Collection<? extends TypedTag> typedTag) {
         this.typedTag = typedTag;
     }
 

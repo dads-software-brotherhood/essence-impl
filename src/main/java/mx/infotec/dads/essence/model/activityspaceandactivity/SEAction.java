@@ -88,16 +88,16 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 public class SEAction extends SELanguageElement implements Action {
 
     /** The activity. */
-    private Activity activity;
+    protected Activity activity;
 
     /** The alpha. */
-    private Collection<Alpha> alpha;
+    protected Collection<? extends Alpha> alpha;
 
     /** The work product. */
-    private Collection<WorkProduct> workProduct;
+    protected Collection<? extends WorkProduct> workProduct;
 
     /** The kind. */
-    private ActionKind kind;
+    protected ActionKind kind;
 
     public Activity getActivity() {
         return activity;
@@ -107,19 +107,19 @@ public class SEAction extends SELanguageElement implements Action {
         this.activity = activity;
     }
 
-    public Collection<Alpha> getAlpha() {
+    public Collection<? extends Alpha> getAlpha() {
         return alpha;
     }
 
-    public void setAlpha(Collection<Alpha> alpha) {
+    public void setAlpha(Collection<? extends Alpha> alpha) {
         this.alpha = alpha;
     }
 
-    public Collection<WorkProduct> getWorkProduct() {
+    public Collection<? extends WorkProduct> getWorkProduct() {
         return workProduct;
     }
 
-    public void setWorkProduct(Collection<WorkProduct> workProduct) {
+    public void setWorkProduct(Collection<? extends WorkProduct> workProduct) {
         this.workProduct = workProduct;
     }
 

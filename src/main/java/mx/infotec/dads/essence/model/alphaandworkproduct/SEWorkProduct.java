@@ -79,35 +79,35 @@ import mx.infotec.dads.essence.model.foundation.SEBasicElement;
 public class SEWorkProduct extends SEBasicElement implements WorkProduct {
 
     /** The level of details defined for the work product. */
-    private Collection<LevelOfDetail> levelOfDetail;
+    private Collection<? extends LevelOfDetail> levelOfDetail;
 
     /** The action. */
-    private Collection<Action> action;
+    private Collection<? extends Action> action;
 
     /** The work product manifest. */
-    private Collection<WorkProductManifest> workProductManifest;
+    private Collection<? extends WorkProductManifest> workProductManifest;
 
-    public Collection<LevelOfDetail> getLevelOfDetail() {
+    public Collection<? extends LevelOfDetail> getLevelOfDetail() {
         return levelOfDetail;
     }
 
-    public void setLevelOfDetail(Collection<LevelOfDetail> levelOfDetail) {
+    public void setLevelOfDetail(Collection<? extends LevelOfDetail> levelOfDetail) {
         this.levelOfDetail = levelOfDetail;
     }
 
-    public Collection<Action> getAction() {
+    public Collection<? extends Action> getAction() {
         return action;
     }
 
-    public void setAction(Collection<Action> action) {
+    public void setAction(Collection<? extends Action> action) {
         this.action = action;
     }
 
-    public Collection<WorkProductManifest> getWorkProductManifest() {
+    public Collection<? extends WorkProductManifest> getWorkProductManifest() {
         return workProductManifest;
     }
 
-    public void setWorkProductManifest(Collection<WorkProductManifest> workProductManifest) {
+    public void setWorkProductManifest(Collection<? extends WorkProductManifest> workProductManifest) {
         this.workProductManifest = workProductManifest;
     }
 

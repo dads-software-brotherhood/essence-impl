@@ -86,35 +86,35 @@ import org.omg.essence.model.competency.CompetencyLevel;
 public class SEActivity extends SEAbstractActivity implements Activity{
 
     /** The approach. */
-    private Collection<Approach> approach;
+    private Collection<? extends Approach> approach;
 
     /** The action. */
-    private Collection<Action> action;
+    private Collection<? extends Action> action;
 
     /** The required competency level. */
-    private Collection<CompetencyLevel> requiredCompetencyLevel;
+    private Collection<? extends CompetencyLevel> requiredCompetencyLevel;
 
-    public Collection<Approach> getApproach() {
+    public Collection<? extends Approach> getApproach() {
         return approach;
     }
 
-    public void setApproach(Collection<Approach> approach) {
+    public void setApproach(Collection<? extends Approach> approach) {
         this.approach = approach;
     }
 
-    public Collection<Action> getAction() {
+    public Collection<? extends Action> getAction() {
         return action;
     }
 
-    public void setAction(Collection<Action> action) {
+    public void setAction(Collection<? extends Action> action) {
         this.action = action;
     }
 
-    public Collection<CompetencyLevel> getRequiredCompetencyLevel() {
+    public Collection<? extends CompetencyLevel> getRequiredCompetencyLevel() {
         return requiredCompetencyLevel;
     }
 
-    public void setRequiredCompetencyLevel(Collection<CompetencyLevel> requiredCompetencyLevel) {
+    public void setRequiredCompetencyLevel(Collection<? extends CompetencyLevel> requiredCompetencyLevel) {
         this.requiredCompetencyLevel = requiredCompetencyLevel;
     }
 

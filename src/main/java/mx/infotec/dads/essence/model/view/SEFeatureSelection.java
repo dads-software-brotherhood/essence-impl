@@ -23,11 +23,8 @@
  */
 package mx.infotec.dads.essence.model.view;
 
-import java.util.Collection;
-
 import org.omg.essence.model.foundation.LanguageElement;
 import org.omg.essence.model.view.FeatureSelection;
-import org.omg.essence.model.view.ViewSelection;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 

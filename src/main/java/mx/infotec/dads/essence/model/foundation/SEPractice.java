@@ -26,6 +26,9 @@ package mx.infotec.dads.essence.model.foundation;
 import java.util.Collection;
 
 import org.omg.essence.model.foundation.Practice;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Version;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -131,8 +134,11 @@ import org.omg.essence.model.foundation.Practice;
  * @version 1.1
  * @since essence 1.1
  */
-
+@Document(collection = "practices")
 public class SEPractice extends SEElementGroup implements Practice {
+
+    @Id
+    private String id;
 
     /**
      * Rules on the consistency of a particular Practice. The format for writing
@@ -154,19 +160,22 @@ public class SEPractice extends SEElementGroup implements Practice {
      * List of standard units used to evaluate the practice performance and the
      * objectives’ achievement.
      */
-    private Collection<String> measures;
+    private Collection<? extends String> measures;
 
     /**
      * Expected characteristics of elements needed to start the execution of a
      * practice.
      */
-    private Collection<String> entry;
+    private Collection<? extends String> entry;
 
     /**
      * Expected characteristics of elements required as outputs after the
      * execution a practice is completed.
      */
-    private Collection<String> result;
+    private Collection<? extends String> result;
+
+    @Version
+    private Long version;
 
     @Override
     public String getConsistencyRules() {
@@ -187,30 +196,46 @@ public class SEPractice extends SEElementGroup implements Practice {
     }
 
     @Override
-    public Collection<String> getMeasures() {
+    public Collection<? extends String> getMeasures() {
         return measures;
     }
 
-    public void setMeasures(Collection<String> measures) {
+    public void setMeasures(Collection<? extends String> measures) {
         this.measures = measures;
     }
 
     @Override
-    public Collection<String> getEntry() {
+    public Collection<? extends String> getEntry() {
         return entry;
     }
 
-    public void setEntry(Collection<String> entry) {
+    public void setEntry(Collection<? extends String> entry) {
         this.entry = entry;
     }
 
     @Override
-    public Collection<String> getResult() {
+    public Collection<? extends String> getResult() {
         return result;
     }
 
-    public void setResult(Collection<String> result) {
+    public void setResult(Collection<? extends String> result) {
         this.result = result;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
     }
 
 }

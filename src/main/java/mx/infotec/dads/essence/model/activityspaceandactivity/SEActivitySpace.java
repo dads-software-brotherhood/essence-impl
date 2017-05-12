@@ -71,13 +71,13 @@ public class SEActivitySpace extends SEAbstractActivity implements ActivitySpace
      * A collection of alphas that have to be present to be successful in
      * fulfilling the objectives of this activity space.
      */
-    private Collection<Alpha> input;
+    private Collection<? extends Alpha> input;
 
-    public Collection<Alpha> getInput() {
+    public Collection<? extends Alpha> getInput() {
         return input;
     }
     
-    public void setInput(Collection<Alpha> input) {
+    public void setInput(Collection<? extends Alpha> input) {
         this.input = input;
     }
 

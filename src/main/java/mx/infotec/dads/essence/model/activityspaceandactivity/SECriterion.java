@@ -70,16 +70,16 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 public abstract class SECriterion extends SELanguageElement implements Criterion {
 
     /** The activity. */
-    private AbstractActivity activity;
+    protected AbstractActivity activity;
 
     /** A state to be reached. */
-    private State state;
+    protected State state;
 
     /** A level of detail to be reached. */
-    private LevelOfDetail levelOfDetail;
+    protected LevelOfDetail levelOfDetail;
 
     /** The description of the Criterion */
-    private String description;
+    protected String description;
 
     public AbstractActivity getActivity() {
         return activity;

@@ -38,13 +38,13 @@ import org.omg.essence.model.diagraminterchange.DiagramElement;
 public class SEDiagram implements Diagram {
 
     /** The diagram element. */
-    private Collection<DiagramElement> diagramElement;
+    private Collection<? extends DiagramElement> diagramElement;
 
-    public Collection<DiagramElement> getDiagramElement() {
+    public Collection<? extends DiagramElement> getDiagramElement() {
         return diagramElement;
     }
 
-    public void setDiagramElement(Collection<DiagramElement> diagramElement) {
+    public void setDiagramElement(Collection<? extends DiagramElement> diagramElement) {
         this.diagramElement = diagramElement;
     }
 

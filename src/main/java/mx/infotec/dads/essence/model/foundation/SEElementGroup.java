@@ -87,10 +87,10 @@ import org.omg.essence.model.foundation.MergeResolution;
 public abstract class SEElementGroup extends SELanguageElement implements ElementGroup {
 
     /** The name of the element group */
-    private String name;
+    protected String name;
 
     /** The icon to be used when presenting the element group */
-    private GraphicalElement icon;
+    protected GraphicalElement icon;
 
     /**
      * A short description of what the group is. It is discoraged to use rich
@@ -98,7 +98,7 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
      * description. The content of this attribute should be a summary of the
      * content given in attribute "description".
      */
-    private String briefDescription;
+    protected String briefDescription;
 
     /**
      * A more detailed description of the group. The content of this attribute
@@ -106,23 +106,22 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
      * may include section headings, formatting information, hyperlinks, or
      * similar to ease structured reading and navigation.
      */
-    private String description;
+    protected String description;
 
     /** The merge resolution. */
-    private Collection<MergeResolution> mergeResolution;
+    protected Collection<? extends MergeResolution> mergeResolution;
 
     /** The language elements this group owns by value */
-    private Collection<LanguageElement> ownedElements;
+    protected Collection<? extends LanguageElement> ownedElements;
 
     /** The language elements this group owns by reference */
-    private Collection<LanguageElement> referredElements;
+    protected Collection<? extends LanguageElement> referredElements;
 
     @Override
     public String getName() {
         return name;
     }
 
-    
     public void setName(String name) {
         this.name = name;
     }
@@ -155,29 +154,29 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
     }
 
     @Override
-    public Collection<MergeResolution> getMergeResolution() {
+    public Collection<? extends MergeResolution> getMergeResolution() {
         return mergeResolution;
     }
 
-    public void setMergeResolution(Collection<MergeResolution> mergeResolution) {
+    public void setMergeResolution(Collection<? extends MergeResolution> mergeResolution) {
         this.mergeResolution = mergeResolution;
     }
 
     @Override
-    public Collection<LanguageElement> getOwnedElements() {
+    public Collection<? extends LanguageElement> getOwnedElements() {
         return ownedElements;
     }
 
-    public void setOwnedElements(Collection<LanguageElement> ownedElements) {
+    public void setOwnedElements(Collection<? extends LanguageElement> ownedElements) {
         this.ownedElements = ownedElements;
     }
 
     @Override
-    public Collection<LanguageElement> getReferredElements() {
+    public Collection<? extends LanguageElement> getReferredElements() {
         return referredElements;
     }
 
-    public void setReferredElements(Collection<LanguageElement> referredElements) {
+    public void setReferredElements(Collection<? extends LanguageElement> referredElements) {
         this.referredElements = referredElements;
     }
 

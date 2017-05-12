@@ -62,24 +62,24 @@ import org.omg.essence.model.foundation.EndeavorProperty;
 public class SEEndeavorAssociation implements EndeavorAssociation {
 
     /** The properties of this association */
-    private Collection<EndeavorProperty> ownedEnd;
+    private Collection<? extends EndeavorProperty> ownedEnd;
 
     /** End properties of the association */
-    private Collection<EndeavorProperty> memberEnd;
+    private Collection<? extends EndeavorProperty> memberEnd;
 
-    public Collection<EndeavorProperty> getOwnedEnd() {
+    public Collection<? extends EndeavorProperty> getOwnedEnd() {
         return ownedEnd;
     }
 
-    public void setOwnedEnd(Collection<EndeavorProperty> ownedEnd) {
+    public void setOwnedEnd(Collection<? extends EndeavorProperty> ownedEnd) {
         this.ownedEnd = ownedEnd;
     }
 
-    public Collection<EndeavorProperty> getMemberEnd() {
+    public Collection<? extends EndeavorProperty> getMemberEnd() {
         return memberEnd;
     }
 
-    public void setMemberEnd(Collection<EndeavorProperty> memberEnd) {
+    public void setMemberEnd(Collection<? extends EndeavorProperty> memberEnd) {
         this.memberEnd = memberEnd;
     }
 

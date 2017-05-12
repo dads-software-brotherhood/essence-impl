@@ -72,7 +72,7 @@ public class SEPatternAssociation extends SELanguageElement implements PatternAs
     private String name;
 
     /** The elements taking part in the pattern via this association */
-    private Collection<LanguageElement> elements;
+    private Collection<? extends LanguageElement> elements;
 
     /** The pattern. */
     private Pattern pattern;
@@ -85,11 +85,11 @@ public class SEPatternAssociation extends SELanguageElement implements PatternAs
         this.name = name;
     }
 
-    public Collection<LanguageElement> getElements() {
+    public Collection<? extends LanguageElement> getElements() {
         return elements;
     }
 
-    public void setElements(Collection<LanguageElement> elements) {
+    public void setElements(Collection<? extends LanguageElement> elements) {
         this.elements = elements;
     }
 

@@ -68,13 +68,13 @@ import org.omg.essence.model.foundation.PatternAssociation;
 public class SEPattern extends SEBasicElement implements Pattern {
 
     /** Named association types between elements */
-    private Collection<PatternAssociation> association;
+    private Collection<? extends PatternAssociation> association;
 
-    public Collection<PatternAssociation> getAssociation() {
+    public Collection<? extends PatternAssociation> getAssociation() {
         return association;
     }
 
-    public void setAssociation(Collection<PatternAssociation> association) {
+    public void setAssociation(Collection<? extends PatternAssociation> association) {
         this.association = association;
     }
 }

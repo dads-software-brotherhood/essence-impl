@@ -94,7 +94,7 @@ import org.omg.essence.model.foundation.Method;
 public class SEKernel extends SEElementGroup implements Kernel {
 
     /** The referring method. */
-    private Collection<Method> referringMethod;
+    private Collection<? extends Method> referringMethod;
 
     /**
      * A set of rules on the consistency of a particular Kernel. The format for
@@ -103,11 +103,11 @@ public class SEKernel extends SEElementGroup implements Kernel {
      */
     private String consistencyRules;
 
-    public Collection<Method> getReferringMethod() {
+    public Collection<? extends Method> getReferringMethod() {
         return referringMethod;
     }
 
-    public void setReferringMethod(Collection<Method> referringMethod) {
+    public void setReferringMethod(Collection<? extends Method> referringMethod) {
         this.referringMethod = referringMethod;
     }
 

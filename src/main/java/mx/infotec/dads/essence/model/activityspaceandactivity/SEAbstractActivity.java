@@ -64,27 +64,27 @@ import mx.infotec.dads.essence.model.foundation.SEBasicElement;
 public abstract class SEAbstractActivity extends SEBasicElement implements AbstractActivity {
 
     /** The activity association. */
-    private Collection<SEActivityAssociation> activityAssociation;
+    protected Collection<? extends ActivityAssociation> activityAssociation;
 
     /**
      * The criterion. A collection of criteria that have to be fulfilled for
      * entering the activity or considering the activity completed
      */
-    private Collection<Criterion> criterion;
+    protected Collection<? extends Criterion> criterion;
 
-    public Collection<SEActivityAssociation> getActivityAssociation() {
+    public Collection<? extends ActivityAssociation> getActivityAssociation() {
         return activityAssociation;
     }
 
-    public void setActivityAssociation(Collection<SEActivityAssociation> activityAssociation) {
+    public void setActivityAssociation(Collection<? extends ActivityAssociation> activityAssociation) {
         this.activityAssociation = activityAssociation;
     }
 
-    public Collection<Criterion> getCriterion() {
+    public Collection<? extends Criterion> getCriterion() {
         return criterion;
     }
 
-    public void setCriterion(Collection<Criterion> criterion) {
+    public void setCriterion(Collection<? extends Criterion> criterion) {
         this.criterion = criterion;
     }
 
