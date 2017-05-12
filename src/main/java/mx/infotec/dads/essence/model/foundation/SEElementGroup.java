@@ -25,10 +25,9 @@ package mx.infotec.dads.essence.model.foundation;
 
 import java.util.Collection;
 
-import org.omg.essence.model.GraphicalElement;
 import org.omg.essence.model.foundation.ElementGroup;
-import org.omg.essence.model.foundation.LanguageElement;
-import org.omg.essence.model.foundation.MergeResolution;
+
+import mx.infotec.dads.essence.model.SEGraphicalElement;
 
 /**
  * <pre>
@@ -90,7 +89,7 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
     protected String name;
 
     /** The icon to be used when presenting the element group */
-    protected GraphicalElement icon;
+    protected SEGraphicalElement icon;
 
     /**
      * A short description of what the group is. It is discoraged to use rich
@@ -109,13 +108,13 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
     protected String description;
 
     /** The merge resolution. */
-    protected Collection<? extends MergeResolution> mergeResolution;
+    protected Collection<? extends SEMergeResolution> mergeResolution;
 
     /** The language elements this group owns by value */
-    protected Collection<? extends LanguageElement> ownedElements;
+    protected Collection<? extends SELanguageElement> ownedElements;
 
     /** The language elements this group owns by reference */
-    protected Collection<? extends LanguageElement> referredElements;
+    protected Collection<? extends SELanguageElement> referredElements;
 
     @Override
     public String getName() {
@@ -127,11 +126,11 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
     }
 
     @Override
-    public GraphicalElement getIcon() {
+    public SEGraphicalElement getIcon() {
         return icon;
     }
 
-    public void setIcon(GraphicalElement icon) {
+    public void setIcon(SEGraphicalElement icon) {
         this.icon = icon;
     }
 
@@ -154,29 +153,29 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
     }
 
     @Override
-    public Collection<? extends MergeResolution> getMergeResolution() {
+    public Collection<? extends SEMergeResolution> getMergeResolution() {
         return mergeResolution;
     }
 
-    public void setMergeResolution(Collection<? extends MergeResolution> mergeResolution) {
+    public void setMergeResolution(Collection<? extends SEMergeResolution> mergeResolution) {
         this.mergeResolution = mergeResolution;
     }
 
     @Override
-    public Collection<? extends LanguageElement> getOwnedElements() {
+    public Collection<? extends SELanguageElement> getOwnedElements() {
         return ownedElements;
     }
 
-    public void setOwnedElements(Collection<? extends LanguageElement> ownedElements) {
+    public void setOwnedElements(Collection<? extends SELanguageElement> ownedElements) {
         this.ownedElements = ownedElements;
     }
 
     @Override
-    public Collection<? extends LanguageElement> getReferredElements() {
+    public Collection<? extends SELanguageElement> getReferredElements() {
         return referredElements;
     }
 
-    public void setReferredElements(Collection<? extends LanguageElement> referredElements) {
+    public void setReferredElements(Collection<? extends SELanguageElement> referredElements) {
         this.referredElements = referredElements;
     }
 

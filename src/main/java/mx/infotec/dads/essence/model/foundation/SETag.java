@@ -23,7 +23,6 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
-import org.omg.essence.model.foundation.LanguageElement;
 import org.omg.essence.model.foundation.Tag;
 
 /**
@@ -66,7 +65,7 @@ public class SETag extends SELanguageElement implements Tag {
     private String value;
 
     /** The language element. */
-    private LanguageElement languageElement;
+    private SELanguageElement languageElement;
 
     public String getValue() {
         return value;
@@ -76,11 +75,11 @@ public class SETag extends SELanguageElement implements Tag {
         this.value = value;
     }
 
-    public LanguageElement getLanguageElement() {
+    public SELanguageElement getLanguageElement() {
         return languageElement;
     }
 
-    public void setLanguageElement(LanguageElement languageElement) {
+    public void setLanguageElement(SELanguageElement languageElement) {
         this.languageElement = languageElement;
     }
 

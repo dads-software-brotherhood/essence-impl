@@ -25,14 +25,10 @@ package mx.infotec.dads.essence.model.alphaandworkproduct;
 
 import java.util.Collection;
 
-import org.omg.essence.model.activityspaceandactivity.Action;
-import org.omg.essence.model.activityspaceandactivity.ActivitySpace;
 import org.omg.essence.model.alphaandworkproduct.Alpha;
-import org.omg.essence.model.alphaandworkproduct.AlphaAssociation;
-import org.omg.essence.model.alphaandworkproduct.AlphaContainment;
-import org.omg.essence.model.alphaandworkproduct.State;
-import org.omg.essence.model.alphaandworkproduct.WorkProductManifest;
 
+import mx.infotec.dads.essence.model.activityspaceandactivity.SEAction;
+import mx.infotec.dads.essence.model.activityspaceandactivity.SEActivitySpace;
 import mx.infotec.dads.essence.model.foundation.SEBasicElement;
 
 /**
@@ -104,68 +100,68 @@ import mx.infotec.dads.essence.model.foundation.SEBasicElement;
 public class SEAlpha extends SEBasicElement implements Alpha {
 
     /** The states of the alpha. */
-    private Collection<? extends State> states;
+    private Collection<? extends SEState> states;
 
     /** The action. */
-    private Collection<? extends Action> action;
+    private Collection<? extends SEAction> action;
 
     /** The activity space. */
-    private ActivitySpace activitySpace;
+    private SEActivitySpace activitySpace;
 
     /** The alpha containment. */
-    private Collection<? extends AlphaContainment> alphaContainment;
+    private Collection<? extends SEAlphaContainment> alphaContainment;
 
     /** The alpha association. */
-    private Collection<? extends AlphaAssociation> alphaAssociation;
+    private Collection<? extends SEAlphaAssociation> alphaAssociation;
 
     /** The work product manifest. */
-    private Collection<? extends WorkProductManifest> workProductManifest;
+    private Collection<? extends SEWorkProductManifest> workProductManifest;
 
-    public Collection<? extends State> getStates() {
+    public Collection<? extends SEState> getStates() {
         return states;
     }
 
-    public void setStates(Collection<? extends State> states) {
+    public void setStates(Collection<? extends SEState> states) {
         this.states = states;
     }
 
-    public Collection<? extends Action> getAction() {
+    public Collection<? extends SEAction> getAction() {
         return action;
     }
 
-    public void setAction(Collection<? extends Action> action) {
+    public void setAction(Collection<? extends SEAction> action) {
         this.action = action;
     }
 
-    public ActivitySpace getActivitySpace() {
+    public SEActivitySpace getActivitySpace() {
         return activitySpace;
     }
 
-    public void setActivitySpace(ActivitySpace activitySpace) {
+    public void setActivitySpace(SEActivitySpace activitySpace) {
         this.activitySpace = activitySpace;
     }
 
-    public Collection<? extends AlphaContainment> getAlphaContainment() {
+    public Collection<? extends SEAlphaContainment> getAlphaContainment() {
         return alphaContainment;
     }
 
-    public void setAlphaContainment(Collection<? extends AlphaContainment> alphaContainment) {
+    public void setAlphaContainment(Collection<? extends SEAlphaContainment> alphaContainment) {
         this.alphaContainment = alphaContainment;
     }
 
-    public Collection<? extends AlphaAssociation> getAlphaAssociation() {
+    public Collection<? extends SEAlphaAssociation> getAlphaAssociation() {
         return alphaAssociation;
     }
 
-    public void setAlphaAssociation(Collection<? extends AlphaAssociation> alphaAssociation) {
+    public void setAlphaAssociation(Collection<? extends SEAlphaAssociation> alphaAssociation) {
         this.alphaAssociation = alphaAssociation;
     }
 
-    public Collection<? extends WorkProductManifest> getWorkProductManifest() {
+    public Collection<? extends SEWorkProductManifest> getWorkProductManifest() {
         return workProductManifest;
     }
 
-    public void setWorkProductManifest(Collection<? extends WorkProductManifest> workProductManifest) {
+    public void setWorkProductManifest(Collection<? extends SEWorkProductManifest> workProductManifest) {
         this.workProductManifest = workProductManifest;
     }
 

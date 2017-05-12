@@ -25,11 +25,10 @@ package mx.infotec.dads.essence.model.alphaandworkproduct;
 
 import java.util.Collection;
 
-import org.omg.essence.model.activityspaceandactivity.Criterion;
-import org.omg.essence.model.alphaandworkproduct.Alpha;
 import org.omg.essence.model.alphaandworkproduct.State;
-import org.omg.essence.model.foundation.Checkpoint;
 
+import mx.infotec.dads.essence.model.activityspaceandactivity.SECriterion;
+import mx.infotec.dads.essence.model.foundation.SECheckpoint;
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
 /**
@@ -85,16 +84,16 @@ public class SEState extends SELanguageElement implements State {
     private String description;
 
     /** A collection of checkpoints associated with the state. */
-    private Collection<? extends Checkpoint> checkListItem;
+    private Collection<? extends SECheckpoint> checkListItem;
 
     /** The successor state. */
     private SEState successor;
 
     /** The criterion. */
-    private Collection<? extends Criterion> criterion;
+    private Collection<? extends SECriterion> criterion;
 
     /** The alpha. */
-    private Alpha alpha;
+    private SEAlpha alpha;
 
     /** The predecessor. */
     private SEState predecessor;
@@ -115,11 +114,11 @@ public class SEState extends SELanguageElement implements State {
         this.description = description;
     }
 
-    public Collection<? extends Checkpoint> getCheckListItem() {
+    public Collection<? extends SECheckpoint> getCheckListItem() {
         return checkListItem;
     }
 
-    public void setCheckListItem(Collection<? extends Checkpoint> checkListItem) {
+    public void setCheckListItem(Collection<? extends SECheckpoint> checkListItem) {
         this.checkListItem = checkListItem;
     }
 
@@ -131,19 +130,19 @@ public class SEState extends SELanguageElement implements State {
         this.successor = successor;
     }
 
-    public Collection<? extends Criterion> getCriterion() {
+    public Collection<? extends SECriterion> getCriterion() {
         return criterion;
     }
 
-    public void setCriterion(Collection<? extends Criterion> criterion) {
+    public void setCriterion(Collection<? extends SECriterion> criterion) {
         this.criterion = criterion;
     }
 
-    public Alpha getAlpha() {
+    public SEAlpha getAlpha() {
         return alpha;
     }
 
-    public void setAlpha(Alpha alpha) {
+    public void setAlpha(SEAlpha alpha) {
         this.alpha = alpha;
     }
 

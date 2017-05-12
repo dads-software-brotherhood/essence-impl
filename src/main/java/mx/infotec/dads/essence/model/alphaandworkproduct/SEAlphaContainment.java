@@ -23,7 +23,6 @@
  */
 package mx.infotec.dads.essence.model.alphaandworkproduct;
 
-import org.omg.essence.model.alphaandworkproduct.Alpha;
 import org.omg.essence.model.alphaandworkproduct.AlphaContainment;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
@@ -71,10 +70,10 @@ public class SEAlphaContainment extends SELanguageElement implements AlphaContai
     private int upperBound;
 
     /** The super alpha */
-    private Alpha superAlpha;
+    private SEAlpha superAlpha;
 
     /** The subordinate alpha. */
-    private Alpha subordinateAlpha;
+    private SEAlpha subordinateAlpha;
 
     public int getLowerBound() {
         return lowerBound;
@@ -92,19 +91,19 @@ public class SEAlphaContainment extends SELanguageElement implements AlphaContai
         this.upperBound = upperBound;
     }
 
-    public Alpha getSuperAlpha() {
+    public SEAlpha getSuperAlpha() {
         return superAlpha;
     }
 
-    public void setSuperAlpha(Alpha superAlpha) {
+    public void setSuperAlpha(SEAlpha superAlpha) {
         this.superAlpha = superAlpha;
     }
 
-    public Alpha getSubordinateAlpha() {
+    public SEAlpha getSubordinateAlpha() {
         return subordinateAlpha;
     }
 
-    public void setSubordinateAlpha(Alpha subordinateAlpha) {
+    public void setSubordinateAlpha(SEAlpha subordinateAlpha) {
         this.subordinateAlpha = subordinateAlpha;
     }
 

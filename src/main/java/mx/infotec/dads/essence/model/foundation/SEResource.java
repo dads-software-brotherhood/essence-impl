@@ -23,7 +23,6 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
-import org.omg.essence.model.foundation.LanguageElement;
 import org.omg.essence.model.foundation.Resource;
 
 /**
@@ -71,7 +70,7 @@ public class SEResource extends SELanguageElement implements Resource{
     private String content;
 
     /** The language element */
-    private LanguageElement languageElement;
+    private SELanguageElement languageElement;
 
     public String getContent() {
         return content;
@@ -81,11 +80,11 @@ public class SEResource extends SELanguageElement implements Resource{
         this.content = content;
     }
 
-    public LanguageElement getLanguageElement() {
+    public SELanguageElement getLanguageElement() {
         return languageElement;
     }
 
-    public void setLanguageElement(LanguageElement languageElement) {
+    public void setLanguageElement(SELanguageElement languageElement) {
         this.languageElement = languageElement;
     }
 

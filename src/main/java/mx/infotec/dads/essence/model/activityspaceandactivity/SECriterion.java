@@ -23,11 +23,10 @@
  */
 package mx.infotec.dads.essence.model.activityspaceandactivity;
 
-import org.omg.essence.model.activityspaceandactivity.AbstractActivity;
 import org.omg.essence.model.activityspaceandactivity.Criterion;
-import org.omg.essence.model.alphaandworkproduct.LevelOfDetail;
-import org.omg.essence.model.alphaandworkproduct.State;
 
+import mx.infotec.dads.essence.model.alphaandworkproduct.SELevelOfDetail;
+import mx.infotec.dads.essence.model.alphaandworkproduct.SEState;
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
 /**
@@ -70,38 +69,38 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 public abstract class SECriterion extends SELanguageElement implements Criterion {
 
     /** The activity. */
-    protected AbstractActivity activity;
+    protected SEAbstractActivity activity;
 
     /** A state to be reached. */
-    protected State state;
+    protected SEState state;
 
     /** A level of detail to be reached. */
-    protected LevelOfDetail levelOfDetail;
+    protected SELevelOfDetail levelOfDetail;
 
     /** The description of the Criterion */
     protected String description;
 
-    public AbstractActivity getActivity() {
+    public SEAbstractActivity getActivity() {
         return activity;
     }
 
-    public void setActivity(AbstractActivity activity) {
+    public void setActivity(SEAbstractActivity activity) {
         this.activity = activity;
     }
 
-    public State getState() {
+    public SEState getState() {
         return state;
     }
 
-    public void setState(State state) {
+    public void setState(SEState state) {
         this.state = state;
     }
 
-    public LevelOfDetail getLevelOfDetail() {
+    public SELevelOfDetail getLevelOfDetail() {
         return levelOfDetail;
     }
 
-    public void setLevelOfDetail(LevelOfDetail levelOfDetail) {
+    public void setLevelOfDetail(SELevelOfDetail levelOfDetail) {
         this.levelOfDetail = levelOfDetail;
     }
 

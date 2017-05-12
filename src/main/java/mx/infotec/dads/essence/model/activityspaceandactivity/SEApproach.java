@@ -23,7 +23,6 @@
  */
 package mx.infotec.dads.essence.model.activityspaceandactivity;
 
-import org.omg.essence.model.activityspaceandactivity.Activity;
 import org.omg.essence.model.activityspaceandactivity.Approach;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
@@ -61,7 +60,7 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 public class SEApproach extends SELanguageElement implements Approach {
 
     /** The activity */
-    private Activity activity;
+    private SEActivity activity;
 
     /** The name of the Approach */
     private String name;
@@ -71,11 +70,11 @@ public class SEApproach extends SELanguageElement implements Approach {
      */
     private String description;
 
-    public Activity getActivity() {
+    public SEActivity getActivity() {
         return activity;
     }
 
-    public void setActivity(Activity activity) {
+    public void setActivity(SEActivity activity) {
         this.activity = activity;
     }
 

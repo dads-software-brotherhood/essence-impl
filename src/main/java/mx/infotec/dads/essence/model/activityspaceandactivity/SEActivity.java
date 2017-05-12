@@ -25,10 +25,9 @@ package mx.infotec.dads.essence.model.activityspaceandactivity;
 
 import java.util.Collection;
 
-import org.omg.essence.model.activityspaceandactivity.Action;
 import org.omg.essence.model.activityspaceandactivity.Activity;
-import org.omg.essence.model.activityspaceandactivity.Approach;
-import org.omg.essence.model.competency.CompetencyLevel;
+
+import mx.infotec.dads.essence.model.competency.SECompetencyLevel;
 
 /**
  * <pre>
@@ -86,35 +85,35 @@ import org.omg.essence.model.competency.CompetencyLevel;
 public class SEActivity extends SEAbstractActivity implements Activity{
 
     /** The approach. */
-    private Collection<? extends Approach> approach;
+    private Collection<? extends SEApproach> approach;
 
     /** The action. */
-    private Collection<? extends Action> action;
+    private Collection<? extends SEAction> action;
 
     /** The required competency level. */
-    private Collection<? extends CompetencyLevel> requiredCompetencyLevel;
+    private Collection<? extends SECompetencyLevel> requiredCompetencyLevel;
 
-    public Collection<? extends Approach> getApproach() {
+    public Collection<? extends SEApproach> getApproach() {
         return approach;
     }
 
-    public void setApproach(Collection<? extends Approach> approach) {
+    public void setApproach(Collection<? extends SEApproach> approach) {
         this.approach = approach;
     }
 
-    public Collection<? extends Action> getAction() {
+    public Collection<? extends SEAction> getAction() {
         return action;
     }
 
-    public void setAction(Collection<? extends Action> action) {
+    public void setAction(Collection<? extends SEAction> action) {
         this.action = action;
     }
 
-    public Collection<? extends CompetencyLevel> getRequiredCompetencyLevel() {
+    public Collection<? extends SECompetencyLevel> getRequiredCompetencyLevel() {
         return requiredCompetencyLevel;
     }
 
-    public void setRequiredCompetencyLevel(Collection<? extends CompetencyLevel> requiredCompetencyLevel) {
+    public void setRequiredCompetencyLevel(Collection<? extends SECompetencyLevel> requiredCompetencyLevel) {
         this.requiredCompetencyLevel = requiredCompetencyLevel;
     }
 

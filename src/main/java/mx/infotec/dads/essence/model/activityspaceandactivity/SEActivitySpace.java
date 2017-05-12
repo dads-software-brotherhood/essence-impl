@@ -26,7 +26,8 @@ package mx.infotec.dads.essence.model.activityspaceandactivity;
 import java.util.Collection;
 
 import org.omg.essence.model.activityspaceandactivity.ActivitySpace;
-import org.omg.essence.model.alphaandworkproduct.Alpha;
+
+import mx.infotec.dads.essence.model.alphaandworkproduct.SEAlpha;
 
 /**
  * <pre>
@@ -71,13 +72,13 @@ public class SEActivitySpace extends SEAbstractActivity implements ActivitySpace
      * A collection of alphas that have to be present to be successful in
      * fulfilling the objectives of this activity space.
      */
-    private Collection<? extends Alpha> input;
+    private Collection<? extends SEAlpha> input;
 
-    public Collection<? extends Alpha> getInput() {
+    public Collection<? extends SEAlpha> getInput() {
         return input;
     }
     
-    public void setInput(Collection<? extends Alpha> input) {
+    public void setInput(Collection<? extends SEAlpha> input) {
         this.input = input;
     }
 

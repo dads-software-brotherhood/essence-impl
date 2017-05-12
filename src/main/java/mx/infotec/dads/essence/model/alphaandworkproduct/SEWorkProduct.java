@@ -25,11 +25,9 @@ package mx.infotec.dads.essence.model.alphaandworkproduct;
 
 import java.util.Collection;
 
-import org.omg.essence.model.activityspaceandactivity.Action;
-import org.omg.essence.model.alphaandworkproduct.LevelOfDetail;
 import org.omg.essence.model.alphaandworkproduct.WorkProduct;
-import org.omg.essence.model.alphaandworkproduct.WorkProductManifest;
 
+import mx.infotec.dads.essence.model.activityspaceandactivity.SEAction;
 import mx.infotec.dads.essence.model.foundation.SEBasicElement;
 
 /**
@@ -79,35 +77,35 @@ import mx.infotec.dads.essence.model.foundation.SEBasicElement;
 public class SEWorkProduct extends SEBasicElement implements WorkProduct {
 
     /** The level of details defined for the work product. */
-    private Collection<? extends LevelOfDetail> levelOfDetail;
+    private Collection<? extends SELevelOfDetail> levelOfDetail;
 
     /** The action. */
-    private Collection<? extends Action> action;
+    private Collection<? extends SEAction> action;
 
     /** The work product manifest. */
-    private Collection<? extends WorkProductManifest> workProductManifest;
+    private Collection<? extends SEWorkProductManifest> workProductManifest;
 
-    public Collection<? extends LevelOfDetail> getLevelOfDetail() {
+    public Collection<? extends SELevelOfDetail> getLevelOfDetail() {
         return levelOfDetail;
     }
 
-    public void setLevelOfDetail(Collection<? extends LevelOfDetail> levelOfDetail) {
+    public void setLevelOfDetail(Collection<? extends SELevelOfDetail> levelOfDetail) {
         this.levelOfDetail = levelOfDetail;
     }
 
-    public Collection<? extends Action> getAction() {
+    public Collection<? extends SEAction> getAction() {
         return action;
     }
 
-    public void setAction(Collection<? extends Action> action) {
+    public void setAction(Collection<? extends SEAction> action) {
         this.action = action;
     }
 
-    public Collection<? extends WorkProductManifest> getWorkProductManifest() {
+    public Collection<? extends SEWorkProductManifest> getWorkProductManifest() {
         return workProductManifest;
     }
 
-    public void setWorkProductManifest(Collection<? extends WorkProductManifest> workProductManifest) {
+    public void setWorkProductManifest(Collection<? extends SEWorkProductManifest> workProductManifest) {
         this.workProductManifest = workProductManifest;
     }
 

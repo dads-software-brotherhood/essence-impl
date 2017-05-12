@@ -23,7 +23,6 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
-import org.omg.essence.model.foundation.ElementGroup;
 import org.omg.essence.model.foundation.MergeResolution;
 
 /**
@@ -70,7 +69,7 @@ public class SEMergeResolution extends SELanguageElement implements MergeResolut
     private String resolutionFunction;
 
     /** The element group. */
-    private ElementGroup elementGroup;
+    private SEElementGroup elementGroup;
 
     public String getTargetAttribute() {
         return targetAttribute;
@@ -96,11 +95,11 @@ public class SEMergeResolution extends SELanguageElement implements MergeResolut
         this.resolutionFunction = resolutionFunction;
     }
 
-    public ElementGroup getElementGroup() {
+    public SEElementGroup getElementGroup() {
         return elementGroup;
     }
 
-    public void setElementGroup(ElementGroup elementGroup) {
+    public void setElementGroup(SEElementGroup elementGroup) {
         this.elementGroup = elementGroup;
     }
 

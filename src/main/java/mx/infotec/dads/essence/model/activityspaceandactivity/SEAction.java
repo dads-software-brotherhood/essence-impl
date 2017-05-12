@@ -27,10 +27,9 @@ import java.util.Collection;
 
 import org.omg.essence.model.activityspaceandactivity.Action;
 import org.omg.essence.model.activityspaceandactivity.ActionKind;
-import org.omg.essence.model.activityspaceandactivity.Activity;
-import org.omg.essence.model.alphaandworkproduct.Alpha;
-import org.omg.essence.model.alphaandworkproduct.WorkProduct;
 
+import mx.infotec.dads.essence.model.alphaandworkproduct.SEAlpha;
+import mx.infotec.dads.essence.model.alphaandworkproduct.SEWorkProduct;
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
 /**
@@ -88,38 +87,38 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 public class SEAction extends SELanguageElement implements Action {
 
     /** The activity. */
-    protected Activity activity;
+    protected SEActivity activity;
 
     /** The alpha. */
-    protected Collection<? extends Alpha> alpha;
+    protected Collection<? extends SEAlpha> alpha;
 
     /** The work product. */
-    protected Collection<? extends WorkProduct> workProduct;
+    protected Collection<? extends SEWorkProduct> workProduct;
 
     /** The kind. */
     protected ActionKind kind;
 
-    public Activity getActivity() {
+    public SEActivity getActivity() {
         return activity;
     }
 
-    public void setActivity(Activity activity) {
+    public void setActivity(SEActivity activity) {
         this.activity = activity;
     }
 
-    public Collection<? extends Alpha> getAlpha() {
+    public Collection<? extends SEAlpha> getAlpha() {
         return alpha;
     }
 
-    public void setAlpha(Collection<? extends Alpha> alpha) {
+    public void setAlpha(Collection<? extends SEAlpha> alpha) {
         this.alpha = alpha;
     }
 
-    public Collection<? extends WorkProduct> getWorkProduct() {
+    public Collection<? extends SEWorkProduct> getWorkProduct() {
         return workProduct;
     }
 
-    public void setWorkProduct(Collection<? extends WorkProduct> workProduct) {
+    public void setWorkProduct(Collection<? extends SEWorkProduct> workProduct) {
         this.workProduct = workProduct;
     }
 

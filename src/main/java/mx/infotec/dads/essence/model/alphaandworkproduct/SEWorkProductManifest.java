@@ -23,8 +23,6 @@
  */
 package mx.infotec.dads.essence.model.alphaandworkproduct;
 
-import org.omg.essence.model.alphaandworkproduct.Alpha;
-import org.omg.essence.model.alphaandworkproduct.WorkProduct;
 import org.omg.essence.model.alphaandworkproduct.WorkProductManifest;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
@@ -79,10 +77,10 @@ public class SEWorkProductManifest extends SELanguageElement implements WorkProd
     private int upperBound;
 
     /** The alpha bound by this manifest. */
-    private Alpha alpha;
+    private SEAlpha alpha;
 
     /** The work product bound by this manifest. */
-    private WorkProduct workProduct;
+    private SEWorkProduct workProduct;
 
     public int getLowerBound() {
         return lowerBound;
@@ -100,24 +98,24 @@ public class SEWorkProductManifest extends SELanguageElement implements WorkProd
         this.upperBound = upperBound;
     }
 
-    public Alpha getAlpha() {
+    public SEAlpha getAlpha() {
         return alpha;
     }
 
-    public void setAlpha(Alpha alpha) {
+    public void setAlpha(SEAlpha alpha) {
         this.alpha = alpha;
     }
 
-    public WorkProduct getWorkProduct() {
+    public SEWorkProduct getWorkProduct() {
         return workProduct;
     }
 
-    public void setWorkProduct(WorkProduct workProduct) {
+    public void setWorkProduct(SEWorkProduct workProduct) {
         this.workProduct = workProduct;
     }
 
     @Override
-    public Alpha alpha() {
+    public SEAlpha alpha() {
         return this.alpha;
     }
 
@@ -127,7 +125,7 @@ public class SEWorkProductManifest extends SELanguageElement implements WorkProd
     }
 
     @Override
-    public WorkProduct workProduct() {
+    public SEWorkProduct workProduct() {
         return this.workProduct;
     }
 

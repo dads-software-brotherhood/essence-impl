@@ -23,10 +23,7 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
-import org.omg.essence.model.foundation.EndeavorAssociation;
 import org.omg.essence.model.foundation.EndeavorProperty;
-import org.omg.essence.model.foundation.LanguageElement;
-import org.omg.essence.model.foundation.Type;
 
 /**
  * <pre>
@@ -63,19 +60,19 @@ import org.omg.essence.model.foundation.Type;
 public class SEEndeavorProperty implements EndeavorProperty {
 
     /** The language element. */
-    private LanguageElement languageElement;
+    private SELanguageElement languageElement;
 
     /**
      * The association used to express this property if it is not a simple
      * property.
      */
-    private EndeavorAssociation association;
+    private SEEndeavorAssociation association;
 
     /** The association owning this property */
-    private EndeavorAssociation owningAssociation;
+    private SEEndeavorAssociation owningAssociation;
 
     /** The type of the property */
-    private Type type;
+    private SEType type;
 
     /** Name of the property */
     private String name;
@@ -86,35 +83,35 @@ public class SEEndeavorProperty implements EndeavorProperty {
     /** Upper bound of the property */
     private int upperBound;
 
-    public LanguageElement getLanguageElement() {
+    public SELanguageElement getLanguageElement() {
         return languageElement;
     }
 
-    public void setLanguageElement(LanguageElement languageElement) {
+    public void setLanguageElement(SELanguageElement languageElement) {
         this.languageElement = languageElement;
     }
 
-    public EndeavorAssociation getAssociation() {
+    public SEEndeavorAssociation getAssociation() {
         return association;
     }
 
-    public void setAssociation(EndeavorAssociation association) {
+    public void setAssociation(SEEndeavorAssociation association) {
         this.association = association;
     }
 
-    public EndeavorAssociation getOwningAssociation() {
+    public SEEndeavorAssociation getOwningAssociation() {
         return owningAssociation;
     }
 
-    public void setOwningAssociation(EndeavorAssociation owningAssociation) {
+    public void setOwningAssociation(SEEndeavorAssociation owningAssociation) {
         this.owningAssociation = owningAssociation;
     }
 
-    public Type getType() {
+    public SEType getType() {
         return type;
     }
 
-    public void setType(Type type) {
+    public void setType(SEType type) {
         this.type = type;
     }
 

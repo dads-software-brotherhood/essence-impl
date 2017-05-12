@@ -26,8 +26,6 @@ package mx.infotec.dads.essence.model.activityspaceandactivity;
 import java.util.Collection;
 
 import org.omg.essence.model.activityspaceandactivity.AbstractActivity;
-import org.omg.essence.model.activityspaceandactivity.ActivityAssociation;
-import org.omg.essence.model.activityspaceandactivity.Criterion;
 
 import mx.infotec.dads.essence.model.foundation.SEBasicElement;
 
@@ -64,27 +62,27 @@ import mx.infotec.dads.essence.model.foundation.SEBasicElement;
 public abstract class SEAbstractActivity extends SEBasicElement implements AbstractActivity {
 
     /** The activity association. */
-    protected Collection<? extends ActivityAssociation> activityAssociation;
+    protected Collection<? extends SEActivityAssociation> activityAssociation;
 
     /**
      * The criterion. A collection of criteria that have to be fulfilled for
      * entering the activity or considering the activity completed
      */
-    protected Collection<? extends Criterion> criterion;
+    protected Collection<? extends SECriterion> criterion;
 
-    public Collection<? extends ActivityAssociation> getActivityAssociation() {
+    public Collection<? extends SEActivityAssociation> getActivityAssociation() {
         return activityAssociation;
     }
 
-    public void setActivityAssociation(Collection<? extends ActivityAssociation> activityAssociation) {
+    public void setActivityAssociation(Collection<? extends SEActivityAssociation> activityAssociation) {
         this.activityAssociation = activityAssociation;
     }
 
-    public Collection<? extends Criterion> getCriterion() {
+    public Collection<? extends SECriterion> getCriterion() {
         return criterion;
     }
 
-    public void setCriterion(Collection<? extends Criterion> criterion) {
+    public void setCriterion(Collection<? extends SECriterion> criterion) {
         this.criterion = criterion;
     }
 

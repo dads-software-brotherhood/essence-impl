@@ -70,6 +70,8 @@ public class PracticeRepositoryTest {
         practice.setIcon(new SEGraphicalElement());
         practice.setMergeResolution(Arrays.asList(new SEMergeResolution()));
         practice.setName("Name of the Practice");
+        practice.setMergeResolution(null);
+        practice.setProperties(null);
 //        practice.setOwnedElements(ownedElements);
 //        practice.setReferredElements(referredElements);
 //

@@ -25,15 +25,11 @@ package mx.infotec.dads.essence.model.foundation;
 
 import java.util.Collection;
 
-import org.omg.essence.model.foundation.ElementGroup;
-import org.omg.essence.model.foundation.EndeavorProperty;
-import org.omg.essence.model.foundation.ExtensionElement;
 import org.omg.essence.model.foundation.LanguageElement;
-import org.omg.essence.model.foundation.PatternAssociation;
-import org.omg.essence.model.foundation.Resource;
-import org.omg.essence.model.foundation.Tag;
 import org.omg.essence.model.view.FeatureSelection;
-import org.omg.essence.model.view.ViewSelection;
+
+import mx.infotec.dads.essence.model.view.SEFeatureSelection;
+import mx.infotec.dads.essence.model.view.SEViewSelection;
 
 /**
  * <pre>
@@ -82,37 +78,37 @@ public abstract class SELanguageElement implements LanguageElement {
     protected boolean isSuppressable = true;
 
     /** The element group that owns this language element */
-    protected ElementGroup owner;
+    protected SEElementGroup owner;
 
     /** Tags associated with this language element */
-    protected Collection<? extends Tag> tag;
+    protected Collection<? extends SETag> tag;
 
     /** Resources associated with this language element. */
-    protected Collection<? extends Resource> resource;
+    protected Collection<? extends SEResource> resource;
 
     /**
      * Properties (defined at M1 level) that you want to track during the
      * endeavor.
      */
-    protected Collection<? extends EndeavorProperty> properties;
+    protected Collection<? extends SEEndeavorProperty> properties;
 
     /**
      * A list of ViewSelection selects a subset of constructs and construct
      * features such as attributes and associations.
      */
-    protected Collection<? extends ViewSelection> viewSelection;
+    protected Collection<? extends SEViewSelection> viewSelection;
 
     /** The feature selection. */
-    protected Collection<? extends FeatureSelection> featureSelection;
+    protected Collection<? extends SEFeatureSelection> featureSelection;
 
     /** The extension. */
-    protected Collection<? extends ExtensionElement> extension;
+    protected Collection<? extends SEExtensionElement> extension;
 
     /** The referrer. */
-    protected Collection<? extends ElementGroup> referrer;
+    protected Collection<? extends SEElementGroup> referrer;
 
     /** The pattern association. */
-    protected Collection<? extends PatternAssociation> patternAssociation;
+    protected Collection<? extends SEPatternAssociation> patternAssociation;
 
     @Override
     public boolean isSuppressable() {
@@ -124,47 +120,47 @@ public abstract class SELanguageElement implements LanguageElement {
     }
 
     @Override
-    public ElementGroup getOwner() {
+    public SEElementGroup getOwner() {
         return owner;
     }
 
-    public void setOwner(ElementGroup owner) {
+    public void setOwner(SEElementGroup owner) {
         this.owner = owner;
     }
 
     @Override
-    public Collection<? extends Tag> getTag() {
+    public Collection<? extends SETag> getTag() {
         return tag;
     }
 
-    public void setTag(Collection<? extends Tag> tag) {
+    public void setTag(Collection<? extends SETag> tag) {
         this.tag = tag;
     }
 
     @Override
-    public Collection<? extends Resource> getResource() {
+    public Collection<? extends SEResource> getResource() {
         return resource;
     }
 
-    public void setResource(Collection<? extends Resource> resource) {
+    public void setResource(Collection<? extends SEResource> resource) {
         this.resource = resource;
     }
 
     @Override
-    public Collection<? extends EndeavorProperty> getProperties() {
+    public Collection<? extends SEEndeavorProperty> getProperties() {
         return properties;
     }
 
-    public void setProperties(Collection<? extends EndeavorProperty> properties) {
+    public void setProperties(Collection<? extends SEEndeavorProperty> properties) {
         this.properties = properties;
     }
 
     @Override
-    public Collection<? extends ViewSelection> getViewSelection() {
+    public Collection<? extends SEViewSelection> getViewSelection() {
         return viewSelection;
     }
 
-    public void setViewSelection(Collection<? extends ViewSelection> viewSelection) {
+    public void setViewSelection(Collection<? extends SEViewSelection> viewSelection) {
         this.viewSelection = viewSelection;
     }
 
@@ -173,34 +169,34 @@ public abstract class SELanguageElement implements LanguageElement {
         return featureSelection;
     }
 
-    public void setFeatureSelection(Collection<? extends FeatureSelection> featureSelection) {
+    public void setFeatureSelection(Collection<? extends SEFeatureSelection> featureSelection) {
         this.featureSelection = featureSelection;
     }
 
     @Override
-    public Collection<? extends ExtensionElement> getExtension() {
+    public Collection<? extends SEExtensionElement> getExtension() {
         return extension;
     }
 
-    public void setExtension(Collection<? extends ExtensionElement> extension) {
+    public void setExtension(Collection<? extends SEExtensionElement> extension) {
         this.extension = extension;
     }
 
     @Override
-    public Collection<? extends ElementGroup> getReferrer() {
+    public Collection<? extends SEElementGroup> getReferrer() {
         return referrer;
     }
 
-    public void setReferrer(Collection<? extends ElementGroup> referrer) {
+    public void setReferrer(Collection<? extends SEElementGroup> referrer) {
         this.referrer = referrer;
     }
 
     @Override
-    public Collection<? extends PatternAssociation> getPatternAssociation() {
+    public Collection<? extends SEPatternAssociation> getPatternAssociation() {
         return patternAssociation;
     }
 
-    public void setPatternAssociation(Collection<? extends PatternAssociation> patternAssociation) {
+    public void setPatternAssociation(Collection<? extends SEPatternAssociation> patternAssociation) {
         this.patternAssociation = patternAssociation;
     }
 

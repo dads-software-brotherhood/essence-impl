@@ -25,11 +25,10 @@ package mx.infotec.dads.essence.model.alphaandworkproduct;
 
 import java.util.Collection;
 
-import org.omg.essence.model.activityspaceandactivity.Criterion;
 import org.omg.essence.model.alphaandworkproduct.LevelOfDetail;
-import org.omg.essence.model.alphaandworkproduct.WorkProduct;
-import org.omg.essence.model.foundation.Checkpoint;
 
+import mx.infotec.dads.essence.model.activityspaceandactivity.SECriterion;
+import mx.infotec.dads.essence.model.foundation.SECheckpoint;
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
 /**
@@ -99,19 +98,19 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
     private String name;
 
     /** Checklist items to determine if the level of detail has been reached. */
-    private Collection<? extends Checkpoint> checkListItem;
+    private Collection<? extends SECheckpoint> checkListItem;
 
     /** Next level of detail. */
     private SELevelOfDetail successor;
 
     /** The criterion. */
-    private Collection<? extends Criterion> criterion;
+    private Collection<? extends SECriterion> criterion;
 
     /** The predecessor. */
     private SELevelOfDetail predecessor;
 
     /** The work product. */
-    private WorkProduct workProduct;
+    private SEWorkProduct workProduct;
 
     public String getDescription() {
         return description;
@@ -137,11 +136,11 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
         this.name = name;
     }
 
-    public Collection<? extends Checkpoint> getCheckListItem() {
+    public Collection<? extends SECheckpoint> getCheckListItem() {
         return checkListItem;
     }
 
-    public void setCheckListItem(Collection<? extends Checkpoint> checkListItem) {
+    public void setCheckListItem(Collection<? extends SECheckpoint> checkListItem) {
         this.checkListItem = checkListItem;
     }
 
@@ -153,11 +152,11 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
         this.successor = successor;
     }
 
-    public Collection<? extends Criterion> getCriterion() {
+    public Collection<? extends SECriterion> getCriterion() {
         return criterion;
     }
 
-    public void setCriterion(Collection<? extends Criterion> criterion) {
+    public void setCriterion(Collection<? extends SECriterion> criterion) {
         this.criterion = criterion;
     }
 
@@ -169,11 +168,11 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
         this.predecessor = predecessor;
     }
 
-    public WorkProduct getWorkProduct() {
+    public SEWorkProduct getWorkProduct() {
         return workProduct;
     }
 
-    public void setWorkProduct(WorkProduct workProduct) {
+    public void setWorkProduct(SEWorkProduct workProduct) {
         this.workProduct = workProduct;
     }
 

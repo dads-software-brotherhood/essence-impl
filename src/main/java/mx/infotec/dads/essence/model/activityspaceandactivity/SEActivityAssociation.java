@@ -23,7 +23,6 @@
  */
 package mx.infotec.dads.essence.model.activityspaceandactivity;
 
-import org.omg.essence.model.activityspaceandactivity.AbstractActivity;
 import org.omg.essence.model.activityspaceandactivity.ActivityAssociation;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
@@ -83,27 +82,27 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 public class SEActivityAssociation extends SELanguageElement implements ActivityAssociation{
 
     /** The first member of the association. */
-    private AbstractActivity end2;
+    private SEAbstractActivity end2;
 
     /** The second member of the association. */
-    private AbstractActivity end1;
+    private SEAbstractActivity end1;
 
     /** The kind of the association. */
     private String kind;
 
-    public AbstractActivity getEnd2() {
+    public SEAbstractActivity getEnd2() {
         return end2;
     }
 
-    public void setEnd2(AbstractActivity end2) {
+    public void setEnd2(SEAbstractActivity end2) {
         this.end2 = end2;
     }
 
-    public AbstractActivity getEnd1() {
+    public SEAbstractActivity getEnd1() {
         return end1;
     }
 
-    public void setEnd1(AbstractActivity end1) {
+    public void setEnd1(SEAbstractActivity end1) {
         this.end1 = end1;
     }
 

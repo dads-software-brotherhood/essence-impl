@@ -160,19 +160,19 @@ public class SEPractice extends SEElementGroup implements Practice {
      * List of standard units used to evaluate the practice performance and the
      * objectives’ achievement.
      */
-    private Collection<? extends String> measures;
+    private Collection<String> measures;
 
     /**
      * Expected characteristics of elements needed to start the execution of a
      * practice.
      */
-    private Collection<? extends String> entry;
+    private Collection<String> entry;
 
     /**
      * Expected characteristics of elements required as outputs after the
      * execution a practice is completed.
      */
-    private Collection<? extends String> result;
+    private Collection<String> result;
 
     @Version
     private Long version;
@@ -196,29 +196,29 @@ public class SEPractice extends SEElementGroup implements Practice {
     }
 
     @Override
-    public Collection<? extends String> getMeasures() {
+    public Collection<String> getMeasures() {
         return measures;
     }
 
-    public void setMeasures(Collection<? extends String> measures) {
+    public void setMeasures(Collection<String> measures) {
         this.measures = measures;
     }
 
     @Override
-    public Collection<? extends String> getEntry() {
+    public Collection<String> getEntry() {
         return entry;
     }
 
-    public void setEntry(Collection<? extends String> entry) {
+    public void setEntry(Collection<String> entry) {
         this.entry = entry;
     }
 
     @Override
-    public Collection<? extends String> getResult() {
+    public Collection<String> getResult() {
         return result;
     }
 
-    public void setResult(Collection<? extends String> result) {
+    public void setResult(Collection<String> result) {
         this.result = result;
     }
 

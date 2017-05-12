@@ -81,10 +81,10 @@ public class SEAlphaAssociation extends SELanguageElement implements AlphaAssoci
     private String name;
 
     /** The alpha endpoint 1 of the association. */
-    private Alpha end1;
+    private SEAlpha end1;
 
     /** The alpha endpoint 2 of the association. */
-    private Alpha end2;
+    private SEAlpha end2;
 
     public int getEnd1lowerBound() {
         return end1lowerBound;
@@ -130,15 +130,15 @@ public class SEAlphaAssociation extends SELanguageElement implements AlphaAssoci
         return end1;
     }
 
-    public void setEnd1(Alpha end1) {
+    public void setEnd1(SEAlpha end1) {
         this.end1 = end1;
     }
 
-    public Alpha getEnd2() {
+    public SEAlpha getEnd2() {
         return end2;
     }
 
-    public void setEnd2(Alpha end2) {
+    public void setEnd2(SEAlpha end2) {
         this.end2 = end2;
     }
 }
