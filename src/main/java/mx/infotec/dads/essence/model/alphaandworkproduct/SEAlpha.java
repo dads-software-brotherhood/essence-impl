@@ -104,11 +104,11 @@ public class SEAlpha extends SEBasicElement implements Alpha {
 
     /** The states of the alpha. */
     @DBRef
-    private Collection<? extends SEState> states;
+    private Collection<SEState> states;
 
     /** The action. */
     @DBRef
-    private Collection<? extends SEAction> action;
+    private Collection<SEAction> action;
 
     /** The activity space. */
     @DBRef
@@ -116,29 +116,29 @@ public class SEAlpha extends SEBasicElement implements Alpha {
 
     /** The alpha containment. */
     @DBRef
-    private Collection<? extends SEAlphaContainment> alphaContainment;
+    private Collection<SEAlphaContainment> alphaContainment;
 
     /** The alpha association. */
     @DBRef
-    private Collection<? extends SEAlphaAssociation> alphaAssociation;
+    private Collection<SEAlphaAssociation> alphaAssociation;
 
     /** The work product manifest. */
     @DBRef
-    private Collection<? extends SEWorkProductManifest> workProductManifest;
+    private Collection<SEWorkProductManifest> workProductManifest;
 
-    public Collection<? extends SEState> getStates() {
+    public Collection<SEState> getStates() {
         return states;
     }
 
-    public void setStates(Collection<? extends SEState> states) {
+    public void setStates(Collection<SEState> states) {
         this.states = states;
     }
 
-    public Collection<? extends SEAction> getAction() {
+    public Collection<SEAction> getAction() {
         return action;
     }
 
-    public void setAction(Collection<? extends SEAction> action) {
+    public void setAction(Collection<SEAction> action) {
         this.action = action;
     }
 
@@ -150,27 +150,27 @@ public class SEAlpha extends SEBasicElement implements Alpha {
         this.activitySpace = activitySpace;
     }
 
-    public Collection<? extends SEAlphaContainment> getAlphaContainment() {
+    public Collection<SEAlphaContainment> getAlphaContainment() {
         return alphaContainment;
     }
 
-    public void setAlphaContainment(Collection<? extends SEAlphaContainment> alphaContainment) {
+    public void setAlphaContainment(Collection<SEAlphaContainment> alphaContainment) {
         this.alphaContainment = alphaContainment;
     }
 
-    public Collection<? extends SEAlphaAssociation> getAlphaAssociation() {
+    public Collection<SEAlphaAssociation> getAlphaAssociation() {
         return alphaAssociation;
     }
 
-    public void setAlphaAssociation(Collection<? extends SEAlphaAssociation> alphaAssociation) {
+    public void setAlphaAssociation(Collection<SEAlphaAssociation> alphaAssociation) {
         this.alphaAssociation = alphaAssociation;
     }
 
-    public Collection<? extends SEWorkProductManifest> getWorkProductManifest() {
+    public Collection<SEWorkProductManifest> getWorkProductManifest() {
         return workProductManifest;
     }
 
-    public void setWorkProductManifest(Collection<? extends SEWorkProductManifest> workProductManifest) {
+    public void setWorkProductManifest(Collection<SEWorkProductManifest> workProductManifest) {
         this.workProductManifest = workProductManifest;
     }
 

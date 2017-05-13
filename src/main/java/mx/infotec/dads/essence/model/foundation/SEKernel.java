@@ -97,7 +97,7 @@ public class SEKernel extends SEElementGroup implements Kernel {
 
     /** The referring method. */
     @DBRef
-    private Collection<? extends SEMethod> referringMethod;
+    private Collection<SEMethod> referringMethod;
 
     /**
      * A set of rules on the consistency of a particular Kernel. The format for
@@ -106,11 +106,11 @@ public class SEKernel extends SEElementGroup implements Kernel {
      */
     private String consistencyRules;
 
-    public Collection<? extends SEMethod> getReferringMethod() {
+    public Collection<SEMethod> getReferringMethod() {
         return referringMethod;
     }
 
-    public void setReferringMethod(Collection<? extends SEMethod> referringMethod) {
+    public void setReferringMethod(Collection<SEMethod> referringMethod) {
         this.referringMethod = referringMethod;
     }
 

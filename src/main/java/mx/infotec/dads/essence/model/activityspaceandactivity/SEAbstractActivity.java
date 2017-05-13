@@ -64,28 +64,28 @@ public abstract class SEAbstractActivity extends SEBasicElement implements Abstr
 
     /** The activity association. */
     @DBRef
-    protected Collection<? extends SEActivityAssociation> activityAssociation;
+    protected Collection<SEActivityAssociation> activityAssociation;
 
     /**
      * The criterion. A collection of criteria that have to be fulfilled for
      * entering the activity or considering the activity completed
      */
     @DBRef
-    protected Collection<? extends SECriterion> criterion;
+    protected Collection<SECriterion> criterion;
 
-    public Collection<? extends SEActivityAssociation> getActivityAssociation() {
+    public Collection<SEActivityAssociation> getActivityAssociation() {
         return activityAssociation;
     }
 
-    public void setActivityAssociation(Collection<? extends SEActivityAssociation> activityAssociation) {
+    public void setActivityAssociation(Collection<SEActivityAssociation> activityAssociation) {
         this.activityAssociation = activityAssociation;
     }
 
-    public Collection<? extends SECriterion> getCriterion() {
+    public Collection<SECriterion> getCriterion() {
         return criterion;
     }
 
-    public void setCriterion(Collection<? extends SECriterion> criterion) {
+    public void setCriterion(Collection<SECriterion> criterion) {
         this.criterion = criterion;
     }
 

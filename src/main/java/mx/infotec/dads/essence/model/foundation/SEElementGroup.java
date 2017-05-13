@@ -111,7 +111,7 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
 
     /** The merge resolution. */
     @DBRef
-    protected Collection<? extends SEMergeResolution> mergeResolution;
+    protected Collection<SEMergeResolution> mergeResolution;
 
     /** The language elements this group owns by value */
     @DBRef
@@ -119,7 +119,7 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
 
     /** The language elements this group owns by reference */
     @DBRef
-    protected Collection<? extends SELanguageElement> referredElements;
+    protected Collection<SELanguageElement> referredElements;
 
     @Override
     public String getName() {
@@ -158,11 +158,11 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
     }
 
     @Override
-    public Collection<? extends SEMergeResolution> getMergeResolution() {
+    public Collection<SEMergeResolution> getMergeResolution() {
         return mergeResolution;
     }
 
-    public void setMergeResolution(Collection<? extends SEMergeResolution> mergeResolution) {
+    public void setMergeResolution(Collection<SEMergeResolution> mergeResolution) {
         this.mergeResolution = mergeResolution;
     }
 
@@ -176,11 +176,11 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
     }
 
     @Override
-    public Collection<? extends SELanguageElement> getReferredElements() {
+    public Collection<SELanguageElement> getReferredElements() {
         return referredElements;
     }
 
-    public void setReferredElements(Collection<? extends SELanguageElement> referredElements) {
+    public void setReferredElements(Collection<SELanguageElement> referredElements) {
         this.referredElements = referredElements;
     }
     

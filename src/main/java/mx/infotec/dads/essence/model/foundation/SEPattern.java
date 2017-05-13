@@ -72,13 +72,13 @@ public class SEPattern extends SEBasicElement implements Pattern {
 
     /** Named association types between elements */
     @DBRef
-    private Collection<? extends PatternAssociation> association;
+    private Collection<PatternAssociation> association;
 
-    public Collection<? extends PatternAssociation> getAssociation() {
+    public Collection<PatternAssociation> getAssociation() {
         return association;
     }
 
-    public void setAssociation(Collection<? extends PatternAssociation> association) {
+    public void setAssociation(Collection<PatternAssociation> association) {
         this.association = association;
     }
 }

@@ -89,37 +89,37 @@ public class SEActivity extends SEAbstractActivity implements Activity {
 
     /** The approach. */
     @DBRef
-    private Collection<? extends SEApproach> approach;
+    private Collection<SEApproach> approach;
 
     /** The action. */
     @DBRef
-    private Collection<? extends SEAction> action;
+    private Collection<SEAction> action;
 
     /** The required competency level. */
     @DBRef
-    private Collection<? extends SECompetencyLevel> requiredCompetencyLevel;
+    private Collection<SECompetencyLevel> requiredCompetencyLevel;
 
-    public Collection<? extends SEApproach> getApproach() {
+    public Collection<SEApproach> getApproach() {
         return approach;
     }
 
-    public void setApproach(Collection<? extends SEApproach> approach) {
+    public void setApproach(Collection<SEApproach> approach) {
         this.approach = approach;
     }
 
-    public Collection<? extends SEAction> getAction() {
+    public Collection<SEAction> getAction() {
         return action;
     }
 
-    public void setAction(Collection<? extends SEAction> action) {
+    public void setAction(Collection<SEAction> action) {
         this.action = action;
     }
 
-    public Collection<? extends SECompetencyLevel> getRequiredCompetencyLevel() {
+    public Collection<SECompetencyLevel> getRequiredCompetencyLevel() {
         return requiredCompetencyLevel;
     }
 
-    public void setRequiredCompetencyLevel(Collection<? extends SECompetencyLevel> requiredCompetencyLevel) {
+    public void setRequiredCompetencyLevel(Collection<SECompetencyLevel> requiredCompetencyLevel) {
         this.requiredCompetencyLevel = requiredCompetencyLevel;
     }
 

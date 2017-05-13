@@ -76,13 +76,13 @@ public class SEActivitySpace extends SEAbstractActivity implements ActivitySpace
      * fulfilling the objectives of this activity space.
      */
     @DBRef
-    private Collection<? extends SEAlpha> input;
+    private Collection<SEAlpha> input;
 
-    public Collection<? extends SEAlpha> getInput() {
+    public Collection<SEAlpha> getInput() {
         return input;
     }
 
-    public void setInput(Collection<? extends SEAlpha> input) {
+    public void setInput(Collection<SEAlpha> input) {
         this.input = input;
     }
 

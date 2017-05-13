@@ -81,37 +81,37 @@ public class SEWorkProduct extends SEBasicElement implements WorkProduct {
 
     /** The level of details defined for the work product. */
     @DBRef
-    private Collection<? extends SELevelOfDetail> levelOfDetail;
+    private Collection<SELevelOfDetail> levelOfDetail;
 
     /** The action. */
     @DBRef
-    private Collection<? extends SEAction> action;
+    private Collection<SEAction> action;
 
     /** The work product manifest. */
     @DBRef
-    private Collection<? extends SEWorkProductManifest> workProductManifest;
+    private Collection<SEWorkProductManifest> workProductManifest;
 
-    public Collection<? extends SELevelOfDetail> getLevelOfDetail() {
+    public Collection<SELevelOfDetail> getLevelOfDetail() {
         return levelOfDetail;
     }
 
-    public void setLevelOfDetail(Collection<? extends SELevelOfDetail> levelOfDetail) {
+    public void setLevelOfDetail(Collection<SELevelOfDetail> levelOfDetail) {
         this.levelOfDetail = levelOfDetail;
     }
 
-    public Collection<? extends SEAction> getAction() {
+    public Collection<SEAction> getAction() {
         return action;
     }
 
-    public void setAction(Collection<? extends SEAction> action) {
+    public void setAction(Collection<SEAction> action) {
         this.action = action;
     }
 
-    public Collection<? extends SEWorkProductManifest> getWorkProductManifest() {
+    public Collection<SEWorkProductManifest> getWorkProductManifest() {
         return workProductManifest;
     }
 
-    public void setWorkProductManifest(Collection<? extends SEWorkProductManifest> workProductManifest) {
+    public void setWorkProductManifest(Collection<SEWorkProductManifest> workProductManifest) {
         this.workProductManifest = workProductManifest;
     }
 

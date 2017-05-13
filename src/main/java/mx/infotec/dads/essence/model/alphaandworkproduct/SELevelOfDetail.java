@@ -102,7 +102,7 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
 
     /** Checklist items to determine if the level of detail has been reached. */
     @DBRef
-    private Collection<? extends SECheckpoint> checkListItem;
+    private Collection<SECheckpoint> checkListItem;
 
     /** Next level of detail. */
     @DBRef
@@ -110,7 +110,7 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
 
     /** The criterion. */
     @DBRef
-    private Collection<? extends SECriterion> criterion;
+    private Collection<SECriterion> criterion;
 
     /** The predecessor. */
     @DBRef
@@ -144,11 +144,11 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
         this.name = name;
     }
 
-    public Collection<? extends SECheckpoint> getCheckListItem() {
+    public Collection<SECheckpoint> getCheckListItem() {
         return checkListItem;
     }
 
-    public void setCheckListItem(Collection<? extends SECheckpoint> checkListItem) {
+    public void setCheckListItem(Collection<SECheckpoint> checkListItem) {
         this.checkListItem = checkListItem;
     }
 
@@ -160,11 +160,11 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
         this.successor = successor;
     }
 
-    public Collection<? extends SECriterion> getCriterion() {
+    public Collection<SECriterion> getCriterion() {
         return criterion;
     }
 
-    public void setCriterion(Collection<? extends SECriterion> criterion) {
+    public void setCriterion(Collection<SECriterion> criterion) {
         this.criterion = criterion;
     }
 

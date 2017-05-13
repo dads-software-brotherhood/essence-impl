@@ -74,7 +74,7 @@ public class SEPatternAssociation extends SELanguageElement implements PatternAs
 
     /** The elements taking part in the pattern via this association */
     @DBRef
-    private Collection<? extends SELanguageElement> elements;
+    private Collection<SELanguageElement> elements;
 
     /** The pattern. */
     @DBRef
@@ -88,11 +88,11 @@ public class SEPatternAssociation extends SELanguageElement implements PatternAs
         this.name = name;
     }
 
-    public Collection<? extends SELanguageElement> getElements() {
+    public Collection<SELanguageElement> getElements() {
         return elements;
     }
 
-    public void setElements(Collection<? extends SELanguageElement> elements) {
+    public void setElements(Collection<SELanguageElement> elements) {
         this.elements = elements;
     }
 

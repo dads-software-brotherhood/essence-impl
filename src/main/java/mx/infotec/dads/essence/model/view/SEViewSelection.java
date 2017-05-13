@@ -75,14 +75,14 @@ public class SEViewSelection extends SELanguageElement implements ViewSelection 
 
     /** The referring view selection. */
     @DBRef
-    private Collection<? extends SEViewSelection> referringViewSelection;
+    private Collection<SEViewSelection> referringViewSelection;
 
     /**
      * The selected constructs (such as Alpha, State, etc) to be included in the
      * view.
      */
     @DBRef
-    private Collection<? extends SELanguageElement> constructSelection;
+    private Collection<SELanguageElement> constructSelection;
 
     /**
      * ViewSelections to be included in this ViewSelection (provides a means to
@@ -90,7 +90,7 @@ public class SEViewSelection extends SELanguageElement implements ViewSelection 
      * views)
      */
     @DBRef
-    private Collection<? extends SEViewSelection> includedViewSelection;
+    private Collection<SEViewSelection> includedViewSelection;
 
     @Override
     public String getName() {
@@ -111,29 +111,29 @@ public class SEViewSelection extends SELanguageElement implements ViewSelection 
     }
 
     @Override
-    public Collection<? extends SEViewSelection> getReferringViewSelection() {
+    public Collection<SEViewSelection> getReferringViewSelection() {
         return referringViewSelection;
     }
 
-    public void setReferringViewSelection(Collection<? extends SEViewSelection> referringViewSelection) {
+    public void setReferringViewSelection(Collection<SEViewSelection> referringViewSelection) {
         this.referringViewSelection = referringViewSelection;
     }
 
     @Override
-    public Collection<? extends SELanguageElement> getConstructSelection() {
+    public Collection<SELanguageElement> getConstructSelection() {
         return constructSelection;
     }
 
-    public void setConstructSelection(Collection<? extends SELanguageElement> constructSelection) {
+    public void setConstructSelection(Collection<SELanguageElement> constructSelection) {
         this.constructSelection = constructSelection;
     }
 
     @Override
-    public Collection<? extends SEViewSelection> getIncludedViewSelection() {
+    public Collection<SEViewSelection> getIncludedViewSelection() {
         return includedViewSelection;
     }
 
-    public void setIncludedViewSelection(Collection<? extends SEViewSelection> includedViewSelection) {
+    public void setIncludedViewSelection(Collection<SEViewSelection> includedViewSelection) {
         this.includedViewSelection = includedViewSelection;
     }
 

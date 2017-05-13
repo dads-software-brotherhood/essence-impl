@@ -88,7 +88,7 @@ public class SEState extends SELanguageElement implements State {
 
     /** A collection of checkpoints associated with the state. */
     @DBRef
-    private Collection<? extends SECheckpoint> checkListItem;
+    private Collection<SECheckpoint> checkListItem;
 
     /** The successor state. */
     @DBRef
@@ -96,7 +96,7 @@ public class SEState extends SELanguageElement implements State {
 
     /** The criterion. */
     @DBRef
-    private Collection<? extends SECriterion> criterion;
+    private Collection<SECriterion> criterion;
 
     /** The alpha. */
     @DBRef
@@ -122,11 +122,11 @@ public class SEState extends SELanguageElement implements State {
         this.description = description;
     }
 
-    public Collection<? extends SECheckpoint> getCheckListItem() {
+    public Collection<SECheckpoint> getCheckListItem() {
         return checkListItem;
     }
 
-    public void setCheckListItem(Collection<? extends SECheckpoint> checkListItem) {
+    public void setCheckListItem(Collection<SECheckpoint> checkListItem) {
         this.checkListItem = checkListItem;
     }
 
@@ -138,11 +138,11 @@ public class SEState extends SELanguageElement implements State {
         this.successor = successor;
     }
 
-    public Collection<? extends SECriterion> getCriterion() {
+    public Collection<SECriterion> getCriterion() {
         return criterion;
     }
 
-    public void setCriterion(Collection<? extends SECriterion> criterion) {
+    public void setCriterion(Collection<SECriterion> criterion) {
         this.criterion = criterion;
     }
 

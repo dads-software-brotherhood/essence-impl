@@ -63,25 +63,25 @@ public class SEEndeavorAssociation implements EndeavorAssociation {
 
     /** The properties of this association */
     @DBRef
-    private Collection<? extends SEEndeavorProperty> ownedEnd;
+    private Collection<SEEndeavorProperty> ownedEnd;
 
     /** End properties of the association */
     @DBRef
-    private Collection<? extends SEEndeavorProperty> memberEnd;
+    private Collection<SEEndeavorProperty> memberEnd;
 
-    public Collection<? extends SEEndeavorProperty> getOwnedEnd() {
+    public Collection<SEEndeavorProperty> getOwnedEnd() {
         return ownedEnd;
     }
 
-    public void setOwnedEnd(Collection<? extends SEEndeavorProperty> ownedEnd) {
+    public void setOwnedEnd(Collection<SEEndeavorProperty> ownedEnd) {
         this.ownedEnd = ownedEnd;
     }
 
-    public Collection<? extends SEEndeavorProperty> getMemberEnd() {
+    public Collection<SEEndeavorProperty> getMemberEnd() {
         return memberEnd;
     }
 
-    public void setMemberEnd(Collection<? extends SEEndeavorProperty> memberEnd) {
+    public void setMemberEnd(Collection<SEEndeavorProperty> memberEnd) {
         this.memberEnd = memberEnd;
     }
 

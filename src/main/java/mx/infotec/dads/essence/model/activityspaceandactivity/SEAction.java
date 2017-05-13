@@ -95,11 +95,11 @@ public class SEAction extends SELanguageElement implements Action {
 
     /** The alpha. */
     @DBRef
-    private Collection<? extends SEAlpha> alpha;
+    private Collection<SEAlpha> alpha;
 
     /** The work product. */
     @DBRef
-    private Collection<? extends SEWorkProduct> workProduct;
+    private Collection<SEWorkProduct> workProduct;
 
     /** The kind. */
     @DBRef
@@ -115,20 +115,20 @@ public class SEAction extends SELanguageElement implements Action {
     }
 
     @Override
-    public Collection<? extends SEAlpha> getAlpha() {
+    public Collection<SEAlpha> getAlpha() {
         return alpha;
     }
 
-    public void setAlpha(Collection<? extends SEAlpha> alpha) {
+    public void setAlpha(Collection<SEAlpha> alpha) {
         this.alpha = alpha;
     }
 
     @Override
-    public Collection<? extends SEWorkProduct> getWorkProduct() {
+    public Collection<SEWorkProduct> getWorkProduct() {
         return workProduct;
     }
 
-    public void setWorkProduct(Collection<? extends SEWorkProduct> workProduct) {
+    public void setWorkProduct(Collection<SEWorkProduct> workProduct) {
         this.workProduct = workProduct;
     }
 

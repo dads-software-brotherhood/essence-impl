@@ -68,16 +68,16 @@ public class SEType implements Type {
 
     /** The property. */
     @DBRef
-    private Collection<? extends EndeavorProperty> property;
+    private Collection<EndeavorProperty> property;
 
     /** The name. */
     private String name;
 
-    public Collection<? extends EndeavorProperty> getProperty() {
+    public Collection<EndeavorProperty> getProperty() {
         return property;
     }
 
-    public void setProperty(Collection<? extends EndeavorProperty> property) {
+    public void setProperty(Collection<EndeavorProperty> property) {
         this.property = property;
     }
 

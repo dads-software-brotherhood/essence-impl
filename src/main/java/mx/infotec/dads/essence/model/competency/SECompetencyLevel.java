@@ -85,7 +85,7 @@ public class SECompetencyLevel extends SELanguageElement implements CompetencyLe
 
     /** The activity. */
     @DBRef
-    private Collection<? extends Activity> activity;
+    private Collection<Activity> activity;
 
     /** The competency. */
     @DBRef
@@ -93,7 +93,7 @@ public class SECompetencyLevel extends SELanguageElement implements CompetencyLe
 
     /** The checklist item. */
     @DBRef
-    private Collection<? extends Checkpoint> checklistItem;
+    private Collection<Checkpoint> checklistItem;
 
     public String getName() {
         return name;
@@ -119,11 +119,11 @@ public class SECompetencyLevel extends SELanguageElement implements CompetencyLe
         this.level = level;
     }
 
-    public Collection<? extends Activity> getActivity() {
+    public Collection<Activity> getActivity() {
         return activity;
     }
 
-    public void setActivity(Collection<? extends Activity> activity) {
+    public void setActivity(Collection<Activity> activity) {
         this.activity = activity;
     }
 
@@ -135,11 +135,11 @@ public class SECompetencyLevel extends SELanguageElement implements CompetencyLe
         this.competency = competency;
     }
 
-    public Collection<? extends Checkpoint> getChecklistItem() {
+    public Collection<Checkpoint> getChecklistItem() {
         return checklistItem;
     }
 
-    public void setChecklistItem(Collection<? extends Checkpoint> checklistItem) {
+    public void setChecklistItem(Collection<Checkpoint> checklistItem) {
         this.checklistItem = checklistItem;
     }
 

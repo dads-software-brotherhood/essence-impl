@@ -73,13 +73,13 @@ public class SECompetency extends SEBasicElement implements Competency {
 
     /** A collection of levels defined for this competency. */
     @DBRef
-    private Collection<? extends CompetencyLevel> possibleLevel;
+    private Collection<CompetencyLevel> possibleLevel;
 
-    public Collection<? extends CompetencyLevel> getPossibleLevel() {
+    public Collection<CompetencyLevel> getPossibleLevel() {
         return possibleLevel;
     }
 
-    public void setPossibleLevel(Collection<? extends CompetencyLevel> possibleLevel) {
+    public void setPossibleLevel(Collection<CompetencyLevel> possibleLevel) {
         this.possibleLevel = possibleLevel;
     }
 
