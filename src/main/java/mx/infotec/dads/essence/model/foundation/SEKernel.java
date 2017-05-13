@@ -26,7 +26,6 @@ package mx.infotec.dads.essence.model.foundation;
 import java.util.Collection;
 
 import org.omg.essence.model.foundation.Kernel;
-import org.omg.essence.model.foundation.Method;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -98,7 +97,7 @@ public class SEKernel extends SEElementGroup implements Kernel {
 
     /** The referring method. */
     @DBRef
-    private Collection<? extends Method> referringMethod;
+    private Collection<? extends SEMethod> referringMethod;
 
     /**
      * A set of rules on the consistency of a particular Kernel. The format for
@@ -107,11 +106,11 @@ public class SEKernel extends SEElementGroup implements Kernel {
      */
     private String consistencyRules;
 
-    public Collection<? extends Method> getReferringMethod() {
+    public Collection<? extends SEMethod> getReferringMethod() {
         return referringMethod;
     }
 
-    public void setReferringMethod(Collection<? extends Method> referringMethod) {
+    public void setReferringMethod(Collection<? extends SEMethod> referringMethod) {
         this.referringMethod = referringMethod;
     }
 

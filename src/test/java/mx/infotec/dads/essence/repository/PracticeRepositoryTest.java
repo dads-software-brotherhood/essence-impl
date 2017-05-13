@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.repository;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.junit.Test;
@@ -33,6 +34,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import mx.infotec.dads.essence.model.foundation.SEKernel;
 import mx.infotec.dads.essence.model.foundation.SEPractice;
 
 /**
@@ -48,9 +50,15 @@ public class PracticeRepositoryTest {
 
     @Autowired
     private SEPracticeRepository practiceRepository;
+    @Autowired
+    private SEKernelRepository kernelRepository;
 
     private static String id;
 
+    /**
+     * 
+     * @throws Exception
+     */
     @Test
     public void insertPractice() throws Exception {
         LOGGER.info("insert practice");
@@ -68,23 +76,27 @@ public class PracticeRepositoryTest {
         practice.setIcon(null);
         practice.setMergeResolution(null);
         practice.setName("Name of the Practice");
-//        practice.setOwnedElements(ownedElements);
-//        practice.setReferredElements(referredElements);
-//
-//        // Inheritance
-//        practice.setExtension(extension);
-//        practice.setFeatureSelection(featureSelection);
-//        practice.setOwner(owner);
-//        practice.setPatternAssociation(patternAssociation);
-//        practice.setProperties(properties);
-//        practice.setReferrer(referrer);
-//        practice.setResource(resource);
+        // practice.setOwnedElements(ownedElements);
+        // practice.setReferredElements(referredElements);
+        //
+        // // Inheritance
+        // practice.setExtension(extension);
+        // practice.setFeatureSelection(featureSelection);
+        // practice.setOwner(owner);
+        // practice.setPatternAssociation(patternAssociation);
+        // practice.setProperties(properties);
+        // practice.setReferrer(referrer);
+        // practice.setResource(resource);
         practice.setSuppressable(false);
-//        practice.setTag(tag);
-//        practice.setViewSelection(viewSelection);
+        // practice.setTag(tag);
+        // practice.setViewSelection(viewSelection);
         practiceRepository.save(practice);
         id = practice.getId();
         LOGGER.info("id = {}", id);
+        SEKernel seKernel = kernelRepository.findAll().get(0);
+        seKernel.setOwnedElements(new ArrayList<>());
+        seKernel.getOwnedElements().add(practice);
+        kernelRepository.save(seKernel);
     }
 
     @Test
@@ -92,6 +104,6 @@ public class PracticeRepositoryTest {
         LOGGER.info("get practice id = {}", id);
         SEPractice practice = practiceRepository.findOne(id);
         System.out.println(practice);
-        LOGGER.info("id: {}",practice.getId());
+        LOGGER.info("id: {}", practice.getId());
     }
 }

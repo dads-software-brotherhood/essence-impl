@@ -115,7 +115,7 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
 
     /** The language elements this group owns by value */
     @DBRef
-    protected Collection<? extends SELanguageElement> ownedElements;
+    protected Collection<SELanguageElement> ownedElements;
 
     /** The language elements this group owns by reference */
     @DBRef
@@ -167,11 +167,11 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
     }
 
     @Override
-    public Collection<? extends SELanguageElement> getOwnedElements() {
+    public Collection<SELanguageElement> getOwnedElements() {
         return ownedElements;
     }
 
-    public void setOwnedElements(Collection<? extends SELanguageElement> ownedElements) {
+    public void setOwnedElements(Collection<SELanguageElement> ownedElements) {
         this.ownedElements = ownedElements;
     }
 
