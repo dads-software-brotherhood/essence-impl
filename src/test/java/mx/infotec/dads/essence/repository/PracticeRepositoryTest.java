@@ -65,7 +65,7 @@ public class PracticeRepositoryTest {
         SEPractice practice = new SEPractice();
         // Practice
         practice.setConsistencyRules("Consistency Rules");
-        practice.setEntry(Arrays.asList("Requeriments:Alpha", "Software:Architecture"));
+        practice.setEntry(Arrays.asList("Requeriments:State", "Software:Architecture"));
         practice.setMeasures(Arrays.asList("Timing", "five minutes pear meeting"));
         practice.setObjective("The Objetive of the practice");
         practice.setResult(Arrays.asList("Requeriments:Alpha", "Software:Architecture"));
