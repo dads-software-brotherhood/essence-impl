@@ -99,6 +99,7 @@ public class SEActivity extends SEAbstractActivity implements Activity {
     @DBRef
     private Collection<SECompetencyLevel> requiredCompetencyLevel;
 
+    @Override
     public Collection<SEApproach> getApproach() {
         return approach;
     }
@@ -107,6 +108,7 @@ public class SEActivity extends SEAbstractActivity implements Activity {
         this.approach = approach;
     }
 
+    @Override
     public Collection<SEAction> getAction() {
         return action;
     }
@@ -115,6 +117,7 @@ public class SEActivity extends SEAbstractActivity implements Activity {
         this.action = action;
     }
 
+    @Override
     public Collection<SECompetencyLevel> getRequiredCompetencyLevel() {
         return requiredCompetencyLevel;
     }

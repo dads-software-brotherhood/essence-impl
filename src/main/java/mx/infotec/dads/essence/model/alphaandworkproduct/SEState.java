@@ -106,6 +106,7 @@ public class SEState extends SELanguageElement implements State {
     @DBRef
     private SEState predecessor;
 
+    @Override
     public String getName() {
         return name;
     }
@@ -114,6 +115,7 @@ public class SEState extends SELanguageElement implements State {
         this.name = name;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
@@ -122,6 +124,7 @@ public class SEState extends SELanguageElement implements State {
         this.description = description;
     }
 
+    @Override
     public Collection<SECheckpoint> getCheckListItem() {
         return checkListItem;
     }
@@ -130,6 +133,7 @@ public class SEState extends SELanguageElement implements State {
         this.checkListItem = checkListItem;
     }
 
+    @Override
     public SEState getSuccessor() {
         return successor;
     }
@@ -138,6 +142,7 @@ public class SEState extends SELanguageElement implements State {
         this.successor = successor;
     }
 
+    @Override
     public Collection<SECriterion> getCriterion() {
         return criterion;
     }
@@ -146,6 +151,7 @@ public class SEState extends SELanguageElement implements State {
         this.criterion = criterion;
     }
 
+    @Override
     public SEAlpha getAlpha() {
         return alpha;
     }
@@ -154,6 +160,7 @@ public class SEState extends SELanguageElement implements State {
         this.alpha = alpha;
     }
 
+    @Override
     public SEState getPredecessor() {
         return predecessor;
     }

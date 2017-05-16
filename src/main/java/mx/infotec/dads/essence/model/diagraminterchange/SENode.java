@@ -41,6 +41,7 @@ public class SENode extends SEDiagramElement implements Node {
     /** The name. */
     private Label name;
 
+    @Override
     public Label getBottomRightLabel() {
         return bottomRightLabel;
     }
@@ -49,6 +50,7 @@ public class SENode extends SEDiagramElement implements Node {
         this.bottomRightLabel = bottomRightLabel;
     }
 
+    @Override
     public Label getName() {
         return name;
     }

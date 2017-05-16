@@ -97,6 +97,7 @@ public class SEUserDefinedType extends SELanguageElement implements UserDefinedT
     @DBRef
     private Collection<TypedTag> typedTag;
 
+    @Override
     public String getName() {
         return name;
     }
@@ -105,6 +106,7 @@ public class SEUserDefinedType extends SELanguageElement implements UserDefinedT
         this.name = name;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
@@ -113,6 +115,7 @@ public class SEUserDefinedType extends SELanguageElement implements UserDefinedT
         this.description = description;
     }
 
+    @Override
     public String getConstraint() {
         return constraint;
     }
@@ -121,6 +124,7 @@ public class SEUserDefinedType extends SELanguageElement implements UserDefinedT
         this.constraint = constraint;
     }
 
+    @Override
     public Collection<TypedResource> getTypedResource() {
         return typedResource;
     }
@@ -129,6 +133,7 @@ public class SEUserDefinedType extends SELanguageElement implements UserDefinedT
         this.typedResource = typedResource;
     }
 
+    @Override
     public Collection<TypedPattern> getTypedPattern() {
         return typedPattern;
     }
@@ -137,6 +142,7 @@ public class SEUserDefinedType extends SELanguageElement implements UserDefinedT
         this.typedPattern = typedPattern;
     }
 
+    @Override
     public Collection<TypedTag> getTypedTag() {
         return typedTag;
     }

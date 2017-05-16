@@ -40,6 +40,7 @@ public class SEDiagram implements Diagram {
     /** The diagram element. */
     private Collection<DiagramElement> diagramElement;
 
+    @Override
     public Collection<DiagramElement> getDiagramElement() {
         return diagramElement;
     }

@@ -73,6 +73,7 @@ public class SEFeatureSelection extends SELanguageElement implements FeatureSele
     @DBRef
     private SELanguageElement construct;
 
+    @Override
     public String getFeatureName() {
         return featureName;
     }
@@ -81,6 +82,7 @@ public class SEFeatureSelection extends SELanguageElement implements FeatureSele
         this.featureName = featureName;
     }
 
+    @Override
     public SELanguageElement getConstruct() {
         return construct;
     }

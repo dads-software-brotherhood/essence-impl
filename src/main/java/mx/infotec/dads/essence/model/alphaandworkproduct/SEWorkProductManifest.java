@@ -87,6 +87,7 @@ public class SEWorkProductManifest extends SELanguageElement implements WorkProd
     @DBRef
     private SEWorkProduct workProduct;
 
+    @Override
     public int getLowerBound() {
         return lowerBound;
     }

@@ -71,6 +71,7 @@ public class SETag extends SELanguageElement implements Tag {
     @DBRef
     private SELanguageElement languageElement;
 
+    @Override
     public String getValue() {
         return value;
     }
@@ -79,6 +80,7 @@ public class SETag extends SELanguageElement implements Tag {
         this.value = value;
     }
 
+    @Override
     public SELanguageElement getLanguageElement() {
         return languageElement;
     }

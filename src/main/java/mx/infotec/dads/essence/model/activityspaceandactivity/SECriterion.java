@@ -80,6 +80,7 @@ public abstract class SECriterion extends SELanguageElement implements Criterion
     /** The description of the Criterion */
     protected String description;
 
+    @Override
     public SEAbstractActivity getActivity() {
         return activity;
     }
@@ -88,6 +89,7 @@ public abstract class SECriterion extends SELanguageElement implements Criterion
         this.activity = activity;
     }
 
+    @Override
     public SEState getState() {
         return state;
     }
@@ -96,6 +98,7 @@ public abstract class SECriterion extends SELanguageElement implements Criterion
         this.state = state;
     }
 
+    @Override
     public SELevelOfDetail getLevelOfDetail() {
         return levelOfDetail;
     }
@@ -104,6 +107,7 @@ public abstract class SECriterion extends SELanguageElement implements Criterion
         this.levelOfDetail = levelOfDetail;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }

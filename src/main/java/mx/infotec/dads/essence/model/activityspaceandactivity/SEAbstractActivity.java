@@ -73,6 +73,7 @@ public abstract class SEAbstractActivity extends SEBasicElement implements Abstr
     @DBRef
     protected Collection<SECriterion> criterion;
 
+    @Override
     public Collection<SEActivityAssociation> getActivityAssociation() {
         return activityAssociation;
     }
@@ -81,6 +82,7 @@ public abstract class SEAbstractActivity extends SEBasicElement implements Abstr
         this.activityAssociation = activityAssociation;
     }
 
+    @Override
     public Collection<SECriterion> getCriterion() {
         return criterion;
     }

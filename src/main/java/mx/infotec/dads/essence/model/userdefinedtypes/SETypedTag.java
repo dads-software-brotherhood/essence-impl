@@ -67,6 +67,7 @@ public class SETypedTag extends SETag implements TypedTag {
     @DBRef
     private UserDefinedType kind;
 
+    @Override
     public UserDefinedType getKind() {
         return kind;
     }

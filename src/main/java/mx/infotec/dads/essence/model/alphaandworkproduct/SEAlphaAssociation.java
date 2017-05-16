@@ -91,6 +91,7 @@ public class SEAlphaAssociation extends SELanguageElement implements AlphaAssoci
     @DBRef
     private SEAlpha end2;
 
+    @Override
     public int getEnd1lowerBound() {
         return end1lowerBound;
     }
@@ -99,6 +100,7 @@ public class SEAlphaAssociation extends SELanguageElement implements AlphaAssoci
         this.end1lowerBound = end1lowerBound;
     }
 
+    @Override
     public int getEnd1upperBound() {
         return end1upperBound;
     }
@@ -107,6 +109,7 @@ public class SEAlphaAssociation extends SELanguageElement implements AlphaAssoci
         this.end1upperBound = end1upperBound;
     }
 
+    @Override
     public int getEnd2lowerBound() {
         return end2lowerBound;
     }
@@ -115,6 +118,7 @@ public class SEAlphaAssociation extends SELanguageElement implements AlphaAssoci
         this.end2lowerBound = end2lowerBound;
     }
 
+    @Override
     public int getEnd2upperBound() {
         return end2upperBound;
     }
@@ -123,6 +127,7 @@ public class SEAlphaAssociation extends SELanguageElement implements AlphaAssoci
         this.end2upperBound = end2upperBound;
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -131,6 +136,7 @@ public class SEAlphaAssociation extends SELanguageElement implements AlphaAssoci
         this.name = name;
     }
 
+    @Override
     public Alpha getEnd1() {
         return end1;
     }
@@ -139,6 +145,7 @@ public class SEAlphaAssociation extends SELanguageElement implements AlphaAssoci
         this.end1 = end1;
     }
 
+    @Override
     public SEAlpha getEnd2() {
         return end2;
     }

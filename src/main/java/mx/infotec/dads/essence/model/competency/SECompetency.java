@@ -75,6 +75,7 @@ public class SECompetency extends SEBasicElement implements Competency {
     @DBRef
     private Collection<CompetencyLevel> possibleLevel;
 
+    @Override
     public Collection<CompetencyLevel> getPossibleLevel() {
         return possibleLevel;
     }

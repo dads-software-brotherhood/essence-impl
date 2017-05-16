@@ -106,6 +106,7 @@ public class SEKernel extends SEElementGroup implements Kernel {
      */
     private String consistencyRules;
 
+    @Override
     public Collection<SEMethod> getReferringMethod() {
         return referringMethod;
     }
@@ -114,6 +115,7 @@ public class SEKernel extends SEElementGroup implements Kernel {
         this.referringMethod = referringMethod;
     }
 
+    @Override
     public String getConsistencyRules() {
         return consistencyRules;
     }

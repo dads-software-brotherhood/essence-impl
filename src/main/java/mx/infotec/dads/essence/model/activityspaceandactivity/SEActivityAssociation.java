@@ -95,6 +95,7 @@ public class SEActivityAssociation extends SELanguageElement implements Activity
     /** The kind of the association. */
     private String kind;
 
+    @Override
     public SEAbstractActivity getEnd2() {
         return end2;
     }
@@ -103,6 +104,7 @@ public class SEActivityAssociation extends SELanguageElement implements Activity
         this.end2 = end2;
     }
 
+    @Override
     public SEAbstractActivity getEnd1() {
         return end1;
     }
@@ -111,6 +113,7 @@ public class SEActivityAssociation extends SELanguageElement implements Activity
         this.end1 = end1;
     }
 
+    @Override
     public String getKind() {
         return kind;
     }

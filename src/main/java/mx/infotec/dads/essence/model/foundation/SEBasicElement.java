@@ -89,6 +89,7 @@ public abstract class SEBasicElement extends SELanguageElement implements BasicE
      */
     protected String description;
 
+    @Override
     public String getName() {
         return name;
     }
@@ -97,6 +98,7 @@ public abstract class SEBasicElement extends SELanguageElement implements BasicE
         this.name = name;
     }
 
+    @Override
     public GraphicalElement getIcon() {
         return icon;
     }
@@ -105,6 +107,7 @@ public abstract class SEBasicElement extends SELanguageElement implements BasicE
         this.icon = icon;
     }
 
+    @Override
     public String getBriefDescription() {
         return briefDescription;
     }
@@ -113,6 +116,7 @@ public abstract class SEBasicElement extends SELanguageElement implements BasicE
         this.briefDescription = briefDescription;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }

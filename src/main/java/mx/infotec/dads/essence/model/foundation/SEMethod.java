@@ -85,6 +85,7 @@ public class SEMethod extends SEElementGroup implements Method {
     @DBRef
     private Kernel baseKernel;
 
+    @Override
     public String getPurpose() {
         return purpose;
     }
@@ -93,6 +94,7 @@ public class SEMethod extends SEElementGroup implements Method {
         this.purpose = purpose;
     }
 
+    @Override
     public Kernel getBaseKernel() {
         return baseKernel;
     }

@@ -73,6 +73,7 @@ public class SEType implements Type {
     /** The name. */
     private String name;
 
+    @Override
     public Collection<EndeavorProperty> getProperty() {
         return property;
     }
@@ -81,6 +82,7 @@ public class SEType implements Type {
         this.property = property;
     }
 
+    @Override
     public String getName() {
         return name;
     }

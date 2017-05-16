@@ -120,6 +120,7 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
     @DBRef
     private SEWorkProduct workProduct;
 
+    @Override
     public String getDescription() {
         return description;
     }
@@ -128,6 +129,7 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
         this.description = description;
     }
 
+    @Override
     public boolean isSufficientLevel() {
         return isSufficientLevel;
     }
@@ -136,6 +138,7 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
         this.isSufficientLevel = isSufficientLevel;
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -144,6 +147,7 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
         this.name = name;
     }
 
+    @Override
     public Collection<SECheckpoint> getCheckListItem() {
         return checkListItem;
     }
@@ -152,6 +156,7 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
         this.checkListItem = checkListItem;
     }
 
+    @Override
     public SELevelOfDetail getSuccessor() {
         return successor;
     }
@@ -160,6 +165,7 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
         this.successor = successor;
     }
 
+    @Override
     public Collection<SECriterion> getCriterion() {
         return criterion;
     }
@@ -168,6 +174,7 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
         this.criterion = criterion;
     }
 
+    @Override
     public SELevelOfDetail getPredecessor() {
         return predecessor;
     }
@@ -176,6 +183,7 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
         this.predecessor = predecessor;
     }
 
+    @Override
     public SEWorkProduct getWorkProduct() {
         return workProduct;
     }

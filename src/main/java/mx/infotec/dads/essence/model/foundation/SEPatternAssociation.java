@@ -80,6 +80,7 @@ public class SEPatternAssociation extends SELanguageElement implements PatternAs
     @DBRef
     private SEPattern pattern;
 
+    @Override
     public String getName() {
         return name;
     }
@@ -88,6 +89,7 @@ public class SEPatternAssociation extends SELanguageElement implements PatternAs
         this.name = name;
     }
 
+    @Override
     public Collection<SELanguageElement> getElements() {
         return elements;
     }
@@ -96,6 +98,7 @@ public class SEPatternAssociation extends SELanguageElement implements PatternAs
         this.elements = elements;
     }
 
+    @Override
     public SEPattern getPattern() {
         return pattern;
     }

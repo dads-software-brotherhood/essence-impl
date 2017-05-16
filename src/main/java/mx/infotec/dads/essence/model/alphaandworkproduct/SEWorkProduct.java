@@ -91,6 +91,7 @@ public class SEWorkProduct extends SEBasicElement implements WorkProduct {
     @DBRef
     private Collection<SEWorkProductManifest> workProductManifest;
 
+    @Override
     public Collection<SELevelOfDetail> getLevelOfDetail() {
         return levelOfDetail;
     }
@@ -99,6 +100,7 @@ public class SEWorkProduct extends SEBasicElement implements WorkProduct {
         this.levelOfDetail = levelOfDetail;
     }
 
+    @Override
     public Collection<SEAction> getAction() {
         return action;
     }
@@ -107,6 +109,7 @@ public class SEWorkProduct extends SEBasicElement implements WorkProduct {
         this.action = action;
     }
 
+    @Override
     public Collection<SEWorkProductManifest> getWorkProductManifest() {
         return workProductManifest;
     }

@@ -91,6 +91,7 @@ public class SECheckpoint extends SELanguageElement implements Checkpoint {
     @DBRef
     private CompetencyLevel competencyLevel;
 
+    @Override
     public String getName() {
         return name;
     }
@@ -99,6 +100,7 @@ public class SECheckpoint extends SELanguageElement implements Checkpoint {
         this.name = name;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
@@ -107,6 +109,7 @@ public class SECheckpoint extends SELanguageElement implements Checkpoint {
         this.description = description;
     }
 
+    @Override
     public String getShortDescription() {
         return shortDescription;
     }
@@ -115,6 +118,7 @@ public class SECheckpoint extends SELanguageElement implements Checkpoint {
         this.shortDescription = shortDescription;
     }
 
+    @Override
     public LevelOfDetail getLevel() {
         return level;
     }
@@ -123,6 +127,7 @@ public class SECheckpoint extends SELanguageElement implements Checkpoint {
         this.level = level;
     }
 
+    @Override
     public State getState() {
         return state;
     }
@@ -131,6 +136,7 @@ public class SECheckpoint extends SELanguageElement implements Checkpoint {
         this.state = state;
     }
 
+    @Override
     public CompetencyLevel getCompetencyLevel() {
         return competencyLevel;
     }

@@ -67,6 +67,7 @@ public class SETypedPattern extends SEPattern implements TypedPattern {
     @DBRef
     private UserDefinedType kind;
 
+    @Override
     public UserDefinedType getKind() {
         return kind;
     }

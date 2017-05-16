@@ -80,6 +80,7 @@ public class SEAlphaContainment extends SELanguageElement implements AlphaContai
     @DBRef
     private SEAlpha subordinateAlpha;
 
+    @Override
     public int getLowerBound() {
         return lowerBound;
     }
@@ -88,6 +89,7 @@ public class SEAlphaContainment extends SELanguageElement implements AlphaContai
         this.lowerBound = lowerBound;
     }
 
+    @Override
     public int getUpperBound() {
         return upperBound;
     }
@@ -96,6 +98,7 @@ public class SEAlphaContainment extends SELanguageElement implements AlphaContai
         this.upperBound = upperBound;
     }
 
+    @Override
     public SEAlpha getSuperAlpha() {
         return superAlpha;
     }
@@ -104,6 +107,7 @@ public class SEAlphaContainment extends SELanguageElement implements AlphaContai
         this.superAlpha = superAlpha;
     }
 
+    @Override
     public SEAlpha getSubordinateAlpha() {
         return subordinateAlpha;
     }

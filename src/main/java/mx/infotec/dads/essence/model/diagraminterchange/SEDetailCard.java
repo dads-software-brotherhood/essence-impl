@@ -53,6 +53,7 @@ public class SEDetailCard implements DetailCard {
     /** The model element. */
     private BasicElement modelElement;
 
+    @Override
     public Node getLeftHeaderSide() {
         return leftHeaderSide;
     }
@@ -61,6 +62,7 @@ public class SEDetailCard implements DetailCard {
         this.leftHeaderSide = leftHeaderSide;
     }
 
+    @Override
     public Label getFooter() {
         return footer;
     }
@@ -69,6 +71,7 @@ public class SEDetailCard implements DetailCard {
         this.footer = footer;
     }
 
+    @Override
     public Node getHeader() {
         return header;
     }
@@ -77,6 +80,7 @@ public class SEDetailCard implements DetailCard {
         this.header = header;
     }
 
+    @Override
     public Text getBody() {
         return body;
     }
@@ -85,6 +89,7 @@ public class SEDetailCard implements DetailCard {
         this.body = body;
     }
 
+    @Override
     public BasicElement getModelElement() {
         return modelElement;
     }

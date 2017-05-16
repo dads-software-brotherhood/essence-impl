@@ -78,6 +78,7 @@ public class SEActivitySpace extends SEAbstractActivity implements ActivitySpace
     @DBRef
     private Collection<SEAlpha> input;
 
+    @Override
     public Collection<SEAlpha> getInput() {
         return input;
     }

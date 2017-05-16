@@ -54,6 +54,7 @@ public class SECard implements Card {
     /** The right body side. */
     private Text rightBodySide;
 
+    @Override
     public BasicElement getModelElement() {
         return modelElement;
     }
@@ -62,6 +63,7 @@ public class SECard implements Card {
         this.modelElement = modelElement;
     }
 
+    @Override
     public Label getRightHeaderSide() {
         return rightHeaderSide;
     }
@@ -70,6 +72,7 @@ public class SECard implements Card {
         this.rightHeaderSide = rightHeaderSide;
     }
 
+    @Override
     public Node getLeftHeaderSide() {
         return leftHeaderSide;
     }
@@ -78,6 +81,7 @@ public class SECard implements Card {
         this.leftHeaderSide = leftHeaderSide;
     }
 
+    @Override
     public Diagram getLeftBodySide() {
         return leftBodySide;
     }
@@ -86,6 +90,7 @@ public class SECard implements Card {
         this.leftBodySide = leftBodySide;
     }
 
+    @Override
     public Text getRightBodySide() {
         return rightBodySide;
     }

@@ -75,6 +75,7 @@ public class SEMergeResolution extends SELanguageElement implements MergeResolut
     @DBRef
     private SEElementGroup elementGroup;
 
+    @Override
     public String getTargetAttribute() {
         return targetAttribute;
     }
@@ -83,6 +84,7 @@ public class SEMergeResolution extends SELanguageElement implements MergeResolut
         this.targetAttribute = targetAttribute;
     }
 
+    @Override
     public String getTargetName() {
         return targetName;
     }
@@ -91,6 +93,7 @@ public class SEMergeResolution extends SELanguageElement implements MergeResolut
         this.targetName = targetName;
     }
 
+    @Override
     public String getResolutionFunction() {
         return resolutionFunction;
     }
@@ -99,6 +102,7 @@ public class SEMergeResolution extends SELanguageElement implements MergeResolut
         this.resolutionFunction = resolutionFunction;
     }
 
+    @Override
     public SEElementGroup getElementGroup() {
         return elementGroup;
     }

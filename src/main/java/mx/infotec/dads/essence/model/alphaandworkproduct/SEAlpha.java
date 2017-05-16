@@ -126,6 +126,7 @@ public class SEAlpha extends SEBasicElement implements Alpha {
     @DBRef
     private Collection<SEWorkProductManifest> workProductManifest;
 
+    @Override
     public Collection<SEState> getStates() {
         return states;
     }
@@ -134,6 +135,7 @@ public class SEAlpha extends SEBasicElement implements Alpha {
         this.states = states;
     }
 
+    @Override
     public Collection<SEAction> getAction() {
         return action;
     }
@@ -142,6 +144,7 @@ public class SEAlpha extends SEBasicElement implements Alpha {
         this.action = action;
     }
 
+    @Override
     public SEActivitySpace getActivitySpace() {
         return activitySpace;
     }
@@ -150,6 +153,7 @@ public class SEAlpha extends SEBasicElement implements Alpha {
         this.activitySpace = activitySpace;
     }
 
+    @Override
     public Collection<SEAlphaContainment> getAlphaContainment() {
         return alphaContainment;
     }
@@ -158,6 +162,7 @@ public class SEAlpha extends SEBasicElement implements Alpha {
         this.alphaContainment = alphaContainment;
     }
 
+    @Override
     public Collection<SEAlphaAssociation> getAlphaAssociation() {
         return alphaAssociation;
     }
@@ -166,6 +171,7 @@ public class SEAlpha extends SEBasicElement implements Alpha {
         this.alphaAssociation = alphaAssociation;
     }
 
+    @Override
     public Collection<SEWorkProductManifest> getWorkProductManifest() {
         return workProductManifest;
     }

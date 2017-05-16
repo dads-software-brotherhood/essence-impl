@@ -77,6 +77,7 @@ public class SEExtensionElement extends SELanguageElement implements ExtensionEl
     /** The function applied to the target attribute */
     private String extensionFunction;
 
+    @Override
     public SEElementGroup getElementGroup() {
         return elementGroup;
     }
@@ -85,6 +86,7 @@ public class SEExtensionElement extends SELanguageElement implements ExtensionEl
         this.elementGroup = elementGroup;
     }
 
+    @Override
     public SELanguageElement getTargetElement() {
         return targetElement;
     }
@@ -93,6 +95,7 @@ public class SEExtensionElement extends SELanguageElement implements ExtensionEl
         this.targetElement = targetElement;
     }
 
+    @Override
     public String getTargetAttribute() {
         return targetAttribute;
     }
@@ -101,6 +104,7 @@ public class SEExtensionElement extends SELanguageElement implements ExtensionEl
         this.targetAttribute = targetAttribute;
     }
 
+    @Override
     public String getExtensionFunction() {
         return extensionFunction;
     }

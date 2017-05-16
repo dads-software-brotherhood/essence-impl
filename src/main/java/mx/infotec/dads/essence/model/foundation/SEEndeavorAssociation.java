@@ -69,6 +69,7 @@ public class SEEndeavorAssociation implements EndeavorAssociation {
     @DBRef
     private Collection<SEEndeavorProperty> memberEnd;
 
+    @Override
     public Collection<SEEndeavorProperty> getOwnedEnd() {
         return ownedEnd;
     }
@@ -77,6 +78,7 @@ public class SEEndeavorAssociation implements EndeavorAssociation {
         this.ownedEnd = ownedEnd;
     }
 
+    @Override
     public Collection<SEEndeavorProperty> getMemberEnd() {
         return memberEnd;
     }

@@ -76,6 +76,7 @@ public class SEResource extends SELanguageElement implements Resource{
     @DBRef
     private SELanguageElement languageElement;
 
+    @Override
     public String getContent() {
         return content;
     }
@@ -84,6 +85,7 @@ public class SEResource extends SELanguageElement implements Resource{
         this.content = content;
     }
 
+    @Override
     public SELanguageElement getLanguageElement() {
         return languageElement;
     }

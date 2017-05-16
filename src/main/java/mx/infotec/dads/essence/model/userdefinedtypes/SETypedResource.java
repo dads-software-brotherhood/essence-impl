@@ -67,6 +67,7 @@ public class SETypedResource extends SEResource implements TypedResource {
     @DBRef
     private UserDefinedType kind;
 
+    @Override
     public UserDefinedType getKind() {
         return kind;
     }

@@ -95,6 +95,7 @@ public class SECompetencyLevel extends SELanguageElement implements CompetencyLe
     @DBRef
     private Collection<Checkpoint> checklistItem;
 
+    @Override
     public String getName() {
         return name;
     }
@@ -103,6 +104,7 @@ public class SECompetencyLevel extends SELanguageElement implements CompetencyLe
         this.name = name;
     }
 
+    @Override
     public String getBriefDescription() {
         return briefDescription;
     }
@@ -111,6 +113,7 @@ public class SECompetencyLevel extends SELanguageElement implements CompetencyLe
         this.briefDescription = briefDescription;
     }
 
+    @Override
     public int getLevel() {
         return level;
     }
@@ -119,6 +122,7 @@ public class SECompetencyLevel extends SELanguageElement implements CompetencyLe
         this.level = level;
     }
 
+    @Override
     public Collection<Activity> getActivity() {
         return activity;
     }
@@ -127,6 +131,7 @@ public class SECompetencyLevel extends SELanguageElement implements CompetencyLe
         this.activity = activity;
     }
 
+    @Override
     public Competency getCompetency() {
         return competency;
     }
@@ -135,6 +140,7 @@ public class SECompetencyLevel extends SELanguageElement implements CompetencyLe
         this.competency = competency;
     }
 
+    @Override
     public Collection<Checkpoint> getChecklistItem() {
         return checklistItem;
     }

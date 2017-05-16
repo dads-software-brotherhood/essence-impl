@@ -90,6 +90,7 @@ public class SEEndeavorProperty implements EndeavorProperty {
     /** Upper bound of the property */
     private int upperBound;
 
+    @Override
     public SELanguageElement getLanguageElement() {
         return languageElement;
     }
@@ -98,6 +99,7 @@ public class SEEndeavorProperty implements EndeavorProperty {
         this.languageElement = languageElement;
     }
 
+    @Override
     public SEEndeavorAssociation getAssociation() {
         return association;
     }
@@ -106,6 +108,7 @@ public class SEEndeavorProperty implements EndeavorProperty {
         this.association = association;
     }
 
+    @Override
     public SEEndeavorAssociation getOwningAssociation() {
         return owningAssociation;
     }
@@ -114,6 +117,7 @@ public class SEEndeavorProperty implements EndeavorProperty {
         this.owningAssociation = owningAssociation;
     }
 
+    @Override
     public SEType getType() {
         return type;
     }
@@ -122,6 +126,7 @@ public class SEEndeavorProperty implements EndeavorProperty {
         this.type = type;
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -130,6 +135,7 @@ public class SEEndeavorProperty implements EndeavorProperty {
         this.name = name;
     }
 
+    @Override
     public int getLowerBound() {
         return lowerBound;
     }
@@ -138,6 +144,7 @@ public class SEEndeavorProperty implements EndeavorProperty {
         this.lowerBound = lowerBound;
     }
 
+    @Override
     public int getUpperBound() {
         return upperBound;
     }

@@ -36,6 +36,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import mx.infotec.dads.essence.model.foundation.SEKernel;
 import mx.infotec.dads.essence.model.foundation.SEPractice;
+import mx.infotec.dads.essence.util.EssenceMapping;
 
 /**
  * Test for GeneratorService
@@ -69,13 +70,16 @@ public class PracticeRepositoryTest {
         practice.setMeasures(Arrays.asList("Timing", "five minutes pear meeting"));
         practice.setObjective("The Objetive of the practice");
         practice.setResult(Arrays.asList("Requeriments:Alpha", "Software:Architecture"));
-
+        EssenceMapping.fillSELanguageElements(practice);
+        EssenceMapping.fillSEElementGroup(practice);
         // ElementGroup
-        practice.setBriefDescription("Practice Brief Descrition");
-        practice.setDescription("Refactoring all");
-        practice.setIcon(null);
-        practice.setMergeResolution(null);
-        practice.setName("Name of the Practice");
+//        practice.setBriefDescription("Practice Brief Descrition");
+//        practice.setDescription("Refactoring all");
+//        practice.setIcon(null);
+//        practice.setMergeResolution(null);
+//        practice.setName("Name of the Practice");
+
+        
         // practice.setOwnedElements(ownedElements);
         // practice.setReferredElements(referredElements);
         //
@@ -87,7 +91,7 @@ public class PracticeRepositoryTest {
         // practice.setProperties(properties);
         // practice.setReferrer(referrer);
         // practice.setResource(resource);
-        practice.setSuppressable(false);
+//        practice.setSuppressable(false);
         // practice.setTag(tag);
         // practice.setViewSelection(viewSelection);
         practiceRepository.save(practice);

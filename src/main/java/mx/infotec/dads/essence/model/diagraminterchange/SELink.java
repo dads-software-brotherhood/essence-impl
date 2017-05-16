@@ -51,6 +51,7 @@ public class SELink extends SEDiagramElement implements Link {
     /** The end 2 bounds. */
     private Label end2bounds;
 
+    @Override
     public Label getEnd1bounds() {
         return end1bounds;
     }
@@ -59,6 +60,7 @@ public class SELink extends SEDiagramElement implements Link {
         this.end1bounds = end1bounds;
     }
 
+    @Override
     public Node getTarget() {
         return target;
     }
@@ -67,6 +69,7 @@ public class SELink extends SEDiagramElement implements Link {
         this.target = target;
     }
 
+    @Override
     public Node getSource() {
         return source;
     }
@@ -75,6 +78,7 @@ public class SELink extends SEDiagramElement implements Link {
         this.source = source;
     }
 
+    @Override
     public Label getName() {
         return name;
     }
@@ -83,6 +87,7 @@ public class SELink extends SEDiagramElement implements Link {
         this.name = name;
     }
 
+    @Override
     public Label getEnd2bounds() {
         return end2bounds;
     }

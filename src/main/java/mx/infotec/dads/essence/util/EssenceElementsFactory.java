@@ -25,6 +25,7 @@ package mx.infotec.dads.essence.util;
 
 import java.util.ArrayList;
 
+import mx.infotec.dads.essence.model.alphaandworkproduct.SEAlpha;
 import mx.infotec.dads.essence.model.foundation.SEPractice;
 
 /**
@@ -33,9 +34,9 @@ import mx.infotec.dads.essence.model.foundation.SEPractice;
  * @since essence 1.1
  * @version 1.1
  */
-public class EssenceFactory {
+public class EssenceElementsFactory {
 
-    private EssenceFactory() {
+    private EssenceElementsFactory() {
 
     }
 
@@ -46,31 +47,14 @@ public class EssenceFactory {
      */
     public static SEPractice createDefaultPractice() {
         SEPractice practice = new SEPractice();
-        // Practice
-        practice.setConsistencyRules("");
-        practice.setEntry(new ArrayList<>());
-        practice.setMeasures(new ArrayList<>());
-        practice.setObjective("");
-        practice.setResult(new ArrayList<>());
-        // ElementGroup
-        practice.setBriefDescription("");
-        practice.setDescription("");
-        practice.setIcon(null);
-        practice.setMergeResolution(null);
-        practice.setName("");
-        practice.setOwnedElements(new ArrayList<>());
-        practice.setReferredElements(new ArrayList<>());
-        // Inheritance
-        practice.setExtension(new ArrayList<>());
-        practice.setFeatureSelection(new ArrayList<>());
-        practice.setOwner(null);
-        practice.setPatternAssociation(new ArrayList<>());
-        practice.setProperties(new ArrayList<>());
-        practice.setReferrer(new ArrayList<>());
-        practice.setResource(new ArrayList<>());
-        practice.setSuppressable(false);
-        practice.setTag(new ArrayList<>());
-        practice.setViewSelection(new ArrayList<>());
+        EssenceMapping.fillSELanguageElements(practice);
+        EssenceMapping.fillSEElementGroup(practice);
+        EssenceMapping.fillPractice(practice);
         return practice;
+    }
+
+    public static SEAlpha createDefaultAlpha() {
+
+        return null;
     }
 }

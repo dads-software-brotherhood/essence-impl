@@ -74,6 +74,7 @@ public class SEPattern extends SEBasicElement implements Pattern {
     @DBRef
     private Collection<PatternAssociation> association;
 
+    @Override
     public Collection<PatternAssociation> getAssociation() {
         return association;
     }

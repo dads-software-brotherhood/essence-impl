@@ -72,6 +72,7 @@ public class SEApproach extends SELanguageElement implements Approach {
      */
     private String description;
 
+    @Override
     public SEActivity getActivity() {
         return activity;
     }
@@ -80,6 +81,7 @@ public class SEApproach extends SELanguageElement implements Approach {
         this.activity = activity;
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -88,6 +90,7 @@ public class SEApproach extends SELanguageElement implements Approach {
         this.name = name;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
