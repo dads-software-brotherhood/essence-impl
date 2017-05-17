@@ -32,6 +32,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import mx.infotec.dads.essence.model.alphaandworkproduct.SEAlpha;
+import mx.infotec.dads.essence.model.alphaandworkproduct.SEState;
 import mx.infotec.dads.essence.util.EssenceMapping;
 
 /**
@@ -56,7 +57,7 @@ public class AlphaRepositoryTest {
      */
     @Test
     public void insertAlpha() throws Exception {
-        LOGGER.info("insert practice");
+        LOGGER.info("insert alpha");
         SEAlpha alpha = new SEAlpha();
         EssenceMapping.fillSELanguageElements(alpha);
         EssenceMapping.fillBasicElement(alpha);
@@ -67,8 +68,13 @@ public class AlphaRepositoryTest {
         alpha.setAlphaAssociation(null);
         alpha.setWorkProductManifest(null);
         alphaRepository.save(alpha);
+        
+        // Add States
+        SEState state = new SEState();
+        EssenceMapping.fillSELanguageElements(state);
+        state.setAlpha(alpha);
+        
         id = alpha.getId();
-        System.out.println(id);
     }
 
     @Test

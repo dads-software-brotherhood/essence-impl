@@ -26,7 +26,9 @@ package mx.infotec.dads.essence.util;
 import java.util.ArrayList;
 
 import mx.infotec.dads.essence.model.SEGraphicalElement;
+import mx.infotec.dads.essence.model.alphaandworkproduct.SEState;
 import mx.infotec.dads.essence.model.foundation.SEBasicElement;
+import mx.infotec.dads.essence.model.foundation.SECheckpoint;
 import mx.infotec.dads.essence.model.foundation.SEElementGroup;
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 import mx.infotec.dads.essence.model.foundation.SEPractice;
@@ -39,43 +41,55 @@ import mx.infotec.dads.essence.model.foundation.SEPractice;
  */
 public class EssenceMapping {
 
-    public static void fillSELanguageElements(SELanguageElement element) {
-        element.setExtension(new ArrayList<>());
-        element.setFeatureSelection(new ArrayList<>());
-        element.setOwner(null);
-        element.setPatternAssociation(new ArrayList<>());
-        element.setProperties(new ArrayList<>());
-        element.setReferrer(new ArrayList<>());
-        element.setResource(new ArrayList<>());
-        element.setSuppressable(false);
-        element.setTag(new ArrayList<>());
-        element.setViewSelection(new ArrayList<>());
+    public static void fillSELanguageElements(SELanguageElement languageElement) {
+        languageElement.setExtension(new ArrayList<>());
+        languageElement.setFeatureSelection(new ArrayList<>());
+        languageElement.setOwner(null);
+        languageElement.setPatternAssociation(new ArrayList<>());
+        languageElement.setProperties(new ArrayList<>());
+        languageElement.setReferrer(new ArrayList<>());
+        languageElement.setResource(new ArrayList<>());
+        languageElement.setSuppressable(false);
+        languageElement.setTag(new ArrayList<>());
+        languageElement.setViewSelection(new ArrayList<>());
     }
 
-    public static void fillSEElementGroup(SEElementGroup element) {
-        // ElementGroup
-        element.setBriefDescription("");
-        element.setDescription("");
-        element.setIcon(null);
-        element.setMergeResolution(null);
-        element.setName("");
-        element.setOwnedElements(new ArrayList<>());
-        element.setReferredElements(new ArrayList<>());
+    public static void fillSEElementGroup(SEElementGroup elementGroup) {
+        fillSELanguageElements(elementGroup);
+        elementGroup.setBriefDescription("");
+        elementGroup.setDescription("");
+        elementGroup.setIcon(null);
+        elementGroup.setMergeResolution(null);
+        elementGroup.setName("");
+        elementGroup.setOwnedElements(new ArrayList<>());
+        elementGroup.setReferredElements(new ArrayList<>());
     }
 
-    public static void fillBasicElement(SEBasicElement element) {
-        element.setName("");
-        element.setIcon(new SEGraphicalElement());
-        element.setBriefDescription("");
-        element.setDescription("");
+    public static void fillBasicElement(SEBasicElement basicElement) {
+        fillSELanguageElements(basicElement);
+        basicElement.setName("");
+        basicElement.setIcon(new SEGraphicalElement());
+        basicElement.setBriefDescription("");
+        basicElement.setDescription("");
     }
 
-    public static void fillPractice(SEPractice element) {
-        element.setConsistencyRules("");
-        element.setEntry(new ArrayList<>());
-        element.setMeasures(new ArrayList<>());
-        element.setObjective("");
-        element.setResult(new ArrayList<>());
+    public static void fillPractice(SEPractice practice) {
+        fillSEElementGroup(practice);
+        practice.setConsistencyRules("");
+        practice.setEntry(new ArrayList<>());
+        practice.setMeasures(new ArrayList<>());
+        practice.setObjective("");
+        practice.setResult(new ArrayList<>());
     }
 
+    public static void fillCheckpoint(SECheckpoint checkpoint, SEState state){
+        fillSELanguageElements(checkpoint);
+        checkpoint.setName("");
+        checkpoint.setDescription("");
+        checkpoint.setShortDescription("");
+        checkpoint.setState(state);
+        checkpoint.setLevel(null);
+        checkpoint.setCompetencyLevel(null);
+    }
+    
 }
