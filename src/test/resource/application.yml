@@ -13,3 +13,4 @@ logging:
     org.springframework.web: false
     org.hibernate: false
     org.hibernate.SQL: false
+    org.springframework.data.mongodb.core.MongoTemplate: debug

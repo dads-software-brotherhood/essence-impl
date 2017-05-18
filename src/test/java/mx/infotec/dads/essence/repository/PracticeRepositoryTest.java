@@ -139,6 +139,5 @@ public class PracticeRepositoryTest {
                 LOGGER.info("keyword {}", keyword);
             }
         }
-
     }
 }
