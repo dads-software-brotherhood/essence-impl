@@ -24,10 +24,13 @@
 package mx.infotec.dads.essence.model.foundation;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.omg.essence.model.foundation.Practice;
-import org.springframework.data.annotation.Version;
+import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import mx.infotec.dads.essence.search.MultiKeyIndexable;
 
 /**
  * <pre>
@@ -134,7 +137,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @since essence 1.1
  */
 @Document(collection = "practices")
-public class SEPractice extends SEElementGroup implements Practice {
+@CompoundIndex(name = "practices_keyword_idx", def = "{'keyWords': 1}")
+public class SEPractice extends SEElementGroup implements Practice, MultiKeyIndexable {
 
     /**
      * Rules on the consistency of a particular Practice. The format for writing
@@ -171,8 +175,10 @@ public class SEPractice extends SEElementGroup implements Practice {
      */
     private Collection<String> result;
 
-    @Version
-    private Long version;
+    /**
+     * Keywords used for search by areas
+     */
+    private List<String> keyWords;
 
     @Override
     public String getConsistencyRules() {
@@ -219,11 +225,12 @@ public class SEPractice extends SEElementGroup implements Practice {
         this.result = result;
     }
 
-    public Long getVersion() {
-        return version;
+    @Override
+    public List<String> getKeyWords() {
+        return keyWords;
     }
 
-    public void setVersion(Long version) {
-        this.version = version;
+    public void setKeyWords(List<String> keyWords) {
+        this.keyWords = keyWords;
     }
 }

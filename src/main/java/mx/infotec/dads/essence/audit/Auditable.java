@@ -1,7 +1,7 @@
 /*
  *  
  * The MIT License (MIT)
- * Copyright (c) 2017 Daniel Cortes Pichardo
+ * Copyright (c) 2016 Daniel Cortes Pichardo
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,34 +21,45 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package mx.infotec.dads.essence.repository;
+package mx.infotec.dads.essence.audit;
 
-
-import java.util.List;
-
-import org.springframework.data.mongodb.repository.MongoRepository;
-
-import mx.infotec.dads.essence.model.foundation.SEPractice;
+import org.joda.time.DateTime;
 
 /**
- * SEPracticeRepository
+ * Auditable Interface, used into the Domain classes
  * 
  * @author Daniel Cortes Pichardo
- *
+ * @version 1.1
  */
-public interface SEPracticeRepository extends MongoRepository<SEPractice, String> {
+public interface Auditable {
 
     /**
+     * Returns the creation date of the entity.
      * 
-     * @param name
-     * @return
+     * @return the createdDate
      */
-    List<SEPractice> findByName(String name);
+    DateTime getCreatedDate();
 
     /**
+     * Sets the creation date of the entity.
      * 
-     * @param keyWords
-     * @return
+     * @param creationDate
+     *            the creation date to set
      */
-    List<SEPractice> findByKeyWordsIn(List<String> keyWords);
+    void setCreatedDate(final DateTime creationDate);
+
+    /**
+     * Returns the date of the last modification.
+     * 
+     * @return the lastModifiedDate
+     */
+    DateTime getLastModifiedDate();
+
+    /**
+     * Sets the date of the last modification.
+     * 
+     * @param lastModifiedDate
+     *            the date of the last modification to set
+     */
+    void setLastModifiedDate(final DateTime lastModifiedDate);
 }

@@ -25,10 +25,14 @@ package mx.infotec.dads.essence.model.foundation;
 
 import java.util.Collection;
 
+import org.joda.time.DateTime;
 import org.omg.essence.model.foundation.LanguageElement;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
+import mx.infotec.dads.essence.audit.Auditable;
 import mx.infotec.dads.essence.model.view.SEFeatureSelection;
 import mx.infotec.dads.essence.model.view.SEViewSelection;
 
@@ -70,7 +74,7 @@ import mx.infotec.dads.essence.model.view.SEViewSelection;
  * @version 1.1
  * @since essence 1.1
  */
-public abstract class SELanguageElement implements LanguageElement {
+public abstract class SELanguageElement implements LanguageElement, Auditable {
     /** The mongodb Id */
     @Id
     private String id;
@@ -122,6 +126,14 @@ public abstract class SELanguageElement implements LanguageElement {
     /** The pattern association. */
     @DBRef
     protected Collection<SEPatternAssociation> patternAssociation;
+
+    /** The created Date **/
+    @CreatedDate
+    private DateTime createdDate;
+
+    /** The last modified Date **/
+    @LastModifiedDate
+    private DateTime lastModifiedDate;
 
     @Override
     public boolean isSuppressable() {
@@ -219,6 +231,26 @@ public abstract class SELanguageElement implements LanguageElement {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public DateTime getCreatedDate() {
+        return createdDate;
+    }
+
+    @Override
+    public void setCreatedDate(DateTime createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    @Override
+    public DateTime getLastModifiedDate() {
+        return lastModifiedDate;
+    }
+
+    @Override
+    public void setLastModifiedDate(DateTime lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
     }
 
 }

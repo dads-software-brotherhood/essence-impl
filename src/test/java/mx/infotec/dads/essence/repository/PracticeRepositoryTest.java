@@ -25,6 +25,7 @@ package mx.infotec.dads.essence.repository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -60,7 +61,7 @@ public class PracticeRepositoryTest {
      * 
      * @throws Exception
      */
-    @Test
+    // @Test
     public void insertPractice() throws Exception {
         LOGGER.info("insert practice");
         SEPractice practice = new SEPractice();
@@ -72,14 +73,20 @@ public class PracticeRepositoryTest {
         practice.setResult(Arrays.asList("Requeriments:Alpha", "Software:Architecture"));
         EssenceMapping.fillSELanguageElements(practice);
         EssenceMapping.fillSEElementGroup(practice);
+        EssenceMapping.fillBitacoraData(practice);
+        List<String> keywords = new ArrayList<>();
+        keywords.add("arquitectura");
+        // keywords.add("implementacion");
+        keywords.add("implementacion");
+        practice.setKeyWords(keywords);
+        practice.setName("Scrum");
         // ElementGroup
-//        practice.setBriefDescription("Practice Brief Descrition");
-//        practice.setDescription("Refactoring all");
-//        practice.setIcon(null);
-//        practice.setMergeResolution(null);
-//        practice.setName("Name of the Practice");
+        // practice.setBriefDescription("Practice Brief Descrition");
+        // practice.setDescription("Refactoring all");
+        // practice.setIcon(null);
+        // practice.setMergeResolution(null);
+        // practice.setName("Name of the Practice");
 
-        
         // practice.setOwnedElements(ownedElements);
         // practice.setReferredElements(referredElements);
         //
@@ -91,23 +98,47 @@ public class PracticeRepositoryTest {
         // practice.setProperties(properties);
         // practice.setReferrer(referrer);
         // practice.setResource(resource);
-//        practice.setSuppressable(false);
+        // practice.setSuppressable(false);
         // practice.setTag(tag);
         // practice.setViewSelection(viewSelection);
         practiceRepository.save(practice);
         id = practice.getId();
         LOGGER.info("id = {}", id);
         SEKernel seKernel = kernelRepository.findAll().get(0);
-        seKernel.setOwnedElements(new ArrayList<>());
+        if (seKernel.getOwnedElements() == null) {
+            seKernel.setOwnedElements(new ArrayList<>());
+        }
         seKernel.getOwnedElements().add(practice);
+        System.out.println(seKernel.getId());
         kernelRepository.save(seKernel);
     }
 
-    @Test
+    // @Test
     public void getPractice() {
         LOGGER.info("get practice id = {}", id);
         SEPractice practice = practiceRepository.findOne(id);
         System.out.println(practice);
         LOGGER.info("id: {}", practice.getId());
+    }
+
+    @Test
+    public void findPractice() {
+        System.out.println("Runnig and finding");
+        SEPractice practice = new SEPractice();
+        List<String> keywords = new ArrayList<>();
+        keywords.add("arquitectura");
+        keywords.add("solo");
+        practice.setKeyWords(keywords);
+        List<SEPractice> practicesList = practiceRepository.findByKeyWordsIn(keywords);
+        LOGGER.info("Size: {}", practicesList.size());
+        for (SEPractice sePractice : practicesList) {
+            LOGGER.info("id {}", sePractice.getId());
+            if (sePractice.getKeyWords() != null)
+                LOGGER.info("name {}", sePractice.getName());
+            for (String keyword : sePractice.getKeyWords()) {
+                LOGGER.info("keyword {}", keyword);
+            }
+        }
+
     }
 }

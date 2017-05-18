@@ -1,7 +1,7 @@
 /*
  *  
  * The MIT License (MIT)
- * Copyright (c) 2017 Daniel Cortes Pichardo
+ * Copyright (c) 2016 Daniel Cortes Pichardo
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,34 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package mx.infotec.dads.essence.repository;
-
+package mx.infotec.dads.essence.search;
 
 import java.util.List;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
-
-import mx.infotec.dads.essence.model.foundation.SEPractice;
-
 /**
- * SEPracticeRepository
+ * MultiKeyIndexable used to search for keywords
  * 
  * @author Daniel Cortes Pichardo
- *
+ * @since essence 1.1
+ * @version 1.1
  */
-public interface SEPracticeRepository extends MongoRepository<SEPractice, String> {
+public interface MultiKeyIndexable {
 
-    /**
-     * 
-     * @param name
-     * @return
-     */
-    List<SEPractice> findByName(String name);
-
-    /**
-     * 
-     * @param keyWords
-     * @return
-     */
-    List<SEPractice> findByKeyWordsIn(List<String> keyWords);
+    List<String> getKeyWords();
 }

@@ -23,6 +23,9 @@
  */
 package mx.infotec.dads.essence.repository;
 
+import java.util.List;
+
+import org.joda.time.DateTime;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -56,26 +59,38 @@ public class KernelRepositoryTest {
     @Test
     public void insertKernel() throws Exception {
         LOGGER.info("insert practice");
+        List<SEKernel> kernelList = kernelRepository.findAll();
         SEKernel kernel = new SEKernel();
-        kernel.setBriefDescription("Essence default kernel");
-        kernel.setConsistencyRules("Consistencies rules");
-        kernel.setDescription("Essence default kernel");
-        kernel.setExtension(null);
-        kernel.setFeatureSelection(null);
-        kernel.setIcon(null);
-        kernel.setMergeResolution(null);
-        kernel.setName("essence-core");
-        kernel.setOwnedElements(null);// por defecto no hay elementos
-        kernel.setOwner(null);
-        kernel.setPatternAssociation(null);
-        kernel.setProperties(null);
-        kernel.setReferredElements(null);
-        kernel.setReferrer(null);
-        kernel.setReferringMethod(null);
-        kernel.setResource(null);
-        kernel.setSuppressable(false);
-        kernel.setTag(null);
-        kernel.setViewSelection(null);
+        if (kernelList.isEmpty()) {
+            kernel.setBriefDescription("Essence default kernel");
+            kernel.setConsistencyRules("Consistencies rules");
+            kernel.setDescription("Essence default kernel");
+            kernel.setExtension(null);
+            kernel.setFeatureSelection(null);
+            kernel.setIcon(null);
+            kernel.setMergeResolution(null);
+            kernel.setName("essence-core");
+            kernel.setOwnedElements(null);// por defecto no hay elementos
+            kernel.setOwner(null);
+            kernel.setPatternAssociation(null);
+            kernel.setProperties(null);
+            kernel.setReferredElements(null);
+            kernel.setReferrer(null);
+            kernel.setReferringMethod(null);
+            kernel.setResource(null);
+            kernel.setSuppressable(false);
+            kernel.setTag(null);
+            kernel.setViewSelection(null);
+            kernel.setCreatedDate(new DateTime());
+            kernel.setLastModifiedDate(new DateTime());
+
+        } else {
+            kernel = kernelList.get(0);
+            kernel.setName("otro nombre");
+            kernel.setCreatedDate(new DateTime());
+            kernel.setLastModifiedDate(new DateTime());
+        }
+
         kernelRepository.save(kernel);
         id = kernel.getId();
         LOGGER.info("id = {}", id);

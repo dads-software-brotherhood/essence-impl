@@ -25,6 +25,9 @@ package mx.infotec.dads.essence.util;
 
 import java.util.ArrayList;
 
+import org.joda.time.DateTime;
+
+import mx.infotec.dads.essence.audit.Auditable;
 import mx.infotec.dads.essence.model.SEGraphicalElement;
 import mx.infotec.dads.essence.model.alphaandworkproduct.SEState;
 import mx.infotec.dads.essence.model.foundation.SEBasicElement;
@@ -82,7 +85,7 @@ public class EssenceMapping {
         practice.setResult(new ArrayList<>());
     }
 
-    public static void fillCheckpoint(SECheckpoint checkpoint, SEState state){
+    public static void fillCheckpoint(SECheckpoint checkpoint, SEState state) {
         fillSELanguageElements(checkpoint);
         checkpoint.setName("");
         checkpoint.setDescription("");
@@ -91,5 +94,9 @@ public class EssenceMapping {
         checkpoint.setLevel(null);
         checkpoint.setCompetencyLevel(null);
     }
-    
+
+    public static void fillBitacoraData(Auditable auditable) {
+        auditable.setLastModifiedDate(new DateTime());
+        auditable.setCreatedDate(new DateTime());
+    }
 }
