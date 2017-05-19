@@ -44,6 +44,10 @@ import mx.infotec.dads.essence.model.foundation.SEPractice;
  */
 public class EssenceMapping {
 
+    private EssenceMapping() {
+
+    }
+
     public static void fillSELanguageElements(SELanguageElement languageElement) {
         languageElement.setExtension(new ArrayList<>());
         languageElement.setFeatureSelection(new ArrayList<>());

@@ -30,7 +30,7 @@ import org.omg.essence.model.foundation.Practice;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import mx.infotec.dads.essence.search.MultiKeyIndexable;
+import mx.infotec.dads.essence.search.KeyWordsIndexable;
 
 /**
  * <pre>
@@ -137,8 +137,7 @@ import mx.infotec.dads.essence.search.MultiKeyIndexable;
  * @since essence 1.1
  */
 @Document(collection = "practices")
-@CompoundIndex(name = "practices_keyword_idx", def = "{'keyWords': 1}")
-public class SEPractice extends SEElementGroup implements Practice, MultiKeyIndexable {
+public class SEPractice extends SEElementGroup implements Practice, KeyWordsIndexable {
 
     /**
      * Rules on the consistency of a particular Practice. The format for writing

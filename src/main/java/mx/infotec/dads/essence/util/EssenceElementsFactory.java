@@ -23,8 +23,6 @@
  */
 package mx.infotec.dads.essence.util;
 
-import java.util.ArrayList;
-
 import mx.infotec.dads.essence.model.alphaandworkproduct.SEAlpha;
 import mx.infotec.dads.essence.model.foundation.SEPractice;
 

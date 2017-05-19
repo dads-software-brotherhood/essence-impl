@@ -25,6 +25,8 @@ package mx.infotec.dads.essence.search;
 
 import java.util.List;
 
+import org.springframework.data.mongodb.core.index.CompoundIndex;
+
 /**
  * MultiKeyIndexable used to search for keywords
  * 
@@ -32,7 +34,8 @@ import java.util.List;
  * @since essence 1.1
  * @version 1.1
  */
-public interface MultiKeyIndexable {
+@CompoundIndex(def = "{'keyWords': 1}")
+public interface KeyWordsIndexable {
 
     List<String> getKeyWords();
 }

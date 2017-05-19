@@ -33,6 +33,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import mx.infotec.dads.essence.model.foundation.SEKernel;
@@ -61,7 +64,7 @@ public class PracticeRepositoryTest {
      * 
      * @throws Exception
      */
-    // @Test
+    @Test
     public void insertPractice() throws Exception {
         LOGGER.info("insert practice");
         SEPractice practice = new SEPractice();
@@ -75,9 +78,9 @@ public class PracticeRepositoryTest {
         EssenceMapping.fillSEElementGroup(practice);
         EssenceMapping.fillBitacoraData(practice);
         List<String> keywords = new ArrayList<>();
-        keywords.add("arquitectura");
-        // keywords.add("implementacion");
-        keywords.add("implementacion");
+//        keywords.add("arquitectura");
+         keywords.add("solo");
+//        keywords.add("implementacion");
         practice.setKeyWords(keywords);
         practice.setName("Scrum");
         // ElementGroup
@@ -113,24 +116,25 @@ public class PracticeRepositoryTest {
         kernelRepository.save(seKernel);
     }
 
-    // @Test
+    @Test
     public void getPractice() {
         LOGGER.info("get practice id = {}", id);
         SEPractice practice = practiceRepository.findOne(id);
-        System.out.println(practice);
+        LOGGER.info(practice.getName());
         LOGGER.info("id: {}", practice.getId());
     }
 
     @Test
     public void findPractice() {
-        System.out.println("Runnig and finding");
+        LOGGER.info("Runnig and finding");
         SEPractice practice = new SEPractice();
         List<String> keywords = new ArrayList<>();
         keywords.add("arquitectura");
         keywords.add("solo");
         practice.setKeyWords(keywords);
-        List<SEPractice> practicesList = practiceRepository.findByKeyWordsIn(keywords);
-        LOGGER.info("Size: {}", practicesList.size());
+        Pageable pageRequest = new PageRequest(0, 11);
+        Page<SEPractice> practicesList = practiceRepository.findByKeyWordsIn(keywords, pageRequest);
+        LOGGER.info("Size: {}", practicesList.getSize());
         for (SEPractice sePractice : practicesList) {
             LOGGER.info("id {}", sePractice.getId());
             if (sePractice.getKeyWords() != null)

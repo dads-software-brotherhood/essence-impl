@@ -1,7 +1,7 @@
 /*
  *  
  * The MIT License (MIT)
- * Copyright (c) 2017 Daniel Cortes Pichardo
+ * Copyright (c) 2016 Daniel Cortes Pichardo
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,41 +21,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package mx.infotec.dads.essence.repository;
-
-import java.util.List;
-
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.mongodb.repository.MongoRepository;
-
-import mx.infotec.dads.essence.model.foundation.SEPractice;
+package mx.infotec.dads.essence.util;
 
 /**
- * SEPracticeRepository
+ * LanguageElementEnum
  * 
  * @author Daniel Cortes Pichardo
- *
+ * @since essence 1.1
+ * @version 1.1
  */
-public interface SEPracticeRepository extends MongoRepository<SEPractice, String> {
+public enum ElementType {
+    
+    KERNEL("Kernel", "kernels"), 
+    METHOD("method", "methods"), 
+    PRACTICE("practice", "practices"), 
+    ALPHA("alpha", "alphas"), 
+    COMPETENCY("competency", "competencies");
 
-    /**
-     * Execute a query to mongodb engine
-     * 
-     * @param name
-     * @return List<SEPractice> the list of practices that matching the query
-     *         finBy
-     */
-    List<SEPractice> findByName(String name);
+    private final String singular;
+    private final String plural;
 
-    /**
-     * findByKeywordsIn method generate the next query to mongodb engine:
-     * 
-     * { "keyWords" : { "$in" : [ "keyword1" , "keyword2",..."keywordn"]}}
-     * 
-     * @param keyWords
-     * @param page
-     * @return Page<SEPractice>
-     */
-    Page<SEPractice> findByKeyWordsIn(List<String> keyWords, Pageable pageable);
+    private ElementType(final String singular, final String plural) {
+        this.singular = singular;
+        this.plural = plural;
+    }
+
+    public String getSingular() {
+        return singular;
+    }
+
+    public String getPlural() {
+        return plural;
+    }
 }
