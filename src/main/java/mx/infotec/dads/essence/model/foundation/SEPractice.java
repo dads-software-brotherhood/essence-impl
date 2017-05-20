@@ -178,6 +178,11 @@ public class SEPractice extends SEElementGroup implements Practice, KeyWordsInde
      * Keywords used for search by areas
      */
     private List<String> keyWords;
+    
+    /**
+     * Author of the Practice
+     */
+    private String author;
 
     @Override
     public String getConsistencyRules() {
@@ -231,5 +236,13 @@ public class SEPractice extends SEElementGroup implements Practice, KeyWordsInde
 
     public void setKeyWords(List<String> keyWords) {
         this.keyWords = keyWords;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }
