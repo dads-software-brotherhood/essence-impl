@@ -32,7 +32,16 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import mx.infotec.dads.essence.audit.Auditable;
+import mx.infotec.dads.essence.model.alphaandworkproduct.SEAlpha;
+import mx.infotec.dads.essence.model.alphaandworkproduct.SEAlphaAssociation;
+import mx.infotec.dads.essence.model.alphaandworkproduct.SEWorkProduct;
+import mx.infotec.dads.essence.model.alphaandworkproduct.SEWorkProductManifest;
+import mx.infotec.dads.essence.model.competency.SECompetency;
 import mx.infotec.dads.essence.model.view.SEFeatureSelection;
 import mx.infotec.dads.essence.model.view.SEViewSelection;
 
@@ -74,183 +83,195 @@ import mx.infotec.dads.essence.model.view.SEViewSelection;
  * @version 1.1
  * @since essence 1.1
  */
+@JsonTypeInfo(
+		use = JsonTypeInfo.Id.NAME, 
+		include = JsonTypeInfo.As.PROPERTY, 
+		property = "type")
+@JsonSubTypes({ 
+	@Type(value = SEAlpha.class, name = "alpha"), 
+	@Type(value = SEPractice.class, name = "practice"), 
+	@Type(value = SECompetency.class, name = "competency"), 
+	@Type(value = SEWorkProduct.class, name = "workProduct"), 
+	@Type(value = SEWorkProductManifest.class, name = "workProductManifest"), 
+	@Type(value = SEAlphaAssociation.class, name = "alphaAssociation"), 
+	})
 public abstract class SELanguageElement implements LanguageElement, Auditable {
-    /** The mongodb Id */
-    @Id
-    private String id;
+	/** The mongodb Id */
+	@Id
+	private String id;
 
-    /**
-     * A flag indicating whether this element may be suppressed in an extension
-     * or composition (see 9.4.3.2 on the essence standard)
-     */
-    protected boolean isSuppressable = true;
+	/**
+	 * A flag indicating whether this element may be suppressed in an extension
+	 * or composition (see 9.4.3.2 on the essence standard)
+	 */
+	protected boolean isSuppressable = true;
 
-    /** The element group that owns this language element */
-    @DBRef
-    protected SEElementGroup owner;
+	/** The element group that owns this language element */
+	@DBRef
+	protected SEElementGroup owner;
 
-    /** Tags associated with this language element */
-    @DBRef
-    protected Collection<SETag> tag;
+	/** Tags associated with this language element */
+	@DBRef
+	protected Collection<SETag> tag;
 
-    /** Resources associated with this language element. */
-    @DBRef
-    protected Collection<SEResource> resource;
+	/** Resources associated with this language element. */
+	@DBRef
+	protected Collection<SEResource> resource;
 
-    /**
-     * Properties (defined at M1 level) that you want to track during the
-     * endeavor.
-     */
-    @DBRef
-    protected Collection<SEEndeavorProperty> properties;
+	/**
+	 * Properties (defined at M1 level) that you want to track during the
+	 * endeavor.
+	 */
+	@DBRef
+	protected Collection<SEEndeavorProperty> properties;
 
-    /**
-     * A list of ViewSelection selects a subset of constructs and construct
-     * features such as attributes and associations.
-     */
-    @DBRef
-    protected Collection<SEViewSelection> viewSelection;
+	/**
+	 * A list of ViewSelection selects a subset of constructs and construct
+	 * features such as attributes and associations.
+	 */
+	@DBRef
+	protected Collection<SEViewSelection> viewSelection;
 
-    /** The feature selection. */
-    @DBRef
-    protected Collection<SEFeatureSelection> featureSelection;
+	/** The feature selection. */
+	@DBRef
+	protected Collection<SEFeatureSelection> featureSelection;
 
-    /** The extension. */
-    @DBRef
-    protected Collection<SEExtensionElement> extension;
+	/** The extension. */
+	@DBRef
+	protected Collection<SEExtensionElement> extension;
 
-    /** The referrer. */
-    @DBRef
-    protected Collection<SEElementGroup> referrer;
+	/** The referrer. */
+	@DBRef
+	protected Collection<SEElementGroup> referrer;
 
-    /** The pattern association. */
-    @DBRef
-    protected Collection<SEPatternAssociation> patternAssociation;
+	/** The pattern association. */
+	@DBRef
+	protected Collection<SEPatternAssociation> patternAssociation;
 
-    /** The created Date **/
-    @CreatedDate
-    private DateTime createdDate;
+	/** The created Date **/
+	@CreatedDate
+	private DateTime createdDate;
 
-    /** The last modified Date **/
-    @LastModifiedDate
-    private DateTime lastModifiedDate;
+	/** The last modified Date **/
+	@LastModifiedDate
+	private DateTime lastModifiedDate;
 
-    @Override
-    public boolean isSuppressable() {
-        return isSuppressable;
-    }
+	@Override
+	public boolean isSuppressable() {
+		return isSuppressable;
+	}
 
-    public void setSuppressable(boolean isSuppressable) {
-        this.isSuppressable = isSuppressable;
-    }
+	public void setSuppressable(boolean isSuppressable) {
+		this.isSuppressable = isSuppressable;
+	}
 
-    @Override
-    public SEElementGroup getOwner() {
-        return owner;
-    }
+	@Override
+	public SEElementGroup getOwner() {
+		return owner;
+	}
 
-    public void setOwner(SEElementGroup owner) {
-        this.owner = owner;
-    }
+	public void setOwner(SEElementGroup owner) {
+		this.owner = owner;
+	}
 
-    @Override
-    public Collection<SETag> getTag() {
-        return tag;
-    }
+	@Override
+	public Collection<SETag> getTag() {
+		return tag;
+	}
 
-    public void setTag(Collection<SETag> tag) {
-        this.tag = tag;
-    }
+	public void setTag(Collection<SETag> tag) {
+		this.tag = tag;
+	}
 
-    @Override
-    public Collection<SEResource> getResource() {
-        return resource;
-    }
+	@Override
+	public Collection<SEResource> getResource() {
+		return resource;
+	}
 
-    public void setResource(Collection<SEResource> resource) {
-        this.resource = resource;
-    }
+	public void setResource(Collection<SEResource> resource) {
+		this.resource = resource;
+	}
 
-    @Override
-    public Collection<SEEndeavorProperty> getProperties() {
-        return properties;
-    }
+	@Override
+	public Collection<SEEndeavorProperty> getProperties() {
+		return properties;
+	}
 
-    public void setProperties(Collection<SEEndeavorProperty> properties) {
-        this.properties = properties;
-    }
+	public void setProperties(Collection<SEEndeavorProperty> properties) {
+		this.properties = properties;
+	}
 
-    @Override
-    public Collection<SEViewSelection> getViewSelection() {
-        return viewSelection;
-    }
+	@Override
+	public Collection<SEViewSelection> getViewSelection() {
+		return viewSelection;
+	}
 
-    public void setViewSelection(Collection<SEViewSelection> viewSelection) {
-        this.viewSelection = viewSelection;
-    }
+	public void setViewSelection(Collection<SEViewSelection> viewSelection) {
+		this.viewSelection = viewSelection;
+	}
 
-    @Override
-    public Collection<SEFeatureSelection> getFeatureSelection() {
-        return featureSelection;
-    }
+	@Override
+	public Collection<SEFeatureSelection> getFeatureSelection() {
+		return featureSelection;
+	}
 
-    public void setFeatureSelection(Collection<SEFeatureSelection> featureSelection) {
-        this.featureSelection = featureSelection;
-    }
+	public void setFeatureSelection(Collection<SEFeatureSelection> featureSelection) {
+		this.featureSelection = featureSelection;
+	}
 
-    @Override
-    public Collection<SEExtensionElement> getExtension() {
-        return extension;
-    }
+	@Override
+	public Collection<SEExtensionElement> getExtension() {
+		return extension;
+	}
 
-    public void setExtension(Collection<SEExtensionElement> extension) {
-        this.extension = extension;
-    }
+	public void setExtension(Collection<SEExtensionElement> extension) {
+		this.extension = extension;
+	}
 
-    @Override
-    public Collection<SEElementGroup> getReferrer() {
-        return referrer;
-    }
+	@Override
+	public Collection<SEElementGroup> getReferrer() {
+		return referrer;
+	}
 
-    public void setReferrer(Collection<SEElementGroup> referrer) {
-        this.referrer = referrer;
-    }
+	public void setReferrer(Collection<SEElementGroup> referrer) {
+		this.referrer = referrer;
+	}
 
-    @Override
-    public Collection<SEPatternAssociation> getPatternAssociation() {
-        return patternAssociation;
-    }
+	@Override
+	public Collection<SEPatternAssociation> getPatternAssociation() {
+		return patternAssociation;
+	}
 
-    public void setPatternAssociation(Collection<SEPatternAssociation> patternAssociation) {
-        this.patternAssociation = patternAssociation;
-    }
+	public void setPatternAssociation(Collection<SEPatternAssociation> patternAssociation) {
+		this.patternAssociation = patternAssociation;
+	}
 
-    public String getId() {
-        return id;
-    }
+	public String getId() {
+		return id;
+	}
 
-    public void setId(String id) {
-        this.id = id;
-    }
+	public void setId(String id) {
+		this.id = id;
+	}
 
-    @Override
-    public DateTime getCreatedDate() {
-        return createdDate;
-    }
+	@Override
+	public DateTime getCreatedDate() {
+		return createdDate;
+	}
 
-    @Override
-    public void setCreatedDate(DateTime createdDate) {
-        this.createdDate = createdDate;
-    }
+	@Override
+	public void setCreatedDate(DateTime createdDate) {
+		this.createdDate = createdDate;
+	}
 
-    @Override
-    public DateTime getLastModifiedDate() {
-        return lastModifiedDate;
-    }
+	@Override
+	public DateTime getLastModifiedDate() {
+		return lastModifiedDate;
+	}
 
-    @Override
-    public void setLastModifiedDate(DateTime lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
-    }
+	@Override
+	public void setLastModifiedDate(DateTime lastModifiedDate) {
+		this.lastModifiedDate = lastModifiedDate;
+	}
 
 }
