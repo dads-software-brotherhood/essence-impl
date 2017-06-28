@@ -75,7 +75,7 @@ public class EssenceMapping {
     public static void fillBasicElement(SEBasicElement basicElement) {
         fillSELanguageElements(basicElement);
         basicElement.setName("");
-        basicElement.setIcon(new SEGraphicalElement());
+        basicElement.setIcon(null);
         basicElement.setBriefDescription("");
         basicElement.setDescription("");
     }

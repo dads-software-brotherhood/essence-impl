@@ -26,6 +26,7 @@ package mx.infotec.dads.essence.model.alphaandworkproduct;
 import java.util.Collection;
 
 import org.omg.essence.model.alphaandworkproduct.Alpha;
+import org.springframework.data.annotation.TypeAlias;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -100,6 +101,7 @@ import mx.infotec.dads.essence.model.foundation.SEBasicElement;
  * @since essence 1.1
  */
 @Document(collection = "alphas")
+@TypeAlias("Alpha")
 public class SEAlpha extends SEBasicElement implements Alpha {
 
     /** The states of the alpha. */

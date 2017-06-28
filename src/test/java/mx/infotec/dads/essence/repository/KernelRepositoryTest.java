@@ -23,6 +23,8 @@
  */
 package mx.infotec.dads.essence.repository;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.joda.time.DateTime;
@@ -31,10 +33,15 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import mx.infotec.dads.essence.model.alphaandworkproduct.SEAlpha;
 import mx.infotec.dads.essence.model.foundation.SEKernel;
+import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
 /**
  * Test for GeneratorService
@@ -45,61 +52,76 @@ import mx.infotec.dads.essence.model.foundation.SEKernel;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class KernelRepositoryTest {
-    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
-    private SEKernelRepository kernelRepository;
+	@Autowired
+	private SEKernelRepository kernelRepository;
+	@Autowired
+	private SEAlphaRepository alphaRepository;
+	private static String id;
 
-    private static String id;
+	/**
+	 * 
+	 * @throws Exception
+	 */
+	@Test
+	public void insertKernel() throws Exception {
+		LOGGER.info("insert practice");
+		List<SEKernel> kernelList = kernelRepository.findAll();
+		SEKernel kernel = new SEKernel();
+		if (kernelList.isEmpty()) {
+			kernel.setBriefDescription("Essence default kernel");
+			kernel.setConsistencyRules("Consistencies rules");
+			kernel.setDescription("Essence default kernel");
+			kernel.setExtension(null);
+			kernel.setFeatureSelection(null);
+			kernel.setIcon(null);
+			kernel.setMergeResolution(null);
+			kernel.setName("essence-core");
+			kernel.setOwnedElements(new ArrayList<>());// por defecto no hay
+														// elementos
+			kernel.setOwner(null);
+			kernel.setPatternAssociation(null);
+			kernel.setProperties(null);
+			kernel.setReferredElements(null);
+			kernel.setReferrer(null);
+			kernel.setReferringMethod(null);
+			kernel.setResource(null);
+			kernel.setSuppressable(false);
+			kernel.setTag(null);
+			kernel.setViewSelection(null);
+			kernel.setCreatedDate(new DateTime());
+			kernel.setLastModifiedDate(new DateTime());
+			kernel.getOwnedElements().add(alphaRepository.findAll().get(0));
 
-    /**
-     * 
-     * @throws Exception
-     */
-    @Test
-    public void insertKernel() throws Exception {
-        LOGGER.info("insert practice");
-        List<SEKernel> kernelList = kernelRepository.findAll();
-        SEKernel kernel = new SEKernel();
-        if (kernelList.isEmpty()) {
-            kernel.setBriefDescription("Essence default kernel");
-            kernel.setConsistencyRules("Consistencies rules");
-            kernel.setDescription("Essence default kernel");
-            kernel.setExtension(null);
-            kernel.setFeatureSelection(null);
-            kernel.setIcon(null);
-            kernel.setMergeResolution(null);
-            kernel.setName("essence-core");
-            kernel.setOwnedElements(null);// por defecto no hay elementos
-            kernel.setOwner(null);
-            kernel.setPatternAssociation(null);
-            kernel.setProperties(null);
-            kernel.setReferredElements(null);
-            kernel.setReferrer(null);
-            kernel.setReferringMethod(null);
-            kernel.setResource(null);
-            kernel.setSuppressable(false);
-            kernel.setTag(null);
-            kernel.setViewSelection(null);
-            kernel.setCreatedDate(new DateTime());
-            kernel.setLastModifiedDate(new DateTime());
+		} else {
+			kernel = kernelList.get(0);
+			kernel.setName("otro nombre");
+			kernel.setCreatedDate(new DateTime());
+			kernel.setLastModifiedDate(new DateTime());
+		}
 
-        } else {
-            kernel = kernelList.get(0);
-            kernel.setName("otro nombre");
-            kernel.setCreatedDate(new DateTime());
-            kernel.setLastModifiedDate(new DateTime());
-        }
+		kernelRepository.save(kernel);
+		id = kernel.getId();
+		LOGGER.info("id = {}", id);
+	}
 
-        kernelRepository.save(kernel);
-        id = kernel.getId();
-        LOGGER.info("id = {}", id);
-    }
+	@Test
+	public void getKernel() {
+		LOGGER.info("get kernel id = {}", id);
+		SEKernel kernel = kernelRepository.findOne(id);
+		LOGGER.info("id: {}", kernel.getId());
+		Iterator<SELanguageElement> iterator = kernel.getOwnedElements().iterator();
 
-    @Test
-    public void getKernel() {
-        LOGGER.info("get kernel id = {}", id);
-        SEKernel kernel = kernelRepository.findOne(id);
-        LOGGER.info("id: {}", kernel.getId());
-    }
+		while (iterator.hasNext()) {
+			SELanguageElement element = iterator.next();
+			if (element instanceof SEAlpha) {
+				SEAlpha alpha = (SEAlpha) element;
+				LOGGER.info(alpha.getName());
+			} else if (element instanceof SEKernel) {
+				SEKernel kernels = (SEKernel) element;
+				LOGGER.info(kernels.getName());
+			}
+		}
+	}
 }

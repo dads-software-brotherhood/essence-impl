@@ -44,43 +44,46 @@ import mx.infotec.dads.essence.util.EssenceMapping;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class AlphaRepositoryTest {
-    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
-    private SEAlphaRepository alphaRepository;
+	@Autowired
+	private SEAlphaRepository alphaRepository;
 
-    private static String id;
+	private static String id;
 
-    /**
-     * 
-     * @throws Exception
-     */
-    @Test
-    public void insertAlpha() throws Exception {
-        LOGGER.info("insert alpha");
-        SEAlpha alpha = new SEAlpha();
-        EssenceMapping.fillSELanguageElements(alpha);
-        EssenceMapping.fillBasicElement(alpha);
-        alpha.setStates(null);
-        alpha.setAction(null);
-        alpha.setActivitySpace(null);
-        alpha.setAlphaContainment(null);
-        alpha.setAlphaAssociation(null);
-        alpha.setWorkProductManifest(null);
-        alphaRepository.save(alpha);
-        
-        // Add States
-        SEState state = new SEState();
-        EssenceMapping.fillSELanguageElements(state);
-        state.setAlpha(alpha);
-        
-        id = alpha.getId();
-    }
+	/**
+	 * 
+	 * @throws Exception
+	 */
+	@Test
+	public void insertAlpha() throws Exception {
+		LOGGER.info("insert alpha");
+		SEAlpha alpha = new SEAlpha();
+		EssenceMapping.fillSELanguageElements(alpha);
+		EssenceMapping.fillBasicElement(alpha);
+		alpha.setStates(null);
+		alpha.setAction(null);
+		alpha.setActivitySpace(null);
+		alpha.setAlphaContainment(null);
+		alpha.setAlphaAssociation(null);
+		alpha.setWorkProductManifest(null);
+		alpha.setName("Opportunity");
+		alphaRepository.save(alpha);
 
-    @Test
-    public void getPractice() {
-        LOGGER.info("get practice id = {}", id);
-        SEAlpha alpha = alphaRepository.findOne(id);
-        LOGGER.info("id: {}", alpha.getId());
-    }
+		// Add States
+		SEState state = new SEState();
+		EssenceMapping.fillSELanguageElements(state);
+		state.setAlpha(alpha);
+
+		id = alpha.getId();
+	}
+
+	@Test
+	public void getPractice() {
+		LOGGER.info("get practice id = {}", id);
+		SEAlpha alpha = alphaRepository.findOne(id);
+		LOGGER.info("id: {}", alpha.getId());
+	}
+
+	
 }
