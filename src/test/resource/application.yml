@@ -4,9 +4,8 @@ spring:
     enabled: false
   data:
     mongodb:
-      database: essence
-      host: localhost
-      port: 27017
+      uri: mongodb://localshost:27017
+      database: sekc
 logging:
   level:
     root: info
