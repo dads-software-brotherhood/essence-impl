@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.activityspaceandactivity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
 
 import org.omg.essence.model.activityspaceandactivity.AbstractActivity;
@@ -64,6 +65,7 @@ public abstract class SEAbstractActivity extends SEBasicElement implements Abstr
 
     /** The activity association. */
     @DBRef
+    @JsonManagedReference
     protected Collection<SEActivityAssociation> activityAssociation;
 
     /**
@@ -71,9 +73,11 @@ public abstract class SEAbstractActivity extends SEBasicElement implements Abstr
      * entering the activity or considering the activity completed
      */
     @DBRef
+    @JsonManagedReference
     protected Collection<SECriterion> criterion;
 
     @Override
+    @JsonManagedReference
     public Collection<SEActivityAssociation> getActivityAssociation() {
         return activityAssociation;
     }

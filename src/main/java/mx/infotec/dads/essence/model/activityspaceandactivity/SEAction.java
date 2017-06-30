@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.activityspaceandactivity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.util.Collection;
 
 import org.omg.essence.model.activityspaceandactivity.Action;
@@ -91,6 +92,7 @@ public class SEAction extends SELanguageElement implements Action {
 
     /** The activity. */
     @DBRef
+    @JsonBackReference
     private SEActivity activity;
 
     /** The alpha. */

@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.omg.essence.model.foundation.Resource;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -74,6 +75,7 @@ public class SEResource extends SELanguageElement implements Resource{
 
     /** The language element */
     @DBRef
+    @JsonBackReference
     private SELanguageElement languageElement;
 
     @Override

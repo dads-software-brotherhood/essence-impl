@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
 
 import org.omg.essence.model.foundation.EndeavorAssociation;
@@ -63,10 +64,12 @@ public class SEEndeavorAssociation implements EndeavorAssociation {
 
     /** The properties of this association */
     @DBRef
+    @JsonManagedReference
     private Collection<SEEndeavorProperty> ownedEnd;
 
     /** End properties of the association */
     @DBRef
+    @JsonManagedReference
     private Collection<SEEndeavorProperty> memberEnd;
 
     @Override

@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.competency;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
 
 import org.omg.essence.model.competency.Competency;
@@ -73,6 +74,7 @@ public class SECompetency extends SEBasicElement implements Competency {
 
     /** A collection of levels defined for this competency. */
     @DBRef
+    @JsonManagedReference
     private Collection<CompetencyLevel> possibleLevel;
 
     @Override

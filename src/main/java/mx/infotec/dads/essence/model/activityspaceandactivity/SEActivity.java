@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.activityspaceandactivity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
 
 import org.omg.essence.model.activityspaceandactivity.Activity;
@@ -89,10 +90,12 @@ public class SEActivity extends SEAbstractActivity implements Activity {
 
     /** The approach. */
     @DBRef
+    @JsonManagedReference
     private Collection<SEApproach> approach;
 
     /** The action. */
     @DBRef
+    @JsonManagedReference
     private Collection<SEAction> action;
 
     /** The required competency level. */

@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.omg.essence.model.alphaandworkproduct.LevelOfDetail;
 import org.omg.essence.model.alphaandworkproduct.State;
 import org.omg.essence.model.competency.CompetencyLevel;
@@ -81,10 +82,12 @@ public class SECheckpoint extends SELanguageElement implements Checkpoint {
 
     /** The level. */
     @DBRef
+    @JsonBackReference
     private LevelOfDetail level;
 
     /** The state. */
     @DBRef
+    @JsonBackReference
     private State state;
 
     /** The competency level. */

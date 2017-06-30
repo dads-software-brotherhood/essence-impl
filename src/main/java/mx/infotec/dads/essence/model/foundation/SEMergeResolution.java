@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.omg.essence.model.foundation.MergeResolution;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -73,6 +74,7 @@ public class SEMergeResolution extends SELanguageElement implements MergeResolut
 
     /** The element group. */
     @DBRef
+    @JsonBackReference
     private SEElementGroup elementGroup;
 
     @Override

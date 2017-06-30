@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.activityspaceandactivity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.omg.essence.model.activityspaceandactivity.ActivityAssociation;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -86,10 +87,12 @@ public class SEActivityAssociation extends SELanguageElement implements Activity
 
     /** The first member of the association. */
     @DBRef
+    @JsonBackReference
     private SEAbstractActivity end2;
 
     /** The second member of the association. */
     @DBRef
+    @JsonBackReference
     private SEAbstractActivity end1;
 
     /** The kind of the association. */

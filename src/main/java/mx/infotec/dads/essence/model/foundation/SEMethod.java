@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.omg.essence.model.foundation.Kernel;
 import org.omg.essence.model.foundation.Method;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -83,6 +84,7 @@ public class SEMethod extends SEElementGroup implements Method {
 
     /** The Kernel this Method is based on */
     @DBRef
+    @JsonBackReference
     private Kernel baseKernel;
 
     @Override

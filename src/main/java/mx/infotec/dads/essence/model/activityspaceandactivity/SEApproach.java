@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.activityspaceandactivity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.omg.essence.model.activityspaceandactivity.Approach;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
@@ -62,6 +63,7 @@ public class SEApproach extends SELanguageElement implements Approach {
 
     /** The activity */
     @DBRef
+    @JsonBackReference
     private SEActivity activity;
 
     /** The name of the Approach */

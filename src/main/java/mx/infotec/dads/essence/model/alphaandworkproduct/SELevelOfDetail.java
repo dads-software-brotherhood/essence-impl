@@ -23,6 +23,8 @@
  */
 package mx.infotec.dads.essence.model.alphaandworkproduct;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
 
 import org.omg.essence.model.alphaandworkproduct.LevelOfDetail;
@@ -102,6 +104,7 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
 
     /** Checklist items to determine if the level of detail has been reached. */
     @DBRef
+    @JsonManagedReference
     private Collection<SECheckpoint> checkListItem;
 
     /** Next level of detail. */
@@ -110,6 +113,7 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
 
     /** The criterion. */
     @DBRef
+    @JsonManagedReference
     private Collection<SECriterion> criterion;
 
     /** The predecessor. */
@@ -118,6 +122,7 @@ public class SELevelOfDetail extends SELanguageElement implements LevelOfDetail 
 
     /** The work product. */
     @DBRef
+    @JsonBackReference
     private SEWorkProduct workProduct;
 
     @Override

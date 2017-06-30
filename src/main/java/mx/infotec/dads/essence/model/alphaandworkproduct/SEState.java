@@ -23,6 +23,8 @@
  */
 package mx.infotec.dads.essence.model.alphaandworkproduct;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
 
 import org.omg.essence.model.alphaandworkproduct.State;
@@ -88,6 +90,7 @@ public class SEState extends SELanguageElement implements State {
 
     /** A collection of checkpoints associated with the state. */
     @DBRef
+    @JsonManagedReference
     private Collection<SECheckpoint> checkListItem;
 
     /** The successor state. */
@@ -96,10 +99,12 @@ public class SEState extends SELanguageElement implements State {
 
     /** The criterion. */
     @DBRef
+    @JsonManagedReference
     private Collection<SECriterion> criterion;
 
     /** The alpha. */
     @DBRef
+    @JsonBackReference
     private SEAlpha alpha;
 
     /** The predecessor. */

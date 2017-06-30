@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.alphaandworkproduct;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.omg.essence.model.alphaandworkproduct.AlphaContainment;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -74,10 +75,12 @@ public class SEAlphaContainment extends SELanguageElement implements AlphaContai
 
     /** The super alpha */
     @DBRef
+    @JsonBackReference
     private SEAlpha superAlpha;
 
     /** The subordinate alpha. */
     @DBRef
+    @JsonBackReference
     private SEAlpha subordinateAlpha;
 
     @Override

@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.alphaandworkproduct;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
 
 import org.omg.essence.model.alphaandworkproduct.WorkProduct;
@@ -81,6 +82,7 @@ public class SEWorkProduct extends SEBasicElement implements WorkProduct {
 
     /** The level of details defined for the work product. */
     @DBRef
+    @JsonManagedReference
     private Collection<SELevelOfDetail> levelOfDetail;
 
     /** The action. */
@@ -89,6 +91,7 @@ public class SEWorkProduct extends SEBasicElement implements WorkProduct {
 
     /** The work product manifest. */
     @DBRef
+    @JsonManagedReference
     private Collection<SEWorkProductManifest> workProductManifest;
 
     @Override

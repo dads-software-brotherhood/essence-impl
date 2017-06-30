@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.activityspaceandactivity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.omg.essence.model.activityspaceandactivity.Criterion;
 
 import mx.infotec.dads.essence.model.alphaandworkproduct.SELevelOfDetail;
@@ -69,12 +70,15 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 public abstract class SECriterion extends SELanguageElement implements Criterion {
 
     /** The activity. */
+    @JsonBackReference
     protected SEAbstractActivity activity;
 
     /** A state to be reached. */
+    @JsonBackReference
     protected SEState state;
 
     /** A level of detail to be reached. */
+    @JsonBackReference
     protected SELevelOfDetail levelOfDetail;
 
     /** The description of the Criterion */

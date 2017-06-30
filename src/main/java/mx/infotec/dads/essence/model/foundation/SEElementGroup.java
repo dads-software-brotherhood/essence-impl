@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
 
 import org.omg.essence.model.foundation.ElementGroup;
@@ -111,14 +112,17 @@ public abstract class SEElementGroup extends SELanguageElement implements Elemen
 
     /** The merge resolution. */
     @DBRef
+    @JsonManagedReference
     protected Collection<SEMergeResolution> mergeResolution;
 
     /** The language elements this group owns by value */
     @DBRef
+    @JsonManagedReference
     protected Collection<SELanguageElement> ownedElements;
 
     /** The language elements this group owns by reference */
     @DBRef
+    @JsonManagedReference
     protected Collection<SELanguageElement> referredElements;
 
     @Override

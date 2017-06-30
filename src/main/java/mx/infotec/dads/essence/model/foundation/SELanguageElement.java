@@ -23,6 +23,8 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
 
 import org.joda.time.DateTime;
@@ -108,14 +110,17 @@ public abstract class SELanguageElement implements LanguageElement, Auditable {
 
 	/** The element group that owns this language element */
 	@DBRef
+        @JsonBackReference
 	protected SEElementGroup owner;
 
 	/** Tags associated with this language element */
 	@DBRef
+        @JsonManagedReference
 	protected Collection<SETag> tag;
 
 	/** Resources associated with this language element. */
 	@DBRef
+        @JsonManagedReference
 	protected Collection<SEResource> resource;
 
 	/**
@@ -123,6 +128,7 @@ public abstract class SELanguageElement implements LanguageElement, Auditable {
 	 * endeavor.
 	 */
 	@DBRef
+        @JsonManagedReference
 	protected Collection<SEEndeavorProperty> properties;
 
 	/**
@@ -134,14 +140,17 @@ public abstract class SELanguageElement implements LanguageElement, Auditable {
 
 	/** The feature selection. */
 	@DBRef
+        @JsonManagedReference
 	protected Collection<SEFeatureSelection> featureSelection;
 
 	/** The extension. */
 	@DBRef
+        @JsonManagedReference
 	protected Collection<SEExtensionElement> extension;
 
 	/** The referrer. */
 	@DBRef
+        @JsonBackReference
 	protected Collection<SEElementGroup> referrer;
 
 	/** The pattern association. */

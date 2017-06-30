@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.omg.essence.model.foundation.EndeavorProperty;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -64,6 +65,7 @@ public class SEEndeavorProperty implements EndeavorProperty {
 
     /** The language element. */
     @DBRef
+    @JsonBackReference
     private SELanguageElement languageElement;
 
     /**
@@ -71,10 +73,12 @@ public class SEEndeavorProperty implements EndeavorProperty {
      * property.
      */
     @DBRef
+    @JsonBackReference
     private SEEndeavorAssociation association;
 
     /** The association owning this property */
     @DBRef
+    @JsonBackReference
     private SEEndeavorAssociation owningAssociation;
 
     /** The type of the property */

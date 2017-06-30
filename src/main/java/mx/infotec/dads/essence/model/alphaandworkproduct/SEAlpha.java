@@ -23,6 +23,8 @@
  */
 package mx.infotec.dads.essence.model.alphaandworkproduct;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
 
 import org.omg.essence.model.alphaandworkproduct.Alpha;
@@ -106,6 +108,7 @@ public class SEAlpha extends SEBasicElement implements Alpha {
 
     /** The states of the alpha. */
     @DBRef
+    @JsonManagedReference
     private Collection<SEState> states;
 
     /** The action. */
@@ -114,18 +117,22 @@ public class SEAlpha extends SEBasicElement implements Alpha {
 
     /** The activity space. */
     @DBRef
+    @JsonBackReference
     private SEActivitySpace activitySpace;
 
     /** The alpha containment. */
     @DBRef
+    @JsonManagedReference
     private Collection<SEAlphaContainment> alphaContainment;
 
     /** The alpha association. */
     @DBRef
+    @JsonManagedReference
     private Collection<SEAlphaAssociation> alphaAssociation;
 
     /** The work product manifest. */
     @DBRef
+    @JsonManagedReference
     private Collection<SEWorkProductManifest> workProductManifest;
 
     @Override

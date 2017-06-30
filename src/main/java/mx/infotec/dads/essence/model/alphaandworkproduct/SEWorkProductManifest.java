@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.alphaandworkproduct;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.omg.essence.model.alphaandworkproduct.WorkProductManifest;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -81,10 +82,12 @@ public class SEWorkProductManifest extends SELanguageElement implements WorkProd
 
     /** The alpha bound by this manifest. */
     @DBRef
+    @JsonBackReference
     private SEAlpha alpha;
 
     /** The work product bound by this manifest. */
     @DBRef
+    @JsonBackReference
     private SEWorkProduct workProduct;
 
     @Override

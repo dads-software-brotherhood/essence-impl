@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.omg.essence.model.foundation.Tag;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -69,6 +70,7 @@ public class SETag extends SELanguageElement implements Tag {
 
     /** The language element. */
     @DBRef
+    @JsonBackReference
     private SELanguageElement languageElement;
 
     @Override

@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.activityspaceandactivity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
 
 import org.omg.essence.model.activityspaceandactivity.ActivitySpace;
@@ -76,6 +77,7 @@ public class SEActivitySpace extends SEAbstractActivity implements ActivitySpace
      * fulfilling the objectives of this activity space.
      */
     @DBRef
+    @JsonManagedReference
     private Collection<SEAlpha> input;
 
     @Override

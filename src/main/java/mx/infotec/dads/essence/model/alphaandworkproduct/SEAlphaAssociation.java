@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.alphaandworkproduct;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.omg.essence.model.alphaandworkproduct.Alpha;
 import org.omg.essence.model.alphaandworkproduct.AlphaAssociation;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -85,10 +86,12 @@ public class SEAlphaAssociation extends SELanguageElement implements AlphaAssoci
 
     /** The alpha endpoint 1 of the association. */
     @DBRef
+    @JsonBackReference
     private SEAlpha end1;
 
     /** The alpha endpoint 2 of the association. */
     @DBRef
+    @JsonBackReference
     private SEAlpha end2;
 
     @Override

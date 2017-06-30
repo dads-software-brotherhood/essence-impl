@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
 
 import org.omg.essence.model.foundation.Kernel;
@@ -97,6 +98,7 @@ public class SEKernel extends SEElementGroup implements Kernel {
 
     /** The referring method. */
     @DBRef
+    @JsonManagedReference
     private Collection<SEMethod> referringMethod;
 
     /**

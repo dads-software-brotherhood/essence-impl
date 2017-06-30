@@ -23,6 +23,7 @@
  */
 package mx.infotec.dads.essence.model.competency;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.util.Collection;
 
 import org.omg.essence.model.activityspaceandactivity.Activity;
@@ -89,6 +90,7 @@ public class SECompetencyLevel extends SELanguageElement implements CompetencyLe
 
     /** The competency. */
     @DBRef
+    @JsonBackReference
     private Competency competency;
 
     /** The checklist item. */
