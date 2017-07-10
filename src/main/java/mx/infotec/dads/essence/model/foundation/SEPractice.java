@@ -26,8 +26,8 @@ package mx.infotec.dads.essence.model.foundation;
 import java.util.Collection;
 import java.util.List;
 
+import org.omg.essence.model.activityspaceandactivity.Criterion;
 import org.omg.essence.model.foundation.Practice;
-import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.search.KeyWordsIndexable;
@@ -169,16 +169,28 @@ public class SEPractice extends SEElementGroup implements Practice, KeyWordsInde
     private Collection<String> entry;
 
     /**
+     * Expected Criterion of elements needed to start the execution of a
+     * practice.
+     */
+    private Collection<Criterion> entryCriterion;
+
+    /**
      * Expected characteristics of elements required as outputs after the
      * execution a practice is completed.
      */
     private Collection<String> result;
 
     /**
+     * Expected Criterion of elements needed to start the execution of a
+     * practice in Alpha form.
+     */
+    private Collection<Criterion> resultCriterion;
+
+    /**
      * Keywords used for search by areas
      */
     private List<String> keyWords;
-    
+
     /**
      * Author of the Practice
      */
@@ -244,5 +256,21 @@ public class SEPractice extends SEElementGroup implements Practice, KeyWordsInde
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public Collection<Criterion> getEntryCriterion() {
+        return entryCriterion;
+    }
+
+    public void setEntryCriterion(Collection<Criterion> entryCriterion) {
+        this.entryCriterion = entryCriterion;
+    }
+
+    public Collection<Criterion> getResultCriterion() {
+        return resultCriterion;
+    }
+
+    public void setResultCriterion(Collection<Criterion> resultCriterion) {
+        this.resultCriterion = resultCriterion;
     }
 }

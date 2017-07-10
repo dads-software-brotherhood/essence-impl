@@ -23,12 +23,15 @@
  */
 package mx.infotec.dads.essence.model.foundation;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
 
 import org.omg.essence.model.foundation.Kernel;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import mx.infotec.dads.essence.model.foundation.extention.SEAreaOfConcern;
 
 /**
  * <pre>
@@ -108,6 +111,10 @@ public class SEKernel extends SEElementGroup implements Kernel {
      */
     private String consistencyRules;
 
+    /** The referring method. */
+    @DBRef
+    private Collection<SEAreaOfConcern> areaOfConcerns;
+
     @Override
     public Collection<SEMethod> getReferringMethod() {
         return referringMethod;
@@ -124,6 +131,14 @@ public class SEKernel extends SEElementGroup implements Kernel {
 
     public void setConsistencyRules(String consistencyRules) {
         this.consistencyRules = consistencyRules;
+    }
+
+    public Collection<SEAreaOfConcern> getAreaOfConcerns() {
+        return areaOfConcerns;
+    }
+
+    public void setAreaOfConcerns(Collection<SEAreaOfConcern> areaOfConcerns) {
+        this.areaOfConcerns = areaOfConcerns;
     }
 
 }
