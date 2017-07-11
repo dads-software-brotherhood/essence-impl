@@ -28,6 +28,7 @@ import java.util.List;
 
 import org.omg.essence.model.activityspaceandactivity.Criterion;
 import org.omg.essence.model.foundation.Practice;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.search.KeyWordsIndexable;
@@ -172,6 +173,7 @@ public class SEPractice extends SEElementGroup implements Practice, KeyWordsInde
      * Expected Criterion of elements needed to start the execution of a
      * practice.
      */
+    @DBRef
     private Collection<Criterion> entryCriterion;
 
     /**
@@ -184,6 +186,7 @@ public class SEPractice extends SEElementGroup implements Practice, KeyWordsInde
      * Expected Criterion of elements needed to start the execution of a
      * practice in Alpha form.
      */
+    @DBRef
     private Collection<Criterion> resultCriterion;
 
     /**
