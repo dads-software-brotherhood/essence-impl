@@ -1,5 +1,7 @@
 package mx.infotec.dads.essence.model.foundation.extention;
 
+import java.io.Serializable;
+
 /**
  * This Enum represents the color used into the kernel specification, it depends
  * on the implementation used into the model,.
@@ -7,17 +9,28 @@ package mx.infotec.dads.essence.model.foundation.extention;
  * @author Daniel Cortes Pichardo
  *
  */
-public enum Color {
-    GREEN("59DF70"), YELLOW("FFFF65"), BLUE("5E8ED1");
+public class Color implements Serializable {
 
-    private String hexadecimal;
+	private static final long serialVersionUID = 1L;
 
-    Color(String hexadecimal) {
-        this.hexadecimal = hexadecimal;
-    }
+	private String name;
 
-    public String getHexadecimal() {
-        return hexadecimal;
-    }
+	private String hexadecimal;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getHexadecimal() {
+		return hexadecimal;
+	}
+
+	public void setHexadecimal(String hexadecimal) {
+		this.hexadecimal = hexadecimal;
+	}
 
 }
