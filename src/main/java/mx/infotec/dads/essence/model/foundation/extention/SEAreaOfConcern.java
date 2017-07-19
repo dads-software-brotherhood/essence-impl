@@ -24,11 +24,10 @@
 package mx.infotec.dads.essence.model.foundation.extention;
 
 import org.omg.essence.model.GraphicalElement;
-import org.omg.essence.model.foundation.BasicElement;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import mx.infotec.dads.essence.model.foundation.SELanguageElement;
+import mx.infotec.dads.essence.model.foundation.SEElementGroup;
 
 /**
  * <pre>
@@ -52,82 +51,47 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
  * @since essence 1.1
  */
 @Document(collection = "areaOfConcerns")
-public class SEAreaOfConcern extends SELanguageElement implements BasicElement {
+public class SEAreaOfConcern extends SEElementGroup {
 
-    /** The name of the element. */
-    private String name;
+	/**
+	 * The color of the Area Of Concern
+	 */
+	@DBRef
+	private Color color;
 
-    /**
-     * The icon to be used when presenting the elements.
-     * 
-     * @see GraphicalElement
-     */
-    @DBRef
-    private GraphicalElement icon;
+	@Override
+	public String getName() {
+		return name;
+	}
 
-    /**
-     * The color of the Area Of Concern
-     */
-    @DBRef
-    private Color color;
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    /**
-     * A short and concise description of what the element is. It is discouraged
-     * to use rich formatting and structuring elements like section headings in
-     * the brief description. The content of this attribute should be a summary
-     * of the content fiven in attribute "description".
-     */
-    private String briefDescription;
 
-    /**
-     * A more detailed description of the element. The content of this attribute
-     * may be written in a markup language to allow for rich descriptions. It
-     * may include section headings, formatting information, hyperlinks, or
-     * similar to ease structured reading and navigation.
-     */
-    private String description;
+	@Override
+	public String getBriefDescription() {
+		return briefDescription;
+	}
 
-    @Override
-    public String getName() {
-        return name;
-    }
+	public void setBriefDescription(String briefDescription) {
+		this.briefDescription = briefDescription;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	@Override
+	public String getDescription() {
+		return description;
+	}
 
-    @Override
-    public GraphicalElement getIcon() {
-        return icon;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public void setIcon(GraphicalElement icon) {
-        this.icon = icon;
-    }
+	public Color getColor() {
+		return color;
+	}
 
-    @Override
-    public String getBriefDescription() {
-        return briefDescription;
-    }
-
-    public void setBriefDescription(String briefDescription) {
-        this.briefDescription = briefDescription;
-    }
-
-    @Override
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
+	public void setColor(Color color) {
+		this.color = color;
+	}
 }

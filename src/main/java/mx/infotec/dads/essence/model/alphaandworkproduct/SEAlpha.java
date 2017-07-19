@@ -108,7 +108,7 @@ public class SEAlpha extends SEBasicElement implements Alpha {
 
     /** The states of the alpha. */
     @DBRef
-    @JsonManagedReference
+    @JsonManagedReference("states")
     private Collection<SEState> states;
 
     /** The action. */
@@ -117,17 +117,17 @@ public class SEAlpha extends SEBasicElement implements Alpha {
 
     /** The activity space. */
     @DBRef
-    @JsonBackReference
+    @JsonBackReference("activites")
     private SEActivitySpace activitySpace;
 
     /** The alpha containment. */
     @DBRef
-    @JsonManagedReference
+    @JsonManagedReference("alphaContainment")
     private Collection<SEAlphaContainment> alphaContainment;
 
     /** The alpha association. */
     @DBRef
-    @JsonManagedReference
+    @JsonManagedReference("sealphaassociation")
     private Collection<SEAlphaAssociation> alphaAssociation;
 
     /** The work product manifest. */

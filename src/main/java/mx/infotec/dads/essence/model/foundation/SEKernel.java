@@ -111,10 +111,6 @@ public class SEKernel extends SEElementGroup implements Kernel {
      */
     private String consistencyRules;
 
-    /** The referring method. */
-    @DBRef
-    private Collection<SEAreaOfConcern> areaOfConcerns;
-
     @Override
     public Collection<SEMethod> getReferringMethod() {
         return referringMethod;
@@ -132,13 +128,4 @@ public class SEKernel extends SEElementGroup implements Kernel {
     public void setConsistencyRules(String consistencyRules) {
         this.consistencyRules = consistencyRules;
     }
-
-    public Collection<SEAreaOfConcern> getAreaOfConcerns() {
-        return areaOfConcerns;
-    }
-
-    public void setAreaOfConcerns(Collection<SEAreaOfConcern> areaOfConcerns) {
-        this.areaOfConcerns = areaOfConcerns;
-    }
-
 }

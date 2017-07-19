@@ -85,18 +85,12 @@ import mx.infotec.dads.essence.model.view.SEViewSelection;
  * @version 1.1
  * @since essence 1.1
  */
-@JsonTypeInfo(
-		use = JsonTypeInfo.Id.NAME, 
-		include = JsonTypeInfo.As.PROPERTY, 
-		property = "type")
-@JsonSubTypes({ 
-	@Type(value = SEAlpha.class, name = "alpha"), 
-	@Type(value = SEPractice.class, name = "practice"), 
-	@Type(value = SECompetency.class, name = "competency"), 
-	@Type(value = SEWorkProduct.class, name = "workProduct"), 
-	@Type(value = SEWorkProductManifest.class, name = "workProductManifest"), 
-	@Type(value = SEAlphaAssociation.class, name = "alphaAssociation"), 
-	})
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonSubTypes({ @Type(value = SEAlpha.class, name = "alpha"), @Type(value = SEPractice.class, name = "practice"),
+		@Type(value = SECompetency.class, name = "competency"),
+		@Type(value = SEWorkProduct.class, name = "workProduct"),
+		@Type(value = SEWorkProductManifest.class, name = "workProductManifest"),
+		@Type(value = SEAlphaAssociation.class, name = "alphaAssociation"), })
 public abstract class SELanguageElement implements LanguageElement, Auditable {
 	/** The mongodb Id */
 	@Id
@@ -110,17 +104,17 @@ public abstract class SELanguageElement implements LanguageElement, Auditable {
 
 	/** The element group that owns this language element */
 	@DBRef
-        @JsonBackReference
+	@JsonBackReference
 	protected SEElementGroup owner;
 
 	/** Tags associated with this language element */
 	@DBRef
-        @JsonManagedReference
+	@JsonManagedReference
 	protected Collection<SETag> tag;
 
 	/** Resources associated with this language element. */
 	@DBRef
-        @JsonManagedReference
+	@JsonManagedReference
 	protected Collection<SEResource> resource;
 
 	/**
@@ -128,7 +122,7 @@ public abstract class SELanguageElement implements LanguageElement, Auditable {
 	 * endeavor.
 	 */
 	@DBRef
-        @JsonManagedReference
+	@JsonManagedReference
 	protected Collection<SEEndeavorProperty> properties;
 
 	/**
@@ -140,17 +134,17 @@ public abstract class SELanguageElement implements LanguageElement, Auditable {
 
 	/** The feature selection. */
 	@DBRef
-        @JsonManagedReference
+	@JsonManagedReference
 	protected Collection<SEFeatureSelection> featureSelection;
 
 	/** The extension. */
 	@DBRef
-        @JsonManagedReference
+	@JsonManagedReference
 	protected Collection<SEExtensionElement> extension;
 
 	/** The referrer. */
 	@DBRef
-        @JsonBackReference
+	@JsonBackReference
 	protected Collection<SEElementGroup> referrer;
 
 	/** The pattern association. */
