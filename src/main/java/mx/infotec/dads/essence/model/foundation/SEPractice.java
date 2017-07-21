@@ -31,6 +31,7 @@ import org.omg.essence.model.foundation.Practice;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import mx.infotec.dads.essence.model.activityspaceandactivity.SECriterion;
 import mx.infotec.dads.essence.search.KeyWordsIndexable;
 
 /**
@@ -174,7 +175,7 @@ public class SEPractice extends SEElementGroup implements Practice, KeyWordsInde
      * practice.
      */
     @DBRef
-    private Collection<Criterion> entryCriterion;
+    private Collection<SECriterion> entryCriterion;
 
     /**
      * Expected characteristics of elements required as outputs after the
@@ -187,7 +188,7 @@ public class SEPractice extends SEElementGroup implements Practice, KeyWordsInde
      * practice in Alpha form.
      */
     @DBRef
-    private Collection<Criterion> resultCriterion;
+    private Collection<SECriterion> resultCriterion;
 
     /**
      * Keywords used for search by areas
@@ -261,19 +262,19 @@ public class SEPractice extends SEElementGroup implements Practice, KeyWordsInde
         this.author = author;
     }
 
-    public Collection<Criterion> getEntryCriterion() {
+    public Collection<SECriterion> getEntryCriterion() {
         return entryCriterion;
     }
 
-    public void setEntryCriterion(Collection<Criterion> entryCriterion) {
+    public void setEntryCriterion(Collection<SECriterion> entryCriterion) {
         this.entryCriterion = entryCriterion;
     }
 
-    public Collection<Criterion> getResultCriterion() {
+    public Collection<SECriterion> getResultCriterion() {
         return resultCriterion;
     }
 
-    public void setResultCriterion(Collection<Criterion> resultCriterion) {
+    public void setResultCriterion(Collection<SECriterion> resultCriterion) {
         this.resultCriterion = resultCriterion;
     }
 }
