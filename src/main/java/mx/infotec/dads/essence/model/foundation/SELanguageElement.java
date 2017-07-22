@@ -39,6 +39,8 @@ import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import mx.infotec.dads.essence.audit.Auditable;
+import mx.infotec.dads.essence.model.activityspaceandactivity.SECompletionCriterion;
+import mx.infotec.dads.essence.model.activityspaceandactivity.SEEntryCriterion;
 import mx.infotec.dads.essence.model.alphaandworkproduct.SEAlpha;
 import mx.infotec.dads.essence.model.alphaandworkproduct.SEAlphaAssociation;
 import mx.infotec.dads.essence.model.alphaandworkproduct.SEWorkProduct;
@@ -90,7 +92,13 @@ import mx.infotec.dads.essence.model.view.SEViewSelection;
 		@Type(value = SECompetency.class, name = "competency"),
 		@Type(value = SEWorkProduct.class, name = "workProduct"),
 		@Type(value = SEWorkProductManifest.class, name = "workProductManifest"),
-		@Type(value = SEAlphaAssociation.class, name = "alphaAssociation"), })
+		@Type(value = SEAlphaAssociation.class, name = "alphaAssociation"), 
+                @Type(value = SEKernel.class, name = "kernel"), 
+                @Type(value = SELibrary.class, name = "library"), 
+                @Type(value = SEMethod.class, name = "method"), 
+                @Type(value = SEPracticeAsset.class, name = "practiceAsset"), 
+                @Type(value = SECompletionCriterion.class, name = "completitionCriterion"), 
+                @Type(value = SEEntryCriterion.class, name = "entryCriterion"), })
 public abstract class SELanguageElement implements LanguageElement, Auditable {
 	/** The mongodb Id */
 	@Id
