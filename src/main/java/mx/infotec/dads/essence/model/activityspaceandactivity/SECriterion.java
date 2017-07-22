@@ -23,8 +23,11 @@
  */
 package mx.infotec.dads.essence.model.activityspaceandactivity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import java.util.Collection;
+
 import org.omg.essence.model.activityspaceandactivity.Criterion;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import mx.infotec.dads.essence.model.alphaandworkproduct.SELevelOfDetail;
 import mx.infotec.dads.essence.model.alphaandworkproduct.SEState;
@@ -80,6 +83,10 @@ public abstract class SECriterion extends SELanguageElement implements Criterion
     /** A level of detail to be reached. */
     @JsonBackReference
     protected SELevelOfDetail levelOfDetail;
+    
+    /** Other Conditions Mapped */
+    @JsonBackReference
+    protected Collection<String> otherConditions;
 
     /** The description of the Criterion */
     protected String description;
@@ -118,6 +125,14 @@ public abstract class SECriterion extends SELanguageElement implements Criterion
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Collection<String> getOtherConditions() {
+        return otherConditions;
+    }
+
+    public void setOtherConditions(Collection<String> otherConditions) {
+        this.otherConditions = otherConditions;
     }
 
 }
