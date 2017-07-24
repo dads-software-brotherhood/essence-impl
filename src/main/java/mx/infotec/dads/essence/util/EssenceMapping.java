@@ -87,6 +87,8 @@ public class EssenceMapping {
         practice.setMeasures(new ArrayList<>());
         practice.setObjective("");
         practice.setResult(new ArrayList<>());
+        practice.setEntryCriterion(new ArrayList<>());
+        practice.setResult(new ArrayList<>());
     }
 
     public static void fillCheckpoint(SECheckpoint checkpoint, SEState state) {

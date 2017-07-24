@@ -26,7 +26,6 @@ package mx.infotec.dads.essence.model.foundation;
 import java.util.Collection;
 import java.util.List;
 
-import org.omg.essence.model.activityspaceandactivity.Criterion;
 import org.omg.essence.model.foundation.Practice;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
