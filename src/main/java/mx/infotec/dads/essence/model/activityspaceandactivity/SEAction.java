@@ -104,7 +104,6 @@ public class SEAction extends SELanguageElement implements Action {
     private Collection<SEWorkProduct> workProduct;
 
     /** The kind. */
-    @DBRef
     private ActionKind kind;
 
     @Override
