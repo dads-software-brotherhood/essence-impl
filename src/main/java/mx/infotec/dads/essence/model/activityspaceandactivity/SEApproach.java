@@ -28,6 +28,7 @@ import org.omg.essence.model.activityspaceandactivity.Approach;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <pre>
@@ -59,6 +60,7 @@ import mx.infotec.dads.essence.model.foundation.SELanguageElement;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "approaches")
 public class SEApproach extends SELanguageElement implements Approach {
 
     /** The activity */

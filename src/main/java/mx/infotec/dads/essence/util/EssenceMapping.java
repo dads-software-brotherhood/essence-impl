@@ -28,7 +28,6 @@ import java.util.ArrayList;
 import org.joda.time.DateTime;
 
 import mx.infotec.dads.essence.audit.Auditable;
-import mx.infotec.dads.essence.model.SEGraphicalElement;
 import mx.infotec.dads.essence.model.alphaandworkproduct.SEState;
 import mx.infotec.dads.essence.model.foundation.SEBasicElement;
 import mx.infotec.dads.essence.model.foundation.SECheckpoint;
@@ -87,6 +86,8 @@ public class EssenceMapping {
         practice.setMeasures(new ArrayList<>());
         practice.setObjective("");
         practice.setResult(new ArrayList<>());
+        practice.setEntryCriterion(new ArrayList<>());
+        practice.setResultCriterion(new ArrayList<>());
     }
 
     public static void fillCheckpoint(SECheckpoint checkpoint, SEState state) {
