@@ -25,6 +25,7 @@ package mx.infotec.dads.essence.model;
 
 import org.omg.essence.model.GraphicalElement;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * The Class GraphicalElement. It is one of four data types used for attributes.
@@ -33,16 +34,37 @@ import org.springframework.data.annotation.Id;
  * @version 1.1
  * @since essence 1.1
  */
+@Document(collection = "graphicalelements")
 public class SEGraphicalElement implements GraphicalElement {
     @Id
     private String id;
-
+    
+    private String icon_path;
+    
+    private String hex_color;
+    
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getIcon_path() {
+        return icon_path;
+    }
+
+    public void setIcon_path(String icon_path) {
+        this.icon_path = icon_path;
+    }
+
+    public String getHex_color() {
+        return hex_color;
+    }
+
+    public void setHex_color(String hex_color) {
+        this.hex_color = hex_color;
     }
     
     /**

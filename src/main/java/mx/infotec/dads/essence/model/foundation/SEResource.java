@@ -27,6 +27,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.omg.essence.model.foundation.Resource;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import mx.infotec.dads.essence.util.ResourcesTypes;
 
 /**
  * <pre>
@@ -73,6 +74,10 @@ public class SEResource extends SELanguageElement implements Resource{
      */
     private String content;
 
+    private String fileName;
+    
+    private ResourcesTypes idResourceType;
+    
     /** The language element */
     @DBRef
     @JsonBackReference
@@ -96,4 +101,21 @@ public class SEResource extends SELanguageElement implements Resource{
         this.languageElement = languageElement;
     }
 
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public ResourcesTypes getIdResourceType() {
+        return idResourceType;
+    }
+
+    public void setIdResourceType(ResourcesTypes idResourceType) {
+        this.idResourceType = idResourceType;
+    }
+    
+    
 }

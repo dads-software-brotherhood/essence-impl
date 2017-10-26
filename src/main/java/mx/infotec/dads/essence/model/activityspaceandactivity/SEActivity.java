@@ -102,6 +102,8 @@ public class SEActivity extends SEAbstractActivity implements Activity {
     @DBRef
     private Collection<SECompetencyLevel> requiredCompetencyLevel;
 
+    private String goJsPosition;
+    
     @Override
     public Collection<SEApproach> getApproach() {
         return approach;
@@ -127,6 +129,14 @@ public class SEActivity extends SEAbstractActivity implements Activity {
 
     public void setRequiredCompetencyLevel(Collection<SECompetencyLevel> requiredCompetencyLevel) {
         this.requiredCompetencyLevel = requiredCompetencyLevel;
+    }
+
+    public String getGoJsPosition() {
+        return goJsPosition;
+    }
+
+    public void setGoJsPosition(String goJsPosition) {
+        this.goJsPosition = goJsPosition;
     }
 
 }
