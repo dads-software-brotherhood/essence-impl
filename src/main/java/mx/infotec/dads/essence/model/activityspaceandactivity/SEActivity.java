@@ -25,6 +25,7 @@ package mx.infotec.dads.essence.model.activityspaceandactivity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Collection;
+import java.util.List;
 
 import org.omg.essence.model.activityspaceandactivity.Activity;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -104,6 +105,10 @@ public class SEActivity extends SEAbstractActivity implements Activity {
 
     private String goJsPosition;
     
+    private List<String> to;
+    
+    private int position;
+    
     @Override
     public Collection<SEApproach> getApproach() {
         return approach;
@@ -137,6 +142,22 @@ public class SEActivity extends SEAbstractActivity implements Activity {
 
     public void setGoJsPosition(String goJsPosition) {
         this.goJsPosition = goJsPosition;
+    }
+
+    public List<String> getTo() {
+        return to;
+    }
+
+    public void setTo(List<String> to) {
+        this.to = to;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 
 }
