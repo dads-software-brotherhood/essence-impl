@@ -32,6 +32,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.competency.SECompetencyLevel;
+import mx.infotec.dads.essence.model.foundation.extention.SEAreaOfConcern;
 
 /**
  * <pre>
@@ -102,7 +103,9 @@ public class SEActivity extends SEAbstractActivity implements Activity {
     /** The required competency level. */
     @DBRef
     private Collection<SECompetencyLevel> requiredCompetencyLevel;
-
+    
+    private String idAreaOfConcern;
+    
     private String goJsPosition;
     
     private List<String> to;
@@ -136,6 +139,15 @@ public class SEActivity extends SEAbstractActivity implements Activity {
         this.requiredCompetencyLevel = requiredCompetencyLevel;
     }
 
+    public String getIdAreaOfConcern() {
+        return idAreaOfConcern;
+    }
+
+    public void setIdAreaOfConcern(String idAreaOfConcern) {
+        this.idAreaOfConcern = idAreaOfConcern;
+    }
+    
+    
     public String getGoJsPosition() {
         return goJsPosition;
     }

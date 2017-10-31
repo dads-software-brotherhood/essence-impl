@@ -32,6 +32,8 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.alphaandworkproduct.SEAlpha;
+import mx.infotec.dads.essence.model.alphaandworkproduct.SELevelOfDetail;
+import mx.infotec.dads.essence.model.alphaandworkproduct.SEState;
 import mx.infotec.dads.essence.model.alphaandworkproduct.SEWorkProduct;
 import mx.infotec.dads.essence.model.foundation.SELanguageElement;
 
@@ -98,10 +100,16 @@ public class SEAction extends SELanguageElement implements Action {
     /** The alpha. */
     @DBRef
     private Collection<SEAlpha> alpha;
+    
+    @DBRef
+    private Collection<SEState> state;
 
     /** The work product. */
     @DBRef
     private Collection<SEWorkProduct> workProduct;
+    
+    @DBRef
+    private Collection<SELevelOfDetail> levelOfDetail;
 
     /** The kind. */
     private ActionKind kind;
@@ -124,6 +132,14 @@ public class SEAction extends SELanguageElement implements Action {
         this.alpha = alpha;
     }
 
+    public Collection<SEState> getState() {
+        return state;
+    }
+
+    public void setState(Collection<SEState> state) {
+        this.state = state;
+    }
+    
     @Override
     public Collection<SEWorkProduct> getWorkProduct() {
         return workProduct;
@@ -132,7 +148,15 @@ public class SEAction extends SELanguageElement implements Action {
     public void setWorkProduct(Collection<SEWorkProduct> workProduct) {
         this.workProduct = workProduct;
     }
+    
+    public Collection<SELevelOfDetail> getLevelOfDetail() {
+        return levelOfDetail;
+    }
 
+    public void setLevelOfDetail(Collection<SELevelOfDetail> levelOfDetail) {
+        this.levelOfDetail = levelOfDetail;
+    }
+    
     @Override
     public ActionKind getKind() {
         return kind;

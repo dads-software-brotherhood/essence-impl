@@ -73,8 +73,12 @@ public class SEResource extends SELanguageElement implements Resource{
      * in any suitable way, e.g., as a hyperlink or as a full text document.
      */
     private String content;
-
+    
+    private String file;
+    
     private String fileName;
+    
+    private String fileType;
     
     private ResourcesTypes idResourceType;
     
@@ -101,6 +105,22 @@ public class SEResource extends SELanguageElement implements Resource{
         this.languageElement = languageElement;
     }
 
+    public String getFile() {
+        return file;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
+    }
+
+    public String getFileType() {
+        return fileType;
+    }
+
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
+    }
+    
     public String getFileName() {
         return fileName;
     }
