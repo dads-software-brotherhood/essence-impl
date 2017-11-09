@@ -110,7 +110,7 @@ public class SEActivity extends SEAbstractActivity implements Activity {
     
     private List<String> to;
     
-    private int position;
+    private String idActivityComposition;
     
     @Override
     public Collection<SEApproach> getApproach() {
@@ -164,12 +164,12 @@ public class SEActivity extends SEAbstractActivity implements Activity {
         this.to = to;
     }
 
-    public int getPosition() {
-        return position;
+    public String getIdActivityComposition() {
+        return idActivityComposition;
     }
 
-    public void setPosition(int position) {
-        this.position = position;
+    public void setIdActivityComposition(String idActivityComposition) {
+        this.idActivityComposition = idActivityComposition;
     }
 
 }
