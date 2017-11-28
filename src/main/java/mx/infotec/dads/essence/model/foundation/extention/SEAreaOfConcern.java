@@ -56,8 +56,7 @@ public class SEAreaOfConcern extends SEElementGroup {
 	/**
 	 * The color of the Area Of Concern
 	 */
-	@DBRef
-	private Color color;
+	private SEColor color;
 
 	@Override
 	public String getName() {
@@ -87,11 +86,11 @@ public class SEAreaOfConcern extends SEElementGroup {
 		this.description = description;
 	}
 
-	public Color getColor() {
+	public SEColor getColor() {
 		return color;
 	}
 
-	public void setColor(Color color) {
+	public void setColor(SEColor color) {
 		this.color = color;
 	}
 }
