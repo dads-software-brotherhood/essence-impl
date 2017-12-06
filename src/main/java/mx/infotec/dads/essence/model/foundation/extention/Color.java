@@ -16,6 +16,10 @@ public class Color implements Serializable {
 	private String name;
 
 	private String hexadecimal;
+        
+        public Color (String hexColor){
+            this.hexadecimal = hexColor;
+        }
 
 	public String getName() {
 		return name;

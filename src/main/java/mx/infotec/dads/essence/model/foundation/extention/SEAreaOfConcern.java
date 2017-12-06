@@ -68,7 +68,6 @@ public class SEAreaOfConcern extends SEElementGroup {
 		this.name = name;
 	}
 
-
 	@Override
 	public String getBriefDescription() {
 		return briefDescription;

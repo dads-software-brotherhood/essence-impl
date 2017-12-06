@@ -32,7 +32,6 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import mx.infotec.dads.essence.model.competency.SECompetencyLevel;
-import mx.infotec.dads.essence.model.foundation.extention.SEAreaOfConcern;
 
 /**
  * <pre>
@@ -110,6 +109,8 @@ public class SEActivity extends SEAbstractActivity implements Activity {
     
     private List<String> to;
     
+    private String category;
+    
     private String idActivityComposition;
     
     @Override
@@ -164,6 +165,14 @@ public class SEActivity extends SEAbstractActivity implements Activity {
         this.to = to;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+    
     public String getIdActivityComposition() {
         return idActivityComposition;
     }

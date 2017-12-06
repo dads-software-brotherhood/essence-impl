@@ -30,6 +30,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import mx.infotec.dads.essence.model.foundation.SEPractice;
+import org.springframework.data.domain.Sort;
 
 /**
  * SEPracticeRepository
