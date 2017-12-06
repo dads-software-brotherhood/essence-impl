@@ -5,36 +5,36 @@ import java.io.Serializable;
 /**
  * This Enum represents the color used into the kernel specification, it depends
  * on the implementation used into the model,.
- * 
+ *
  * @author Daniel Cortes Pichardo
  *
  */
 public class Color implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private String name;
+    private String name;
 
-	private String hexadecimal;
-        
-        public Color (String hexColor){
-            this.hexadecimal = hexColor;
-        }
+    private String hexadecimal;
 
-	public String getName() {
-		return name;
-	}
+    public Color(String hexColor) {
+        this.hexadecimal = hexColor;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getHexadecimal() {
-		return hexadecimal;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setHexadecimal(String hexadecimal) {
-		this.hexadecimal = hexadecimal;
-	}
+    public String getHexadecimal() {
+        return hexadecimal;
+    }
+
+    public void setHexadecimal(String hexadecimal) {
+        this.hexadecimal = hexadecimal;
+    }
 
 }
